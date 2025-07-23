@@ -16,12 +16,19 @@ from typing import List, Optional
 # Import the converter classes
 try:
     from universal_document_converter import (
-        UniversalConverter, FormatDetector, ConverterLogger, ConfigManager,
-        DocumentConverterError, UnsupportedFormatError, FileProcessingError
+        UniversalConverter,
+        FormatDetector,
+        ConverterLogger,
+        ConfigManager,
+        DocumentConverterError,
+        UnsupportedFormatError,
+        FileProcessingError,
     )
 except ImportError as e:
     print(f"Error: Could not import converter modules: {e}")
-    print("Make sure universal_document_converter.py is in the same directory.")
+    print(
+        "Make sure universal_document_converter.py is in the same directory."
+    )
     sys.exit(1)
 
 
@@ -33,13 +40,15 @@ class DocumentConverterCLI:
         self.config_manager = ConfigManager(config_file)
 
         # Initialize converter with config
-        self.converter = UniversalConverter("CLI", config_manager=self.config_manager)
+        self.converter = UniversalConverter(
+            "CLI", config_manager=self.config_manager
+        )
 
         # Initialize logger with config
-        log_level = self.config_manager.get('logging', 'log_level', 'INFO')
+        log_level = self.config_manager.get("logging", "log_level", "INFO")
         self.logger_instance = ConverterLogger("CLI", log_level)
         self.logger = self.logger_instance.get_logger()
-        
+
     def create_parser(self) -> argparse.ArgumentParser:
         """Create and configure the argument parser"""
         parser = argparse.ArgumentParser(
@@ -56,88 +65,157 @@ Examples:
 
 Supported Input Formats:  DOCX, PDF, TXT, HTML, RTF
 Supported Output Formats: Markdown, TXT, HTML, RTF
-            """
+            """,
         )
-        
+
         # Input/Output arguments
-        parser.add_argument('input', nargs='*', 
-                          help='Input file(s) or directory to convert')
-        parser.add_argument('-o', '--output', required=False,
-                          help='Output file or directory')
-        
+        parser.add_argument(
+            "input", nargs="*", help="Input file(s) or directory to convert"
+        )
+        parser.add_argument(
+            "-o", "--output", required=False, help="Output file or directory"
+        )
+
         # Format arguments
-        parser.add_argument('-f', '--from-format', default='auto',
-                          choices=['auto'] + list(FormatDetector.SUPPORTED_INPUT_FORMATS.keys()),
-                          help='Input format (default: auto-detect)')
-        parser.add_argument('-t', '--to-format', default='markdown',
-                          choices=list(FormatDetector.SUPPORTED_OUTPUT_FORMATS.keys()),
-                          help='Output format (default: markdown)')
-        
+        parser.add_argument(
+            "-f",
+            "--from-format",
+            default="auto",
+            choices=["auto"]
+            + list(FormatDetector.SUPPORTED_INPUT_FORMATS.keys()),
+            help="Input format (default: auto-detect)",
+        )
+        parser.add_argument(
+            "-t",
+            "--to-format",
+            default="markdown",
+            choices=list(FormatDetector.SUPPORTED_OUTPUT_FORMATS.keys()),
+            help="Output format (default: markdown)",
+        )
+
         # Processing options
-        parser.add_argument('--recursive', '-r', action='store_true',
-                          help='Process directories recursively')
-        parser.add_argument('--preserve-structure', action='store_true', default=True,
-                          help='Preserve directory structure in output (default: True)')
-        parser.add_argument('--overwrite', action='store_true',
-                          help='Overwrite existing output files')
-        parser.add_argument('--workers', type=int, default=None,
-                          help='Number of worker threads (default: auto)')
-        
+        parser.add_argument(
+            "--recursive",
+            "-r",
+            action="store_true",
+            help="Process directories recursively",
+        )
+        parser.add_argument(
+            "--preserve-structure",
+            action="store_true",
+            default=True,
+            help="Preserve directory structure in output (default: True)",
+        )
+        parser.add_argument(
+            "--overwrite",
+            action="store_true",
+            help="Overwrite existing output files",
+        )
+        parser.add_argument(
+            "--workers",
+            type=int,
+            default=None,
+            help="Number of worker threads (default: auto)",
+        )
+
         # Caching and performance
-        parser.add_argument('--no-cache', action='store_true',
-                          help='Disable caching for this conversion')
-        parser.add_argument('--clear-cache', action='store_true',
-                          help='Clear the conversion cache and exit')
-        
+        parser.add_argument(
+            "--no-cache",
+            action="store_true",
+            help="Disable caching for this conversion",
+        )
+        parser.add_argument(
+            "--clear-cache",
+            action="store_true",
+            help="Clear the conversion cache and exit",
+        )
+
         # Batch processing
-        parser.add_argument('--batch', metavar='CONFIG_FILE',
-                          help='Batch conversion using JSON configuration file')
-        
+        parser.add_argument(
+            "--batch",
+            metavar="CONFIG_FILE",
+            help="Batch conversion using JSON configuration file",
+        )
+
         # Information commands
-        parser.add_argument('--list-formats', action='store_true',
-                          help='List all supported input and output formats')
-        parser.add_argument('--version', action='version', version='Quick Document Convertor 2.0')
-        
+        parser.add_argument(
+            "--list-formats",
+            action="store_true",
+            help="List all supported input and output formats",
+        )
+        parser.add_argument(
+            "--version",
+            action="version",
+            version="Quick Document Convertor 2.0",
+        )
+
         # Logging and output
-        parser.add_argument('--verbose', '-v', action='store_true',
-                          help='Enable verbose logging')
-        parser.add_argument('--quiet', '-q', action='store_true',
-                          help='Suppress all output except errors')
-        parser.add_argument('--log-file', metavar='FILE',
-                          help='Write logs to specified file')
+        parser.add_argument(
+            "--verbose",
+            "-v",
+            action="store_true",
+            help="Enable verbose logging",
+        )
+        parser.add_argument(
+            "--quiet",
+            "-q",
+            action="store_true",
+            help="Suppress all output except errors",
+        )
+        parser.add_argument(
+            "--log-file", metavar="FILE", help="Write logs to specified file"
+        )
 
         # Configuration management
-        parser.add_argument('--config', metavar='CONFIG_FILE',
-                          help='Use specified configuration file')
-        parser.add_argument('--save-config', metavar='CONFIG_FILE',
-                          help='Save current settings to configuration file')
-        parser.add_argument('--show-config', action='store_true',
-                          help='Show current configuration and exit')
-        parser.add_argument('--reset-config', action='store_true',
-                          help='Reset configuration to defaults')
+        parser.add_argument(
+            "--config",
+            metavar="CONFIG_FILE",
+            help="Use specified configuration file",
+        )
+        parser.add_argument(
+            "--save-config",
+            metavar="CONFIG_FILE",
+            help="Save current settings to configuration file",
+        )
+        parser.add_argument(
+            "--show-config",
+            action="store_true",
+            help="Show current configuration and exit",
+        )
+        parser.add_argument(
+            "--reset-config",
+            action="store_true",
+            help="Reset configuration to defaults",
+        )
 
         # Profile management
-        parser.add_argument('--profile', metavar='PROFILE_NAME',
-                          help='Use named configuration profile')
-        parser.add_argument('--list-profiles', action='store_true',
-                          help='List available configuration profiles')
+        parser.add_argument(
+            "--profile",
+            metavar="PROFILE_NAME",
+            help="Use named configuration profile",
+        )
+        parser.add_argument(
+            "--list-profiles",
+            action="store_true",
+            help="List available configuration profiles",
+        )
 
         return parser
-    
+
     def list_formats(self):
         """Display supported formats"""
         print("Quick Document Convertor - Supported Formats\n")
-        
+
         print("INPUT FORMATS:")
         for key, info in FormatDetector.SUPPORTED_INPUT_FORMATS.items():
-            extensions = ', '.join(info['extensions'])
+            extensions = ", ".join(info["extensions"])
             print(f"  {key.upper():8} - {info['name']} ({extensions})")
-        
+
         print("\nOUTPUT FORMATS:")
         for key, info in FormatDetector.SUPPORTED_OUTPUT_FORMATS.items():
-            extension = info['extension']
+            extension = info["extension"]
             print(f"  {key.upper():8} - {info['name']} ({extension})")
-        
+
         print("\nUse 'auto' for automatic input format detection")
 
     def show_config(self):
@@ -146,19 +224,19 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
 
         # General settings
         print("GENERAL SETTINGS:")
-        general = self.config_manager.get_section('general')
+        general = self.config_manager.get_section("general")
         for key, value in general.items():
             print(f"  {key}: {value}")
 
         # Performance settings
         print("\nPERFORMANCE SETTINGS:")
-        performance = self.config_manager.get_section('performance')
+        performance = self.config_manager.get_section("performance")
         for key, value in performance.items():
             print(f"  {key}: {value}")
 
         # Logging settings
         print("\nLOGGING SETTINGS:")
-        logging_config = self.config_manager.get_section('logging')
+        logging_config = self.config_manager.get_section("logging")
         for key, value in logging_config.items():
             print(f"  {key}: {value}")
 
@@ -232,7 +310,13 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
     def validate_args(self, args) -> bool:
         """Validate command line arguments"""
         # Check for information commands first
-        if args.list_formats or args.clear_cache or args.show_config or args.list_profiles or args.reset_config:
+        if (
+            args.list_formats
+            or args.clear_cache
+            or args.show_config
+            or args.list_profiles
+            or args.reset_config
+        ):
             return True
 
         # Check for configuration commands
@@ -242,37 +326,39 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
         # Check for batch mode
         if args.batch:
             if not Path(args.batch).exists():
-                print(f"Error: Batch configuration file not found: {args.batch}")
+                print(
+                    f"Error: Batch configuration file not found: {args.batch}"
+                )
                 return False
             return True
-        
+
         # Regular mode validation
         if not args.input:
             print("Error: No input files specified")
             return False
-        
+
         if not args.output:
             print("Error: Output path required (use -o/--output)")
             return False
-        
+
         # Validate input files exist
         for input_path in args.input:
             path = Path(input_path)
             if not path.exists():
                 print(f"Error: Input path does not exist: {input_path}")
                 return False
-        
+
         return True
-    
+
     def setup_logging(self, args):
         """Configure logging based on arguments"""
         # Determine log level
         if args.quiet:
-            log_level = 'ERROR'
+            log_level = "ERROR"
         elif args.verbose:
-            log_level = 'DEBUG'
+            log_level = "DEBUG"
         else:
-            log_level = self.config_manager.get('logging', 'log_level', 'INFO')
+            log_level = self.config_manager.get("logging", "log_level", "INFO")
 
         # Update logger level
         numeric_level = getattr(logging, log_level.upper(), logging.INFO)
@@ -281,26 +367,50 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
         # Update all handlers
         for handler in self.logger.handlers:
             handler.setLevel(numeric_level)
-    
-    def convert_single_file(self, input_path: Path, output_path: Path, 
-                          from_format: str, to_format: str) -> bool:
+
+    def convert_single_file(
+        self,
+        input_path: Path,
+        output_path: Path,
+        from_format: str,
+        to_format: str,
+    ) -> bool:
         """Convert a single file"""
         try:
-            self.converter.convert_file(input_path, output_path, from_format, to_format)
+            self.converter.convert_file(
+                input_path, output_path, from_format, to_format
+            )
             return True
-        except (UnsupportedFormatError, FileProcessingError, DocumentConverterError) as e:
+        except (
+            UnsupportedFormatError,
+            FileProcessingError,
+            DocumentConverterError,
+        ) as e:
             self.logger.error(f"Failed to convert {input_path}: {e}")
             return False
-    
-    def get_output_path(self, input_path: Path, output_base: Path, 
-                       to_format: str, preserve_structure: bool, 
-                       base_input_dir: Optional[Path] = None) -> Path:
+
+    def get_output_path(
+        self,
+        input_path: Path,
+        output_base: Path,
+        to_format: str,
+        preserve_structure: bool,
+        base_input_dir: Optional[Path] = None,
+    ) -> Path:
         """Generate output path for a given input file"""
-        output_ext = FormatDetector.SUPPORTED_OUTPUT_FORMATS[to_format]['extension']
-        
-        if output_base.is_file() or (not output_base.exists() and not output_base.suffix):
+        output_ext = FormatDetector.SUPPORTED_OUTPUT_FORMATS[to_format][
+            "extension"
+        ]
+
+        if output_base.is_file() or (
+            not output_base.exists() and not output_base.suffix
+        ):
             # Output is a specific file or directory
-            if preserve_structure and base_input_dir and input_path != base_input_dir:
+            if (
+                preserve_structure
+                and base_input_dir
+                and input_path != base_input_dir
+            ):
                 # Preserve directory structure
                 rel_path = input_path.relative_to(base_input_dir)
                 return output_base / rel_path.with_suffix(output_ext)
@@ -313,49 +423,58 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
         else:
             # Output directory
             return output_base / f"{input_path.stem}{output_ext}"
-    
-    def collect_input_files(self, input_paths: List[str], recursive: bool) -> List[Path]:
+
+    def collect_input_files(
+        self, input_paths: List[str], recursive: bool
+    ) -> List[Path]:
         """Collect all input files to process"""
         files = []
-        
+
         for input_path in input_paths:
             path = Path(input_path)
-            
+
             if path.is_file():
                 files.append(path)
             elif path.is_dir():
                 if recursive:
                     # Find all supported files recursively
-                    for fmt_info in FormatDetector.SUPPORTED_INPUT_FORMATS.values():
-                        for ext in fmt_info['extensions']:
+                    for (
+                        fmt_info
+                    ) in FormatDetector.SUPPORTED_INPUT_FORMATS.values():
+                        for ext in fmt_info["extensions"]:
                             files.extend(path.rglob(f"*{ext}"))
                 else:
                     # Find supported files in directory only
-                    for fmt_info in FormatDetector.SUPPORTED_INPUT_FORMATS.values():
-                        for ext in fmt_info['extensions']:
+                    for (
+                        fmt_info
+                    ) in FormatDetector.SUPPORTED_INPUT_FORMATS.values():
+                        for ext in fmt_info["extensions"]:
                             files.extend(path.glob(f"*{ext}"))
             else:
                 # Handle glob patterns
                 from glob import glob
+
                 matched_files = glob(str(path))
-                files.extend([Path(f) for f in matched_files if Path(f).is_file()])
-        
+                files.extend(
+                    [Path(f) for f in matched_files if Path(f).is_file()]
+                )
+
         # Remove duplicates and filter out temporary files
         unique_files = list(set(files))
-        return [f for f in unique_files if not f.name.startswith('~$')]
-    
+        return [f for f in unique_files if not f.name.startswith("~$")]
+
     def run(self, args=None) -> int:
         """Main CLI execution method"""
         parser = self.create_parser()
         args = parser.parse_args(args)
-        
+
         # Validate arguments
         if not self.validate_args(args):
             return 1
-        
+
         # Setup logging
         self.setup_logging(args)
-        
+
         # Handle information commands
         if args.list_formats:
             self.list_formats()
@@ -389,7 +508,7 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
         # Handle batch mode
         if args.batch:
             return self.run_batch_conversion(args.batch)
-        
+
         # Regular conversion mode
         return self.run_conversion(args)
 
@@ -409,7 +528,11 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
             base_input_dir = None
             if args.preserve_structure and len(input_files) > 1:
                 try:
-                    base_input_dir = Path(os.path.commonpath([str(f.parent) for f in input_files]))
+                    base_input_dir = Path(
+                        os.path.commonpath(
+                            [str(f.parent) for f in input_files]
+                        )
+                    )
                 except ValueError:
                     base_input_dir = None
 
@@ -423,16 +546,19 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
 
             # Use batch conversion for multiple files
             if len(input_files) > 1:
+
                 def progress_callback(completed, total, result):
                     nonlocal successful, failed
-                    if result['status'] == 'success':
+                    if result["status"] == "success":
                         successful += 1
                         if not args.quiet:
-                            print(f"SUCCESS: {result['file']} -> {result['output']}")
-                    elif result['status'] == 'error':
+                            print(
+                                f"SUCCESS: {result['file']} -> {result['output']}"
+                            )
+                    elif result["status"] == "error":
                         failed += 1
                         print(f"ERROR: {result['file']}: {result['error']}")
-                    elif result['status'] == 'skipped':
+                    elif result["status"] == "skipped":
                         if not args.quiet:
                             print(f"SKIPPED (exists): {result['file']}")
 
@@ -450,27 +576,34 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
                     progress_callback=progress_callback,
                     preserve_structure=args.preserve_structure,
                     overwrite_existing=args.overwrite,
-                    base_dir=base_input_dir
+                    base_dir=base_input_dir,
                 )
 
-                successful = results['successful']
-                failed = results['failed']
+                successful = results["successful"]
+                failed = results["failed"]
 
             else:
                 # Single file conversion
                 input_file = input_files[0]
                 output_file = self.get_output_path(
-                    input_file, output_path, args.to_format,
-                    args.preserve_structure, base_input_dir
+                    input_file,
+                    output_path,
+                    args.to_format,
+                    args.preserve_structure,
+                    base_input_dir,
                 )
 
                 # Create output directory
                 output_file.parent.mkdir(parents=True, exist_ok=True)
 
-                if self.convert_single_file(input_file, output_file, args.from_format, args.to_format):
+                if self.convert_single_file(
+                    input_file, output_file, args.from_format, args.to_format
+                ):
                     successful = 1
                     if not args.quiet:
-                        print(f"SUCCESS: {input_file.name} -> {output_file.name}")
+                        print(
+                            f"SUCCESS: {input_file.name} -> {output_file.name}"
+                        )
                 else:
                     failed = 1
 
@@ -493,33 +626,39 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
     def run_batch_conversion(self, config_file: str) -> int:
         """Run batch conversion from configuration file"""
         try:
-            with open(config_file, 'r') as f:
+            with open(config_file, "r") as f:
                 config = json.load(f)
 
             # Validate configuration
-            if 'conversions' not in config:
-                print("Error: Configuration file must contain 'conversions' array")
+            if "conversions" not in config:
+                print(
+                    "Error: Configuration file must contain 'conversions' array"
+                )
                 return 1
 
             total_successful = 0
             total_failed = 0
 
-            for i, conversion in enumerate(config['conversions']):
-                print(f"\n📋 Running conversion {i+1}/{len(config['conversions'])}")
+            for i, conversion in enumerate(config["conversions"]):
+                print(
+                    f"\n📋 Running conversion {i+1}/{len(config['conversions'])}"
+                )
 
                 # Create args object from configuration
                 class Args:
                     pass
 
                 args = Args()
-                args.input = conversion.get('input', [])
-                args.output = conversion.get('output')
-                args.from_format = conversion.get('from_format', 'auto')
-                args.to_format = conversion.get('to_format', 'markdown')
-                args.recursive = conversion.get('recursive', False)
-                args.preserve_structure = conversion.get('preserve_structure', True)
-                args.overwrite = conversion.get('overwrite', False)
-                args.workers = conversion.get('workers')
+                args.input = conversion.get("input", [])
+                args.output = conversion.get("output")
+                args.from_format = conversion.get("from_format", "auto")
+                args.to_format = conversion.get("to_format", "markdown")
+                args.recursive = conversion.get("recursive", False)
+                args.preserve_structure = conversion.get(
+                    "preserve_structure", True
+                )
+                args.overwrite = conversion.get("overwrite", False)
+                args.workers = conversion.get("workers")
                 args.quiet = False
 
                 # Validate conversion config
@@ -551,8 +690,9 @@ def main():
     """Entry point for CLI"""
     # Parse args to check for --config first
     import argparse
+
     temp_parser = argparse.ArgumentParser(add_help=False)
-    temp_parser.add_argument('--config', metavar='CONFIG_FILE')
+    temp_parser.add_argument("--config", metavar="CONFIG_FILE")
     temp_args, _ = temp_parser.parse_known_args()
 
     # Initialize CLI with config file if specified

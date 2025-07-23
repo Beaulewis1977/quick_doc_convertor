@@ -13,9 +13,14 @@ from .image_processor import ImageProcessor
 from .format_detector import OCRFormatDetector
 from .ocr_integration import OCRIntegration
 
-__all__ = ['OCREngine', 'ImageProcessor', 'OCRFormatDetector', 'OCRIntegration']
+__all__ = [
+    "OCREngine",
+    "ImageProcessor",
+    "OCRFormatDetector",
+    "OCRIntegration",
+]
 
 # Version information
-__version__ = '1.0.0'
-__author__ = 'Beau Lewis'
-__email__ = 'blewisxx@gmail.com'
+__version__ = "1.0.0"
+__author__ = "Beau Lewis"
+__email__ = "blewisxx@gmail.com"

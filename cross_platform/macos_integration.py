@@ -8,14 +8,12 @@ Author: Beau Lewis
 Project: Quick Document Convertor
 """
 
-import os
-import plistlib
 import subprocess
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, Optional
 
-from . import get_platform, get_data_dir, get_config_dir
+from . import get_platform
 
 
 class MacOSIntegrationError(Exception):
@@ -26,7 +24,7 @@ class MacOSIntegrationError(Exception):
 def is_macos() -> bool:
     """
     Check if running on macOS.
-    
+
     Returns:
         bool: True if on macOS
     """
@@ -36,7 +34,7 @@ def is_macos() -> bool:
 def get_applications_dir() -> Path:
     """
     Get the Applications directory.
-    
+
     Returns:
         Path to Applications directory
     """
@@ -46,7 +44,7 @@ def get_applications_dir() -> Path:
 def get_user_applications_dir() -> Path:
     """
     Get the user Applications directory.
-    
+
     Returns:
         Path to user Applications directory
     """
@@ -62,20 +60,20 @@ def create_info_plist(
 ) -> Dict:
     """
     Create Info.plist dictionary for macOS app bundle.
-    
+
     Args:
         app_name: Application name
         bundle_id: Bundle identifier (reverse domain)
         version: Application version
         executable_name: Name of executable in MacOS folder
         icon_file: Icon file name (without extension)
-    
+
     Returns:
         Dict containing Info.plist data
     """
     if not is_macos():
         raise MacOSIntegrationError("Not running on macOS")
-    
+
     # Document types for file associations
     document_types = [
         {
@@ -146,7 +144,7 @@ def create_info_plist(
             'LSHandlerRank': 'Alternate'
         }
     ]
-    
+
     # URL types for custom protocols
     url_types = [
         {
@@ -155,7 +153,7 @@ def create_info_plist(
             'CFBundleTypeRole': 'Viewer'
         }
     ]
-    
+
     info_plist = {
         'CFBundleName': app_name,
         'CFBundleDisplayName': app_name,
@@ -173,16 +171,16 @@ def create_info_plist(
         'CFBundleDocumentTypes': document_types,
         'CFBundleURLTypes': url_types,
         'LSApplicationCategoryType': 'public.app-category.productivity',
-        'NSHumanReadableCopyright': f'Copyright © 2024 Beau Lewis. All rights reserved.',
+        'NSHumanReadableCopyright': 'Copyright © 2024 Beau Lewis. All rights reserved.',
         'CFBundleGetInfoString': f'{app_name} {version}, Copyright © 2024 Beau Lewis',
         'NSSupportsAutomaticGraphicsSwitching': True,
         'LSMultipleInstancesProhibited': False
     }
-    
+
     # Add icon if specified
     if icon_file:
         info_plist['CFBundleIconFile'] = icon_file
-    
+
     return info_plist
 
 
@@ -195,26 +193,26 @@ def create_py2app_setup(
 ) -> str:
     """
     Create py2app setup.py content.
-    
+
     Args:
         script_path: Path to main Python script
         app_name: Application name
         bundle_id: Bundle identifier
         version: Application version
         icon_path: Path to icon file
-    
+
     Returns:
         String content for setup.py
     """
     if not is_macos():
         raise MacOSIntegrationError("Not running on macOS")
-    
+
     # Create Info.plist
     plist_data = create_info_plist(
         app_name, bundle_id, version,
         icon_file=icon_path.stem if icon_path else None
     )
-    
+
     setup_content = f'''"""
 py2app setup script for {app_name}
 
@@ -274,7 +272,7 @@ setup(
     ]
 )
 '''
-    
+
     return setup_content
 
 
@@ -286,52 +284,52 @@ def build_app_bundle(
 ) -> Path:
     """
     Build macOS app bundle using py2app.
-    
+
     Args:
         script_path: Path to main Python script
         output_dir: Output directory for app bundle
         app_name: Application name
         icon_path: Path to icon file
-    
+
     Returns:
         Path to created app bundle
-    
+
     Raises:
         MacOSIntegrationError: If build fails
     """
     if not is_macos():
         raise MacOSIntegrationError("Not running on macOS")
-    
+
     try:
         # Check if py2app is available
         try:
             import py2app
         except ImportError:
             raise MacOSIntegrationError("py2app not installed. Install with: pip install py2app")
-        
+
         # Create setup.py content
         setup_content = create_py2app_setup(script_path, app_name, icon_path=icon_path)
-        
+
         # Write setup.py
         setup_file = output_dir / "setup_macos.py"
         with open(setup_file, 'w', encoding='utf-8') as f:
             f.write(setup_content)
-        
+
         # Run py2app
         result = subprocess.run([
             sys.executable, str(setup_file), 'py2app'
         ], cwd=output_dir, capture_output=True, text=True)
-        
+
         if result.returncode != 0:
             raise MacOSIntegrationError(f"py2app build failed: {result.stderr}")
-        
+
         # Return path to app bundle
         app_bundle = output_dir / "dist" / f"{app_name}.app"
         if not app_bundle.exists():
             raise MacOSIntegrationError("App bundle not created")
-        
+
         return app_bundle
-    
+
     except Exception as e:
         raise MacOSIntegrationError(f"Failed to build app bundle: {e}")
 
@@ -339,25 +337,25 @@ def build_app_bundle(
 def register_file_associations(app_bundle: Path) -> bool:
     """
     Register file associations for the app bundle.
-    
+
     Args:
         app_bundle: Path to .app bundle
-    
+
     Returns:
         bool: True if successful
     """
     if not is_macos() or not app_bundle.exists():
         return False
-    
+
     try:
         # Use Launch Services to register the app
         subprocess.run([
             '/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister',
             '-f', str(app_bundle)
         ], check=True, capture_output=True)
-        
+
         return True
-    
+
     except (subprocess.CalledProcessError, FileNotFoundError):
         return False
 
@@ -369,36 +367,36 @@ def create_dmg_installer(
 ) -> Path:
     """
     Create DMG installer for the app bundle.
-    
+
     Args:
         app_bundle: Path to .app bundle
         output_path: Output path for DMG
         volume_name: Volume name for DMG
-    
+
     Returns:
         Path to created DMG
-    
+
     Raises:
         MacOSIntegrationError: If creation fails
     """
     if not is_macos():
         raise MacOSIntegrationError("Not running on macOS")
-    
+
     try:
         # Create temporary directory for DMG contents
         import tempfile
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_path = Path(temp_dir)
-            
+
             # Copy app bundle to temp directory
             import shutil
             app_dest = temp_path / app_bundle.name
             shutil.copytree(app_bundle, app_dest)
-            
+
             # Create Applications symlink
             apps_link = temp_path / "Applications"
             apps_link.symlink_to("/Applications")
-            
+
             # Create DMG
             result = subprocess.run([
                 'hdiutil', 'create',
@@ -407,12 +405,12 @@ def create_dmg_installer(
                 '-ov', '-format', 'UDZO',
                 str(output_path)
             ], capture_output=True, text=True)
-            
+
             if result.returncode != 0:
                 raise MacOSIntegrationError(f"DMG creation failed: {result.stderr}")
-        
+
         return output_path
-    
+
     except Exception as e:
         raise MacOSIntegrationError(f"Failed to create DMG: {e}")
 
@@ -424,20 +422,20 @@ def setup_macos_integration(
 ) -> Dict[str, any]:
     """
     Set up complete macOS integration.
-    
+
     Args:
         script_path: Path to main Python script
         output_dir: Output directory
         icon_path: Path to icon file
-    
+
     Returns:
         Dict with results of integration steps
     """
     if not is_macos():
         return {"error": "Not running on macOS"}
-    
+
     results = {}
-    
+
     try:
         # Build app bundle
         app_bundle = build_app_bundle(script_path, output_dir, icon_path=icon_path)
@@ -447,10 +445,10 @@ def setup_macos_integration(
         results["app_bundle_created"] = False
         results["app_bundle_error"] = str(e)
         return results
-    
+
     # Register file associations
     results["file_associations"] = register_file_associations(app_bundle)
-    
+
     try:
         # Create DMG installer
         dmg_path = output_dir / "Quick Document Convertor.dmg"
@@ -460,14 +458,14 @@ def setup_macos_integration(
     except Exception as e:
         results["dmg_created"] = False
         results["dmg_error"] = str(e)
-    
+
     return results
 
 
 def check_macos_dependencies() -> Dict[str, bool]:
     """
     Check if macOS integration dependencies are available.
-    
+
     Returns:
         Dict with dependency availability
     """
@@ -477,28 +475,28 @@ def check_macos_dependencies() -> Dict[str, bool]:
         'lsregister': False,
         'codesign': False
     }
-    
+
     # Check py2app
     try:
         import py2app
         dependencies['py2app'] = True
     except ImportError:
         pass
-    
+
     # Check command line tools
     commands = {
         'hdiutil': 'hdiutil',
         'lsregister': '/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister',
         'codesign': 'codesign'
     }
-    
+
     for name, cmd in commands.items():
         try:
             subprocess.run([cmd], capture_output=True)
             dependencies[name] = True
         except FileNotFoundError:
             pass
-    
+
     return dependencies
 
 

@@ -12,21 +12,21 @@ from pathlib import Path
 def check_dependencies():
     """Check if required dependencies are installed"""
     missing = []
-    
+
     try:
         import tkinter
     except ImportError:
         missing.append("tkinter (usually comes with Python)")
-    
+
     # Check optional dependencies
     optional_deps = {
         'python-docx': 'docx',
-        'PyPDF2': 'PyPDF2', 
+        'PyPDF2': 'PyPDF2',
         'beautifulsoup4': 'bs4',
         'striprtf': 'striprtf',
         'ebooklib': 'ebooklib'
     }
-    
+
     missing_optional = []
     for package, module in optional_deps.items():
         try:
@@ -39,14 +39,14 @@ def check_dependencies():
                 __import__(module)
         except ImportError:
             missing_optional.append(package)
-    
+
     return missing, missing_optional
 
 def install_missing_packages(packages):
     """Install missing packages"""
     if not packages:
         return True
-    
+
     print(f"Installing missing packages: {', '.join(packages)}")
     try:
         for package in packages:
@@ -61,7 +61,7 @@ def main():
     """Main launcher function"""
     print("Quick Document Convertor")
     print("=" * 30)
-    
+
     # Check if we're in the right directory
     app_file = Path(__file__).parent / "universal_document_converter.py"
     if not app_file.exists():
@@ -69,16 +69,16 @@ def main():
         print("Make sure this launcher is in the same folder as universal_document_converter.py")
         input("Press Enter to exit...")
         return
-    
+
     # Check dependencies
     missing, missing_optional = check_dependencies()
-    
+
     if missing:
         print(f"ERROR: Required dependencies missing: {', '.join(missing)}")
         print("Please install Python with tkinter support")
         input("Press Enter to exit...")
         return
-    
+
     if missing_optional:
         print(f"Optional dependencies missing: {', '.join(missing_optional)}")
         response = input("Install them now? (y/n): ").lower().strip()
@@ -86,7 +86,7 @@ def main():
             if not install_missing_packages(missing_optional):
                 print("Some packages failed to install, but the app may still work")
                 input("Press Enter to continue...")
-    
+
     # Launch the application
     print("Starting Quick Document Convertor...")
     try:

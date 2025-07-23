@@ -1,5 +1,4 @@
 import os
-import sys
 import logging
 from pathlib import Path
 import subprocess
@@ -13,11 +12,11 @@ class OCREngine:
     OCR Engine with Tesseract integration
     Handles both image and PDF OCR with configurable settings
     """
-    
+
     def __init__(self, logger=None):
         """
         Initialize OCR Engine
-        
+
         Args:
             logger: Optional logger instance
         """
@@ -25,7 +24,7 @@ class OCREngine:
         self.backend = None
         self.tesseract_path = None
         self._setup_tesseract()
-        
+
     def _setup_tesseract(self):
         """Setup Tesseract with cross-platform support"""
         try:
@@ -37,7 +36,7 @@ class OCREngine:
                 "/usr/local/bin/tesseract",
                 "/opt/homebrew/bin/tesseract"
             ]
-            
+
             for path in tesseract_paths:
                 path = os.path.expandvars(path)
                 if os.path.isfile(path):
@@ -45,10 +44,10 @@ class OCREngine:
                     self.backend = 'tesseract'
                     self.logger.info(f"Tesseract found at: {path}")
                     return
-            
+
             # Try system PATH
             try:
-                result = subprocess.run(['tesseract', '--version'], 
+                result = subprocess.run(['tesseract', '--version'],
                                       capture_output=True, text=True)
                 if result.returncode == 0:
                     self.backend = 'tesseract'
@@ -57,26 +56,26 @@ class OCREngine:
                     return
             except (FileNotFoundError, subprocess.CalledProcessError):
                 pass
-            
+
             self.logger.warning("Tesseract not found, OCR functionality will be limited")
             self.backend = None
-            
+
         except Exception as e:
             self.logger.error(f"Error setting up Tesseract: {e}")
             self.backend = None
-    
+
     def is_available(self):
         """Check if OCR backend is available"""
         return self.backend is not None
-    
+
     def get_supported_languages(self):
         """Get list of supported languages"""
         if not self.is_available():
             return ['eng']
-        
+
         try:
             # Get languages from Tesseract
-            result = subprocess.run([self.tesseract_path, '--list-langs'], 
+            result = subprocess.run([self.tesseract_path, '--list-langs'],
                                   capture_output=True, text=True)
             if result.returncode == 0:
                 lines = result.stdout.strip().split('\n')
@@ -85,65 +84,65 @@ class OCREngine:
                 return languages if languages else ['eng']
         except Exception as e:
             self.logger.error(f"Failed to get languages: {e}")
-        
+
         return ['eng']
-    
+
     def extract_text(self, image_path, language='eng'):
         """
         Extract text from image using Tesseract CLI
-        
+
         Args:
             image_path: Path to image file
             language: Language for OCR (default: eng)
-            
+
         Returns:
             Extracted text string
         """
         if not self.is_available():
             self.logger.warning("No OCR backend available")
             return ""
-        
+
         try:
             image_path = Path(image_path)
             if not image_path.exists():
                 self.logger.error(f"Image file not found: {image_path}")
                 return ""
-            
+
             # Create temporary output file
             temp_output = image_path.parent / f"{image_path.stem}_temp.txt"
-            
+
             # Run Tesseract
-            cmd = [self.tesseract_path, str(image_path), str(temp_output.with_suffix('')), 
+            cmd = [self.tesseract_path, str(image_path), str(temp_output.with_suffix('')),
                    '-l', language, '--psm', '6']
-            
+
             result = subprocess.run(cmd, capture_output=True, text=True)
-            
+
             if result.returncode == 0:
                 # Read the output
                 output_file = temp_output.with_suffix('.txt')
                 if output_file.exists():
                     with open(output_file, 'r', encoding='utf-8') as f:
                         text = f.read().strip()
-                    
+
                     # Clean up
                     output_file.unlink(missing_ok=True)
                     return text
             else:
                 self.logger.error(f"Tesseract error: {result.stderr}")
-                
+
         except Exception as e:
             self.logger.error(f"OCR extraction failed: {e}")
-        
+
         return ""
 
 # Test the OCR engine
 if __name__ == "__main__":
     print("OCR Document Converter - System Check")
     print("=" * 50)
-    
+
     # Initialize OCR
     ocr = OCREngine()
-    
+
     # Test availability
     if ocr.is_available():
         print("✅ OCR Engine is ready!")

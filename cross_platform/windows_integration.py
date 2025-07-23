@@ -26,7 +26,7 @@ class WindowsIntegrationError(Exception):
 def is_windows() -> bool:
     """
     Check if running on Windows.
-    
+
     Returns:
         bool: True if on Windows
     """
@@ -36,7 +36,7 @@ def is_windows() -> bool:
 def get_start_menu_dir() -> Path:
     """
     Get the Start Menu programs directory.
-    
+
     Returns:
         Path to Start Menu programs directory
     """
@@ -46,7 +46,7 @@ def get_start_menu_dir() -> Path:
 def get_desktop_dir() -> Path:
     """
     Get the Desktop directory.
-    
+
     Returns:
         Path to Desktop directory
     """
@@ -61,25 +61,25 @@ def create_enhanced_shortcuts(
 ) -> Dict[str, bool]:
     """
     Create enhanced Windows shortcuts with proper file associations.
-    
+
     Args:
         app_path: Path to application executable
         app_name: Application name
         description: Application description
         icon_path: Path to icon file
-    
+
     Returns:
         Dict with creation status
     """
     if not is_windows():
         raise WindowsIntegrationError("Not running on Windows")
-    
+
     results = {}
-    
+
     try:
         import win32com.client
         shell = win32com.client.Dispatch("WScript.Shell")
-        
+
         # Desktop shortcut
         desktop_shortcut = get_desktop_dir() / f"{app_name}.lnk"
         shortcut = shell.CreateShortCut(str(desktop_shortcut))
@@ -90,7 +90,7 @@ def create_enhanced_shortcuts(
             shortcut.IconLocation = str(icon_path)
         shortcut.save()
         results["desktop"] = desktop_shortcut.exists()
-        
+
         # Start Menu shortcut
         start_menu_shortcut = get_start_menu_dir() / f"{app_name}.lnk"
         shortcut = shell.CreateShortCut(str(start_menu_shortcut))
@@ -101,9 +101,9 @@ def create_enhanced_shortcuts(
             shortcut.IconLocation = str(icon_path)
         shortcut.save()
         results["start_menu"] = start_menu_shortcut.exists()
-        
+
         return results
-    
+
     except ImportError:
         raise WindowsIntegrationError("pywin32 not available")
     except Exception as e:
@@ -117,59 +117,59 @@ def register_file_associations(
 ) -> Dict[str, bool]:
     """
     Register file associations in Windows registry.
-    
+
     Args:
         app_path: Path to application executable
         app_name: Application name
         extensions: List of file extensions to associate
-    
+
     Returns:
         Dict with registration status for each extension
     """
     if not is_windows():
         raise WindowsIntegrationError("Not running on Windows")
-    
+
     if extensions is None:
         extensions = ['.pdf', '.docx', '.txt', '.html', '.rtf', '.epub', '.odt', '.csv']
-    
+
     results = {}
-    
+
     try:
         for ext in extensions:
             try:
                 # Create file type key
                 file_type = f"QuickDocConvertor{ext[1:].upper()}"
-                
+
                 # Register file extension
                 with winreg.CreateKey(winreg.HKEY_CURRENT_USER, f"Software\\Classes\\{ext}") as key:
                     winreg.SetValueEx(key, "", 0, winreg.REG_SZ, file_type)
-                
+
                 # Register file type
                 with winreg.CreateKey(winreg.HKEY_CURRENT_USER, f"Software\\Classes\\{file_type}") as key:
                     winreg.SetValueEx(key, "", 0, winreg.REG_SZ, f"{ext.upper()} File")
-                
+
                 # Register open command
-                with winreg.CreateKey(winreg.HKEY_CURRENT_USER, 
+                with winreg.CreateKey(winreg.HKEY_CURRENT_USER,
                                     f"Software\\Classes\\{file_type}\\shell\\open\\command") as key:
                     winreg.SetValueEx(key, "", 0, winreg.REG_SZ, f'"{app_path}" "%1"')
-                
+
                 # Register "Convert with Quick Document Convertor" context menu
-                with winreg.CreateKey(winreg.HKEY_CURRENT_USER, 
+                with winreg.CreateKey(winreg.HKEY_CURRENT_USER,
                                     f"Software\\Classes\\{file_type}\\shell\\convert") as key:
                     winreg.SetValueEx(key, "", 0, winreg.REG_SZ, f"Convert with {app_name}")
-                
-                with winreg.CreateKey(winreg.HKEY_CURRENT_USER, 
+
+                with winreg.CreateKey(winreg.HKEY_CURRENT_USER,
                                     f"Software\\Classes\\{file_type}\\shell\\convert\\command") as key:
                     winreg.SetValueEx(key, "", 0, winreg.REG_SZ, f'"{app_path}" "%1"')
-                
+
                 results[ext] = True
-            
+
             except Exception as e:
                 results[ext] = False
                 results[f"{ext}_error"] = str(e)
-        
+
         return results
-    
+
     except Exception as e:
         raise WindowsIntegrationError(f"Failed to register file associations: {e}")
 
@@ -181,18 +181,18 @@ def create_uninstaller(
 ) -> Path:
     """
     Create an uninstaller script for Windows.
-    
+
     Args:
         app_dir: Application directory
         app_name: Application name
         version: Application version
-    
+
     Returns:
         Path to uninstaller script
     """
     if not is_windows():
         raise WindowsIntegrationError("Not running on Windows")
-    
+
     uninstaller_content = f'''@echo off
 echo Uninstalling {app_name}...
 
@@ -217,11 +217,11 @@ rmdir /s /q "{app_dir}" 2>nul
 echo {app_name} has been uninstalled.
 pause
 '''
-    
+
     uninstaller_path = app_dir / "uninstall.bat"
     with open(uninstaller_path, 'w', encoding='utf-8') as f:
         f.write(uninstaller_content)
-    
+
     return uninstaller_path
 
 
@@ -234,35 +234,35 @@ def add_to_programs_list(
 ) -> bool:
     """
     Add application to Windows Programs and Features list.
-    
+
     Args:
         app_path: Path to application executable
         app_name: Application name
         version: Application version
         publisher: Publisher name
         uninstaller_path: Path to uninstaller
-    
+
     Returns:
         bool: True if successful
     """
     if not is_windows():
         return False
-    
+
     try:
         # Register in Programs and Features
-        with winreg.CreateKey(winreg.HKEY_CURRENT_USER, 
+        with winreg.CreateKey(winreg.HKEY_CURRENT_USER,
                             f"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{app_name}") as key:
             winreg.SetValueEx(key, "DisplayName", 0, winreg.REG_SZ, app_name)
             winreg.SetValueEx(key, "DisplayVersion", 0, winreg.REG_SZ, version)
             winreg.SetValueEx(key, "Publisher", 0, winreg.REG_SZ, publisher)
             winreg.SetValueEx(key, "InstallLocation", 0, winreg.REG_SZ, str(app_path.parent))
             winreg.SetValueEx(key, "DisplayIcon", 0, winreg.REG_SZ, str(app_path))
-            
+
             if uninstaller_path:
                 winreg.SetValueEx(key, "UninstallString", 0, winreg.REG_SZ, str(uninstaller_path))
-        
+
         return True
-    
+
     except Exception:
         return False
 
@@ -274,18 +274,18 @@ def create_installer_script(
 ) -> Path:
     """
     Create a Windows installer script.
-    
+
     Args:
         app_dir: Application directory
         app_name: Application name
         version: Application version
-    
+
     Returns:
         Path to installer script
     """
     if not is_windows():
         raise WindowsIntegrationError("Not running on Windows")
-    
+
     installer_content = f'''@echo off
 echo Installing {app_name} {version}...
 
@@ -311,11 +311,11 @@ echo {app_name} has been installed successfully!
 echo You can find it in the Start Menu or on your Desktop.
 pause
 '''
-    
+
     installer_path = app_dir.parent / f"install_{app_name.replace(' ', '_')}.bat"
     with open(installer_path, 'w', encoding='utf-8') as f:
         f.write(installer_content)
-    
+
     return installer_path
 
 
@@ -325,33 +325,33 @@ def setup_windows_integration(
 ) -> Dict[str, any]:
     """
     Set up complete Windows integration.
-    
+
     Args:
         app_path: Path to application executable
         icon_path: Path to icon file
-    
+
     Returns:
         Dict with results of integration steps
     """
     if not is_windows():
         return {"error": "Not running on Windows"}
-    
+
     results = {}
-    
+
     try:
         # Create enhanced shortcuts
         shortcuts = create_enhanced_shortcuts(app_path, icon_path=icon_path)
         results["shortcuts"] = shortcuts
     except Exception as e:
         results["shortcuts"] = {"error": str(e)}
-    
+
     try:
         # Register file associations
         associations = register_file_associations(app_path)
         results["file_associations"] = associations
     except Exception as e:
         results["file_associations"] = {"error": str(e)}
-    
+
     try:
         # Create uninstaller
         uninstaller = create_uninstaller(app_path.parent)
@@ -360,7 +360,7 @@ def setup_windows_integration(
     except Exception as e:
         results["uninstaller_created"] = False
         results["uninstaller_error"] = str(e)
-    
+
     try:
         # Add to Programs and Features
         programs_list = add_to_programs_list(app_path)
@@ -368,14 +368,14 @@ def setup_windows_integration(
     except Exception as e:
         results["programs_list"] = False
         results["programs_list_error"] = str(e)
-    
+
     return results
 
 
 def check_windows_dependencies() -> Dict[str, bool]:
     """
     Check if Windows integration dependencies are available.
-    
+
     Returns:
         Dict with dependency availability
     """
@@ -384,21 +384,21 @@ def check_windows_dependencies() -> Dict[str, bool]:
         'winreg': True,  # Built-in module
         'registry_access': False
     }
-    
+
     # Check pywin32
     try:
         import win32com.client
         dependencies['pywin32'] = True
     except ImportError:
         pass
-    
+
     # Check registry access
     try:
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Software") as key:
             dependencies['registry_access'] = True
     except Exception:
         pass
-    
+
     return dependencies
 
 

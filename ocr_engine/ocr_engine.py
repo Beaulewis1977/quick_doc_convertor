@@ -51,7 +51,7 @@ class ImageProcessingError(OCREngineError):
 class OCREngine:
     """
     Main OCR engine for image-to-text conversion
-    
+
     Features:
     - Multiple OCR backend support (Tesseract, EasyOCR)
     - Image preprocessing and enhancement
@@ -59,11 +59,11 @@ class OCREngine:
     - Caching for improved performance
     - Configurable quality settings
     """
-    
+
     def __init__(self, config: Optional[Dict[str, Any]] = None, logger: Optional[logging.Logger] = None):
         """
         Initialize OCR engine
-        
+
         Args:
             config: Configuration dictionary for OCR settings
             logger: Optional logger instance
@@ -72,17 +72,17 @@ class OCREngine:
         self.logger = logger or logging.getLogger("OCREngine")
         self.image_processor = ImageProcessor(self.logger)
         self.format_detector = OCRFormatDetector()
-        
+
         # Cache directory for OCR results
         self.cache_dir = Path.home() / ".quick_document_convertor" / "ocr_cache"
         self.cache_dir.mkdir(parents=True, exist_ok=True)
-        
+
         # Initialize OCR backends
         self._initialize_backends()
-        
+
         # Thread-local storage for OCR readers
         self._thread_local = threading.local()
-        
+
         # Configuration defaults
         self.default_config = {
             'backend': 'auto',
@@ -98,14 +98,14 @@ class OCREngine:
             'tesseract_config': '--oem 3 --psm 6',
             'confidence_threshold': 30
         }
-        
+
         # Merge user config with defaults
         self.config = {**self.default_config, **self.config}
 
     def _initialize_backends(self):
         """Initialize available OCR backends"""
         self.backends = {}
-        
+
         # Tesseract OCR
         if TESSERACT_AVAILABLE:
             try:
@@ -124,7 +124,7 @@ class OCREngine:
                     'priority': 1,
                     'available': False
                 }
-        
+
         # EasyOCR
         if EASYOCR_AVAILABLE:
             try:
@@ -157,11 +157,11 @@ class OCREngine:
 
     def get_preferred_backend(self) -> str:
         """Get the preferred OCR backend based on availability and priority"""
-        available = [(name, info['priority']) for name, info in self.backends.items() 
+        available = [(name, info['priority']) for name, info in self.backends.items()
                     if info['available']]
         if not available:
             raise OCRBackendError("No OCR backends available")
-        
+
         # Sort by priority (lower is better)
         available.sort(key=lambda x: x[1])
         return available[0][0]
@@ -172,7 +172,7 @@ class OCREngine:
             if languages is None:
                 languages = self.config['languages']
             self._thread_local.easyocr_reader = easyocr.Reader(
-                languages, 
+                languages,
                 gpu=False,  # Disable GPU for compatibility
                 verbose=False
             )
@@ -182,16 +182,16 @@ class OCREngine:
         """Generate cache key for OCR result"""
         # Create hash from file content and options
         hasher = hashlib.md5()
-        
+
         # Add file content hash
         if image_path.exists():
             with open(image_path, 'rb') as f:
                 hasher.update(f.read(1024))  # First 1KB for speed
-        
+
         # Add options hash
         options_str = json.dumps(options, sort_keys=True)
         hasher.update(options_str.encode())
-        
+
         return hasher.hexdigest()
 
     def _load_from_cache(self, cache_key: str) -> Optional[str]:
@@ -217,24 +217,24 @@ class OCREngine:
     def extract_text(self, image_path: str, options: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """
         Extract text from an image using OCR
-        
+
         Args:
             image_path: Path to the image file
             options: OCR options (backend, languages, etc.)
-            
+
         Returns:
             Dictionary with extracted text and metadata
         """
         image_path = Path(image_path)
         if not image_path.exists():
             raise FileNotFoundError(f"Image file not found: {image_path}")
-        
+
         if not self.format_detector.is_ocr_supported(str(image_path)):
             raise ValueError(f"Unsupported image format: {image_path.suffix}")
-        
+
         # Merge options with config
         ocr_options = {**self.config, **(options or {})}
-        
+
         # Check cache first
         if ocr_options.get('use_cache', True):
             cache_key = self._get_cache_key(image_path, ocr_options)
@@ -247,33 +247,33 @@ class OCREngine:
                     'word_count': len(cached_text.split()),
                     'character_count': len(cached_text)
                 }
-        
+
         # Select backend
         backend = ocr_options.get('backend', 'auto')
         if backend == 'auto':
             backend = self.get_preferred_backend()
-        
+
         # Preprocess image
         try:
             processed_image = self.image_processor.preprocess_image(
-                str(image_path), 
+                str(image_path),
                 ocr_options.get('preprocessing', {})
             )
         except Exception as e:
             raise ImageProcessingError(f"Image preprocessing failed: {e}")
-        
+
         # Extract text based on backend
         start_time = time.time()
-        
+
         if backend == 'tesseract' and self.is_tesseract_available():
             result = self._extract_with_tesseract(processed_image, ocr_options)
         elif backend == 'easyocr' and self.is_easyocr_available():
             result = self._extract_with_easyocr(processed_image, ocr_options)
         else:
             raise OCRBackendError(f"Selected backend '{backend}' is not available")
-        
+
         duration = time.time() - start_time
-        
+
         # Add metadata
         result.update({
             'backend': backend,
@@ -282,12 +282,12 @@ class OCREngine:
             'word_count': len(result['text'].split()),
             'character_count': len(result['text'])
         })
-        
+
         # Cache result
         if ocr_options.get('use_cache', True):
             cache_key = self._get_cache_key(image_path, ocr_options)
             self._save_to_cache(cache_key, result['text'])
-        
+
         return result
 
     def _extract_with_tesseract(self, image: np.ndarray, options: Dict[str, Any]) -> Dict[str, Any]:
@@ -298,14 +298,14 @@ class OCREngine:
                 pil_image = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
             else:
                 pil_image = Image.fromarray(image)
-            
+
             # Extract text
             text = pytesseract.image_to_string(
                 pil_image,
                 lang='+'.join(options.get('languages', ['en'])),
                 config=options.get('tesseract_config', '--oem 3 --psm 6')
             )
-            
+
             # Get confidence data
             try:
                 data = pytesseract.image_to_data(
@@ -317,13 +317,13 @@ class OCREngine:
                 avg_confidence = sum(confidences) / len(confidences) if confidences else 0
             except:
                 avg_confidence = None
-            
+
             return {
                 'text': text.strip(),
                 'confidence': avg_confidence,
                 'source': 'tesseract'
             }
-            
+
         except Exception as e:
             raise OCRBackendError(f"Tesseract OCR failed: {e}")
 
@@ -331,76 +331,76 @@ class OCREngine:
         """Extract text using EasyOCR"""
         try:
             reader = self._get_easyocr_reader(options.get('languages', ['en']))
-            
+
             # Convert BGR to RGB if needed
             if len(image.shape) == 3:
                 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
             else:
                 image_rgb = image
-            
+
             # Extract text
             results = reader.readtext(image_rgb)
-            
+
             # Combine text and calculate confidence
             text_parts = []
             confidences = []
-            
+
             for (bbox, text, confidence) in results:
                 if confidence >= options.get('confidence_threshold', 30):
                     text_parts.append(text)
                     confidences.append(confidence)
-            
+
             combined_text = ' '.join(text_parts)
             avg_confidence = sum(confidences) / len(confidences) if confidences else 0
-            
+
             return {
                 'text': combined_text.strip(),
                 'confidence': avg_confidence,
                 'source': 'easyocr'
             }
-            
+
         except Exception as e:
             raise OCRBackendError(f"EasyOCR failed: {e}")
 
     def extract_text_from_multiple_images(
-        self, 
-        image_paths: List[str], 
+        self,
+        image_paths: List[str],
         options: Optional[Dict[str, Any]] = None,
         max_workers: int = 2,
         progress_callback: Optional[Callable[[int, int], None]] = None
     ) -> List[Dict[str, Any]]:
         """
         Extract text from multiple images using parallel processing
-        
+
         Args:
             image_paths: List of image file paths
             options: OCR options
             max_workers: Maximum number of concurrent workers
             progress_callback: Optional callback for progress updates
-            
+
         Returns:
             List of extraction results
         """
         results = []
-        
+
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             # Submit all tasks
             future_to_path = {
                 executor.submit(self.extract_text, path, options): path
                 for path in image_paths
             }
-            
+
             # Process completed tasks
             for i, future in enumerate(as_completed(future_to_path)):
                 path = future_to_path[future]
                 try:
                     result = future.result()
                     results.append(result)
-                    
+
                     # Update progress
                     if progress_callback:
                         progress_callback(i + 1, len(image_paths))
-                        
+
                 except Exception as e:
                     self.logger.error(f"Failed to process {path}: {e}")
                     results.append({
@@ -409,7 +409,7 @@ class OCREngine:
                         'error': str(e),
                         'success': False
                     })
-        
+
         return results
 
     def get_image_info(self, image_path: str) -> Dict[str, Any]:
@@ -441,7 +441,7 @@ class OCREngine:
         try:
             cache_files = list(self.cache_dir.glob("*.txt"))
             total_size = sum(f.stat().st_size for f in cache_files)
-            
+
             return {
                 'file_count': len(cache_files),
                 'total_size': total_size,
@@ -453,21 +453,21 @@ class OCREngine:
     def save_result(self, result: Dict[str, Any], output_path: str, output_format: str = 'txt') -> bool:
         """
         Save OCR result to file
-        
+
         Args:
             result: OCR result dictionary
             output_path: Output file path
             output_format: Output format (txt, json, markdown)
-            
+
         Returns:
             True if successful, False otherwise
         """
         try:
             output_path = Path(output_path)
             output_path.parent.mkdir(parents=True, exist_ok=True)
-            
+
             text = result.get('text', '')
-            
+
             if output_format.lower() == 'json':
                 # Save as JSON with metadata
                 output_data = {
@@ -481,11 +481,11 @@ class OCREngine:
                 }
                 with open(output_path, 'w', encoding='utf-8') as f:
                     json.dump(output_data, f, indent=2, ensure_ascii=False)
-                    
+
             elif output_format.lower() == 'markdown':
                 # Save as markdown with metadata
                 with open(output_path, 'w', encoding='utf-8') as f:
-                    f.write(f"# OCR Result\n\n")
+                    f.write("# OCR Result\n\n")
                     f.write(f"**Source:** {result.get('image_path', 'Unknown')}\n\n")
                     if result.get('confidence'):
                         f.write(f"**Confidence:** {result.get('confidence'):.1f}%\n\n")
@@ -495,14 +495,14 @@ class OCREngine:
                     f.write(f"**Character Count:** {result.get('character_count', 0)}\n\n")
                     f.write("---\n\n")
                     f.write(text)
-                    
+
             else:  # txt
                 # Save as plain text
                 with open(output_path, 'w', encoding='utf-8') as f:
                     f.write(text)
-            
+
             return True
-            
+
         except Exception as e:
             self.logger.error(f"Failed to save result: {e}")
             return False

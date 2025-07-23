@@ -29,16 +29,16 @@ def create_pyinstaller_bundle(
 ) -> Path:
     """
     Create macOS app bundle using PyInstaller.
-    
+
     Args:
         script_path: Path to main Python script
         output_dir: Output directory
         app_name: Application name
         icon_path: Path to icon file
-    
+
     Returns:
         Path to created app bundle
-    
+
     Raises:
         PackagingError: If creation fails
     """
@@ -48,7 +48,7 @@ def create_pyinstaller_bundle(
             import PyInstaller
         except ImportError:
             raise PackagingError("PyInstaller not installed. Install with: pip install pyinstaller")
-        
+
         # PyInstaller command
         cmd = [
             'pyinstaller',
@@ -61,11 +61,11 @@ def create_pyinstaller_bundle(
             '--clean',
             '--noconfirm'
         ]
-        
+
         # Add icon if provided
         if icon_path and icon_path.exists():
             cmd.extend(['--icon', str(icon_path)])
-        
+
         # Add hidden imports for common modules
         hidden_imports = [
             'tkinter', 'tkinter.filedialog', 'tkinter.messagebox',
@@ -73,23 +73,23 @@ def create_pyinstaller_bundle(
         ]
         for module in hidden_imports:
             cmd.extend(['--hidden-import', module])
-        
+
         # Add the script
         cmd.append(str(script_path))
-        
+
         # Run PyInstaller
         result = subprocess.run(cmd, capture_output=True, text=True, cwd=output_dir)
-        
+
         if result.returncode != 0:
             raise PackagingError(f"PyInstaller failed: {result.stderr}")
-        
+
         # Return path to app bundle
         app_bundle = output_dir / 'dist' / f"{app_name}.app"
         if not app_bundle.exists():
             raise PackagingError("App bundle not created by PyInstaller")
-        
+
         return app_bundle
-    
+
     except Exception as e:
         raise PackagingError(f"Failed to create PyInstaller bundle: {e}")
 
@@ -102,35 +102,35 @@ def create_standalone_dmg(
 ) -> Path:
     """
     Create a professional DMG installer with custom layout.
-    
+
     Args:
         app_bundle: Path to .app bundle
         output_path: Output path for DMG
         volume_name: Volume name for DMG
         background_image: Optional background image
-    
+
     Returns:
         Path to created DMG
-    
+
     Raises:
         PackagingError: If creation fails
     """
     try:
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_path = Path(temp_dir)
-            
+
             # Create DMG contents directory
             dmg_contents = temp_path / "dmg_contents"
             dmg_contents.mkdir()
-            
+
             # Copy app bundle
             app_dest = dmg_contents / app_bundle.name
             shutil.copytree(app_bundle, app_dest)
-            
+
             # Create Applications symlink
             apps_link = dmg_contents / "Applications"
             apps_link.symlink_to("/Applications")
-            
+
             # Create README file
             readme_content = f"""Quick Document Convertor
 
@@ -149,26 +149,26 @@ For support, visit: https://github.com/Beaulewis1977/quick_doc_convertor
 
 © 2024 Beau Lewis. All rights reserved.
 """
-            
+
             readme_file = dmg_contents / "README.txt"
             with open(readme_file, 'w', encoding='utf-8') as f:
                 f.write(readme_content)
-            
+
             # Create temporary DMG
             temp_dmg = temp_path / "temp.dmg"
-            
+
             # Calculate size needed (rough estimate)
             size_mb = 200  # Base size
             try:
                 # Get actual size of contents
-                result = subprocess.run(['du', '-sm', str(dmg_contents)], 
+                result = subprocess.run(['du', '-sm', str(dmg_contents)],
                                       capture_output=True, text=True)
                 if result.returncode == 0:
                     actual_size = int(result.stdout.split()[0])
                     size_mb = max(size_mb, actual_size + 50)  # Add 50MB buffer
             except:
                 pass
-            
+
             # Create temporary DMG
             result = subprocess.run([
                 'hdiutil', 'create',
@@ -180,28 +180,28 @@ For support, visit: https://github.com/Beaulewis1977/quick_doc_convertor
                 '-size', f'{size_mb}m',
                 str(temp_dmg)
             ], capture_output=True, text=True)
-            
+
             if result.returncode != 0:
                 raise PackagingError(f"Failed to create temporary DMG: {result.stderr}")
-            
+
             # Mount the DMG
             result = subprocess.run([
                 'hdiutil', 'attach', str(temp_dmg), '-readwrite', '-noverify', '-noautoopen'
             ], capture_output=True, text=True)
-            
+
             if result.returncode != 0:
                 raise PackagingError(f"Failed to mount DMG: {result.stderr}")
-            
+
             # Extract mount point
             mount_point = None
             for line in result.stdout.split('\n'):
                 if '/Volumes/' in line:
                     mount_point = line.split()[-1]
                     break
-            
+
             if not mount_point:
                 raise PackagingError("Could not determine mount point")
-            
+
             try:
                 # Set up DMG appearance using AppleScript
                 applescript = f'''
@@ -224,16 +224,16 @@ tell application "Finder"
     end tell
 end tell
 '''
-                
+
                 # Run AppleScript
-                subprocess.run(['osascript', '-e', applescript], 
+                subprocess.run(['osascript', '-e', applescript],
                              capture_output=True, text=True)
-                
+
                 # Sync and unmount
                 subprocess.run(['sync'], check=True)
-                subprocess.run(['hdiutil', 'detach', mount_point], 
+                subprocess.run(['hdiutil', 'detach', mount_point],
                              capture_output=True)
-                
+
                 # Convert to compressed DMG
                 result = subprocess.run([
                     'hdiutil', 'convert', str(temp_dmg),
@@ -241,21 +241,21 @@ end tell
                     '-imagekey', 'zlib-level=9',
                     '-o', str(output_path)
                 ], capture_output=True, text=True)
-                
+
                 if result.returncode != 0:
                     raise PackagingError(f"Failed to compress DMG: {result.stderr}")
-                
+
             except Exception as e:
                 # Try to unmount in case of error
                 try:
-                    subprocess.run(['hdiutil', 'detach', mount_point], 
+                    subprocess.run(['hdiutil', 'detach', mount_point],
                                  capture_output=True)
                 except:
                     pass
                 raise e
-        
+
         return output_path
-    
+
     except Exception as e:
         raise PackagingError(f"Failed to create DMG: {e}")
 
@@ -268,35 +268,35 @@ def create_pkg_installer(
 ) -> Path:
     """
     Create a .pkg installer for macOS.
-    
+
     Args:
         app_bundle: Path to .app bundle
         output_path: Output path for .pkg
         identifier: Package identifier
         version: Package version
-    
+
     Returns:
         Path to created .pkg
-    
+
     Raises:
         PackagingError: If creation fails
     """
     try:
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_path = Path(temp_dir)
-            
+
             # Create package root
             pkg_root = temp_path / "pkg_root"
             pkg_root.mkdir()
-            
+
             # Create Applications directory in package
             apps_dir = pkg_root / "Applications"
             apps_dir.mkdir()
-            
+
             # Copy app bundle
             app_dest = apps_dir / app_bundle.name
             shutil.copytree(app_bundle, app_dest)
-            
+
             # Create component property list
             component_plist = temp_path / "component.plist"
             plist_content = f'''<?xml version="1.0" encoding="UTF-8"?>
@@ -315,10 +315,10 @@ def create_pkg_installer(
     <string>Applications/{app_bundle.name}</string>
 </dict>
 </plist>'''
-            
+
             with open(component_plist, 'w') as f:
                 f.write(plist_content)
-            
+
             # Build package
             result = subprocess.run([
                 'pkgbuild',
@@ -329,12 +329,12 @@ def create_pkg_installer(
                 '--install-location', '/',
                 str(output_path)
             ], capture_output=True, text=True)
-            
+
             if result.returncode != 0:
                 raise PackagingError(f"pkgbuild failed: {result.stderr}")
-        
+
         return output_path
-    
+
     except Exception as e:
         raise PackagingError(f"Failed to create .pkg installer: {e}")
 
@@ -347,18 +347,18 @@ def build_all_macos_packages(
 ) -> Dict[str, Path]:
     """
     Build all macOS package formats.
-    
+
     Args:
         script_path: Path to main Python script
         output_dir: Output directory for packages
         version: Application version
         icon_path: Path to icon file
-    
+
     Returns:
         Dict mapping package type to file path
     """
     results = {}
-    
+
     try:
         # Create app bundle using PyInstaller
         app_bundle = create_pyinstaller_bundle(script_path, output_dir, icon_path=icon_path)
@@ -366,7 +366,7 @@ def build_all_macos_packages(
     except Exception as e:
         results['app_bundle_error'] = str(e)
         return results
-    
+
     try:
         # Create DMG installer
         dmg_path = output_dir / f"QuickDocumentConvertor-{version}.dmg"
@@ -374,7 +374,7 @@ def build_all_macos_packages(
         results['dmg'] = dmg_result
     except Exception as e:
         results['dmg_error'] = str(e)
-    
+
     try:
         # Create PKG installer
         pkg_path = output_dir / f"QuickDocumentConvertor-{version}.pkg"
@@ -382,7 +382,7 @@ def build_all_macos_packages(
         results['pkg'] = pkg_result
     except Exception as e:
         results['pkg_error'] = str(e)
-    
+
     return results
 
 

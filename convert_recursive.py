@@ -5,7 +5,6 @@ Converts DOCX, PDF, and TXT files to Markdown format, preserving folder structur
 """
 
 import os
-import sys
 from pathlib import Path
 import argparse
 
@@ -16,7 +15,7 @@ def install_requirements():
         'PyPDF2',
         'markdownify'
     ]
-    
+
     for package in required_packages:
         try:
             __import__(package.replace('-', '_'))
@@ -29,10 +28,10 @@ def convert_docx_to_markdown(file_path):
     """Convert DOCX file to Markdown"""
     try:
         from docx import Document
-        
+
         doc = Document(file_path)
         markdown_content = []
-        
+
         for paragraph in doc.paragraphs:
             text = paragraph.text.strip()
             if text:
@@ -46,9 +45,9 @@ def convert_docx_to_markdown(file_path):
                 else:
                     markdown_content.append(text)
                 markdown_content.append("")  # Add blank line
-        
+
         return "\n".join(markdown_content)
-    
+
     except Exception as e:
         print(f"Error converting DOCX file {file_path}: {e}")
         return None
@@ -57,12 +56,12 @@ def convert_pdf_to_markdown(file_path):
     """Convert PDF file to Markdown"""
     try:
         import PyPDF2
-        
+
         markdown_content = []
-        
+
         with open(file_path, 'rb') as file:
             pdf_reader = PyPDF2.PdfReader(file)
-            
+
             for page_num, page in enumerate(pdf_reader.pages):
                 text = page.extract_text()
                 if text.strip():
@@ -76,9 +75,9 @@ def convert_pdf_to_markdown(file_path):
                     else:
                         markdown_content.append(text)
                     markdown_content.append("")  # Add blank line between pages
-        
+
         return "\n".join(markdown_content)
-    
+
     except Exception as e:
         print(f"Error converting PDF file {file_path}: {e}")
         return None
@@ -88,11 +87,11 @@ def convert_txt_to_markdown(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
-        
+
         # Basic markdown formatting for text files
         lines = content.split('\n')
         markdown_content = []
-        
+
         for i, line in enumerate(lines):
             line = line.strip()
             if line:
@@ -102,9 +101,9 @@ def convert_txt_to_markdown(file_path):
                 else:
                     markdown_content.append(line)
             markdown_content.append("")
-        
+
         return "\n".join(markdown_content)
-    
+
     except Exception as e:
         print(f"Error converting TXT file {file_path}: {e}")
         return None
@@ -113,15 +112,15 @@ def convert_file(file_path, output_dir, preserve_structure=True):
     """Convert a single file to Markdown"""
     file_path = Path(file_path)
     output_dir = Path(output_dir)
-    
+
     # Create output directory if it doesn't exist
     output_dir.mkdir(parents=True, exist_ok=True)
-    
+
     # Determine conversion method based on file extension
     extension = file_path.suffix.lower()
-    
+
     print(f"Converting: {file_path}")
-    
+
     if extension == '.docx':
         content = convert_docx_to_markdown(file_path)
     elif extension == '.pdf':
@@ -131,16 +130,16 @@ def convert_file(file_path, output_dir, preserve_structure=True):
     else:
         print(f"Unsupported file type: {extension}")
         return False
-    
+
     if content:
         # Create output filename
         output_filename = file_path.stem + '.md'
         output_path = output_dir / output_filename
-        
+
         # Write markdown content
         with open(output_path, 'w', encoding='utf-8') as output_file:
             output_file.write(content)
-        
+
         print(f"✓ Converted to: {output_path}")
         return True
     else:
@@ -151,26 +150,26 @@ def scan_and_convert_recursive(input_dir, output_dir):
     """Recursively scan directory and convert all supported files"""
     input_dir = Path(input_dir)
     output_dir = Path(output_dir)
-    
+
     if not input_dir.exists():
         print(f"Error: Input directory '{input_dir}' does not exist")
         return 0, 0
-    
+
     # Find all supported files recursively
     supported_extensions = ['.docx', '.pdf', '.txt']
     files_to_convert = []
-    
+
     for ext in supported_extensions:
         # Use rglob for recursive search
         files_to_convert.extend(input_dir.rglob(f'*{ext}'))
-    
+
     if not files_to_convert:
         print(f"No supported files found in '{input_dir}' and subdirectories")
         print(f"Supported formats: {', '.join(supported_extensions)}")
         return 0, 0
-    
+
     print(f"Found {len(files_to_convert)} files to convert:")
-    
+
     # Group files by directory for better organization
     files_by_dir = {}
     for file in files_to_convert:
@@ -178,23 +177,23 @@ def scan_and_convert_recursive(input_dir, output_dir):
         if rel_dir not in files_by_dir:
             files_by_dir[rel_dir] = []
         files_by_dir[rel_dir].append(file)
-    
+
     # Show organized file list
     for dir_name, files in files_by_dir.items():
         if str(dir_name) == '.':
-            print(f"\n📁 Root directory:")
+            print("\n📁 Root directory:")
         else:
             print(f"\n📁 {dir_name}:")
         for file in files:
             print(f"  - {file.name}")
-    
+
     print(f"\nOutput directory: {output_dir}")
     print("=" * 80)
-    
+
     # Convert files, preserving directory structure
     successful = 0
     failed = 0
-    
+
     for file_path in files_to_convert:
         # Calculate relative path to preserve structure
         rel_path = file_path.parent.relative_to(input_dir)
@@ -202,41 +201,41 @@ def scan_and_convert_recursive(input_dir, output_dir):
             target_dir = output_dir
         else:
             target_dir = output_dir / rel_path
-        
+
         if convert_file(file_path, target_dir):
             successful += 1
         else:
             failed += 1
-    
+
     return successful, failed
 
 def main():
     parser = argparse.ArgumentParser(description='Recursively convert documents to Markdown')
-    parser.add_argument('input_dir', nargs='?', default='.', 
+    parser.add_argument('input_dir', nargs='?', default='.',
                        help='Input directory (default: current directory)')
-    parser.add_argument('-o', '--output', default='markdown_output', 
+    parser.add_argument('-o', '--output', default='markdown_output',
                        help='Output directory (default: markdown_output)')
-    parser.add_argument('--install', action='store_true', 
+    parser.add_argument('--install', action='store_true',
                        help='Install required packages')
     parser.add_argument('--flat', action='store_true',
                        help='Save all files to output root (no subdirectories)')
-    
+
     args = parser.parse_args()
-    
+
     if args.install:
         install_requirements()
         return
-    
+
     successful, failed = scan_and_convert_recursive(args.input_dir, args.output)
-    
+
     print("=" * 80)
-    print(f"Conversion complete!")
+    print("Conversion complete!")
     print(f"✓ Successful: {successful}")
     print(f"✗ Failed: {failed}")
-    
+
     if successful > 0:
         print(f"\nMarkdown files saved to: {args.output}")
         print("Folder structure has been preserved in the output directory.")
 
 if __name__ == '__main__':
-    main() 
+    main()

@@ -24,7 +24,7 @@ class PackagingError(Exception):
 def get_app_info() -> Dict[str, str]:
     """
     Get application information for packaging.
-    
+
     Returns:
         Dict containing app metadata
     """
@@ -58,7 +58,7 @@ def get_app_info() -> Dict[str, str]:
 def get_supported_formats() -> Dict[str, List[str]]:
     """
     Get supported file formats for packaging metadata.
-    
+
     Returns:
         Dict with input and output formats
     """
@@ -71,7 +71,7 @@ def get_supported_formats() -> Dict[str, List[str]]:
 def get_mime_types() -> List[str]:
     """
     Get MIME types for file associations.
-    
+
     Returns:
         List of MIME types
     """
@@ -90,7 +90,7 @@ def get_mime_types() -> List[str]:
 def get_file_extensions() -> List[str]:
     """
     Get file extensions for file associations.
-    
+
     Returns:
         List of file extensions
     """
@@ -102,7 +102,7 @@ def get_file_extensions() -> List[str]:
 def check_dependencies() -> Dict[str, bool]:
     """
     Check if packaging dependencies are available.
-    
+
     Returns:
         Dict with dependency availability status
     """
@@ -112,14 +112,14 @@ def check_dependencies() -> Dict[str, bool]:
         'python-dbus': False,
         'pillow': False
     }
-    
+
     # Check PyInstaller
     try:
         import PyInstaller
         dependencies['pyinstaller'] = True
     except ImportError:
         pass
-    
+
     # Check py2app (macOS only)
     if platform.system() == 'Darwin':
         try:
@@ -127,7 +127,7 @@ def check_dependencies() -> Dict[str, bool]:
             dependencies['py2app'] = True
         except ImportError:
             pass
-    
+
     # Check python-dbus (Linux only)
     if platform.system() == 'Linux':
         try:
@@ -135,40 +135,40 @@ def check_dependencies() -> Dict[str, bool]:
             dependencies['python-dbus'] = True
         except ImportError:
             pass
-    
+
     # Check Pillow
     try:
         import PIL
         dependencies['pillow'] = True
     except ImportError:
         pass
-    
+
     return dependencies
 
 
 def install_dependencies() -> bool:
     """
     Install required packaging dependencies.
-    
+
     Returns:
         bool: True if successful
     """
     try:
         # Base dependencies
         base_deps = ['pyinstaller>=5.0', 'pillow>=9.0']
-        
+
         # Platform-specific dependencies
         if platform.system() == 'Darwin':
             base_deps.append('py2app>=0.28')
         elif platform.system() == 'Linux':
             base_deps.append('python-dbus')
-        
+
         for dep in base_deps:
             print(f"Installing {dep}...")
             subprocess.check_call([
                 sys.executable, '-m', 'pip', 'install', dep
             ])
-        
+
         return True
     except subprocess.CalledProcessError as e:
         print(f"Error installing dependencies: {e}")
@@ -178,7 +178,7 @@ def install_dependencies() -> bool:
 def get_project_root() -> Path:
     """
     Get the project root directory.
-    
+
     Returns:
         Path to project root
     """
@@ -189,7 +189,7 @@ def get_project_root() -> Path:
 def get_main_script() -> Path:
     """
     Get the main application script.
-    
+
     Returns:
         Path to main script
     """
@@ -199,35 +199,35 @@ def get_main_script() -> Path:
 def get_icon_path() -> Optional[Path]:
     """
     Get the application icon path.
-    
+
     Returns:
         Path to icon file or None
     """
     project_root = get_project_root()
-    
+
     # Look for common icon files
     icon_files = [
         'icon.ico', 'icon.icns', 'icon.png',
         'app_icon.ico', 'app_icon.icns', 'app_icon.png'
     ]
-    
+
     for icon_file in icon_files:
         icon_path = project_root / icon_file
         if icon_path.exists():
             return icon_path
-    
+
     return None
 
 
 def create_build_info() -> Dict[str, str]:
     """
     Create build information for packaging.
-    
+
     Returns:
         Dict with build metadata
     """
     import datetime
-    
+
     return {
         'build_date': datetime.datetime.now().isoformat(),
         'platform': platform.system(),
@@ -240,12 +240,12 @@ def create_build_info() -> Dict[str, str]:
 def get_package_builder():
     """
     Get the appropriate package builder for the current platform.
-    
+
     Returns:
         Platform-specific package builder module or None
     """
     system = platform.system()
-    
+
     try:
         if system == 'Linux':
             from . import build_linux

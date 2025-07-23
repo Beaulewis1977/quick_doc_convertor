@@ -1,0 +1,2539 @@
+build_all_platforms.py:20:1: E402 module level import not at top of file
+build_all_platforms.py:21:1: E402 module level import not at top of file
+build_all_platforms.py:30:22: W291 trailing whitespace
+build_all_platforms.py:61:1: W293 blank line contains whitespace
+build_all_platforms.py:63:1: W293 blank line contains whitespace
+build_all_platforms.py:68:1: W293 blank line contains whitespace
+build_all_platforms.py:74:1: W293 blank line contains whitespace
+build_all_platforms.py:78:1: W293 blank line contains whitespace
+build_all_platforms.py:81:1: W293 blank line contains whitespace
+build_all_platforms.py:86:1: W293 blank line contains whitespace
+build_all_platforms.py:101:1: W293 blank line contains whitespace
+build_all_platforms.py:107:1: W293 blank line contains whitespace
+build_all_platforms.py:114:1: W293 blank line contains whitespace
+build_all_platforms.py:116:1: W293 blank line contains whitespace
+build_all_platforms.py:119:1: W293 blank line contains whitespace
+build_all_platforms.py:123:80: E501 line too long (87 > 79 characters)
+build_all_platforms.py:127:80: E501 line too long (87 > 79 characters)
+build_all_platforms.py:131:80: E501 line too long (87 > 79 characters)
+build_all_platforms.py:133:1: W293 blank line contains whitespace
+build_all_platforms.py:135:1: W293 blank line contains whitespace
+build_all_platforms.py:139:1: W293 blank line contains whitespace
+build_all_platforms.py:143:1: W293 blank line contains whitespace
+build_all_platforms.py:154:1: W293 blank line contains whitespace
+build_all_platforms.py:155:11: F541 f-string is missing placeholders
+build_all_platforms.py:157:1: W293 blank line contains whitespace
+build_all_platforms.py:161:80: E501 line too long (81 > 79 characters)
+build_all_platforms.py:166:1: W293 blank line contains whitespace
+build_all_platforms.py:168:80: E501 line too long (82 > 79 characters)
+build_all_platforms.py:176:1: W293 blank line contains whitespace
+build_all_platforms.py:178:1: W293 blank line contains whitespace
+build_all_platforms.py:189:1: W293 blank line contains whitespace
+build_all_platforms.py:191:80: E501 line too long (80 > 79 characters)
+cli.py:24:80: E501 line too long (80 > 79 characters)
+cli.py:36:80: E501 line too long (86 > 79 characters)
+cli.py:42:1: W293 blank line contains whitespace
+cli.py:46:80: E501 line too long (96 > 79 characters)
+cli.py:52:80: E501 line too long (84 > 79 characters)
+cli.py:53:80: E501 line too long (87 > 79 characters)
+cli.py:55:80: E501 line too long (88 > 79 characters)
+cli.py:61:1: W293 blank line contains whitespace
+cli.py:63:48: W291 trailing whitespace
+cli.py:64:27: E128 continuation line under-indented for visual indent
+cli.py:66:27: E128 continuation line under-indented for visual indent
+cli.py:67:1: W293 blank line contains whitespace
+cli.py:70:27: E128 continuation line under-indented for visual indent
+cli.py:70:80: E501 line too long (97 > 79 characters)
+cli.py:71:27: E128 continuation line under-indented for visual indent
+cli.py:73:27: E128 continuation line under-indented for visual indent
+cli.py:73:80: E501 line too long (87 > 79 characters)
+cli.py:74:27: E128 continuation line under-indented for visual indent
+cli.py:75:1: W293 blank line contains whitespace
+cli.py:78:27: E128 continuation line under-indented for visual indent
+cli.py:79:80: E501 line too long (86 > 79 characters)
+cli.py:80:27: E128 continuation line under-indented for visual indent
+cli.py:80:80: E501 line too long (88 > 79 characters)
+cli.py:82:27: E128 continuation line under-indented for visual indent
+cli.py:84:27: E128 continuation line under-indented for visual indent
+cli.py:85:1: W293 blank line contains whitespace
+cli.py:88:27: E128 continuation line under-indented for visual indent
+cli.py:90:27: E128 continuation line under-indented for visual indent
+cli.py:91:1: W293 blank line contains whitespace
+cli.py:94:27: E128 continuation line under-indented for visual indent
+cli.py:94:80: E501 line too long (80 > 79 characters)
+cli.py:95:1: W293 blank line contains whitespace
+cli.py:98:27: E128 continuation line under-indented for visual indent
+cli.py:99:80: E501 line too long (98 > 79 characters)
+cli.py:100:1: W293 blank line contains whitespace
+cli.py:103:27: E128 continuation line under-indented for visual indent
+cli.py:105:27: E128 continuation line under-indented for visual indent
+cli.py:107:27: E128 continuation line under-indented for visual indent
+cli.py:111:27: E128 continuation line under-indented for visual indent
+cli.py:113:27: E128 continuation line under-indented for visual indent
+cli.py:115:27: E128 continuation line under-indented for visual indent
+cli.py:117:27: E128 continuation line under-indented for visual indent
+cli.py:121:27: E128 continuation line under-indented for visual indent
+cli.py:123:27: E128 continuation line under-indented for visual indent
+cli.py:126:1: W293 blank line contains whitespace
+cli.py:130:1: W293 blank line contains whitespace
+cli.py:135:1: W293 blank line contains whitespace
+cli.py:140:1: W293 blank line contains whitespace
+cli.py:235:80: E501 line too long (112 > 79 characters)
+cli.py:245:80: E501 line too long (81 > 79 characters)
+cli.py:248:1: W293 blank line contains whitespace
+cli.py:253:1: W293 blank line contains whitespace
+cli.py:257:1: W293 blank line contains whitespace
+cli.py:264:1: W293 blank line contains whitespace
+cli.py:266:1: W293 blank line contains whitespace
+cli.py:284:1: W293 blank line contains whitespace
+cli.py:285:71: W291 trailing whitespace
+cli.py:286:27: E128 continuation line under-indented for visual indent
+cli.py:289:80: E501 line too long (88 > 79 characters)
+cli.py:291:80: E501 line too long (90 > 79 characters)
+cli.py:294:1: W293 blank line contains whitespace
+cli.py:295:67: W291 trailing whitespace
+cli.py:296:24: E128 continuation line under-indented for visual indent
+cli.py:296:65: W291 trailing whitespace
+cli.py:297:24: E128 continuation line under-indented for visual indent
+cli.py:299:80: E501 line too long (84 > 79 characters)
+cli.py:300:1: W293 blank line contains whitespace
+cli.py:301:80: E501 line too long (90 > 79 characters)
+cli.py:303:80: E501 line too long (86 > 79 characters)
+cli.py:316:1: W293 blank line contains whitespace
+cli.py:317:80: E501 line too long (89 > 79 characters)
+cli.py:320:1: W293 blank line contains whitespace
+cli.py:323:1: W293 blank line contains whitespace
+cli.py:329:80: E501 line too long (84 > 79 characters)
+cli.py:334:80: E501 line too long (84 > 79 characters)
+cli.py:341:80: E501 line too long (83 > 79 characters)
+cli.py:342:1: W293 blank line contains whitespace
+cli.py:346:1: W293 blank line contains whitespace
+cli.py:351:1: W293 blank line contains whitespace
+cli.py:355:1: W293 blank line contains whitespace
+cli.py:358:1: W293 blank line contains whitespace
+cli.py:392:1: W293 blank line contains whitespace
+cli.py:412:80: E501 line too long (99 > 79 characters)
+cli.py:431:80: E501 line too long (85 > 79 characters)
+cli.py:470:80: E501 line too long (103 > 79 characters)
+cli.py:473:80: E501 line too long (82 > 79 characters)
+cli.py:501:80: E501 line too long (83 > 79 characters)
+cli.py:508:80: E501 line too long (83 > 79 characters)
+cli.py:520:80: E501 line too long (84 > 79 characters)
+cli.py:538:19: F541 f-string is missing placeholders
+cli_ocr.py:9:1: F401 'os' imported but unused
+cli_ocr.py:12:1: F401 'typing.Optional' imported but unused
+cli_ocr.py:13:1: F401 'json' imported but unused
+cli_ocr.py:14:1: F401 'time' imported but unused
+cli_ocr.py:35:1: W293 blank line contains whitespace
+cli_ocr.py:40:1: E302 expected 2 blank lines, found 1
+cli_ocr.py:42:1: W293 blank line contains whitespace
+cli_ocr.py:46:1: W293 blank line contains whitespace
+cli_ocr.py:54:1: W293 blank line contains whitespace
+cli_ocr.py:58:80: E501 line too long (86 > 79 characters)
+cli_ocr.py:69:1: W293 blank line contains whitespace
+cli_ocr.py:71:48: W291 trailing whitespace
+cli_ocr.py:72:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:73:46: W291 trailing whitespace
+cli_ocr.py:74:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:75:1: W293 blank line contains whitespace
+cli_ocr.py:78:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:80:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:82:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:83:1: W293 blank line contains whitespace
+cli_ocr.py:86:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:88:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:90:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:91:1: W293 blank line contains whitespace
+cli_ocr.py:94:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:95:80: E501 line too long (96 > 79 characters)
+cli_ocr.py:96:1: W293 blank line contains whitespace
+cli_ocr.py:99:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:101:27: E128 continuation line under-indented for visual indent
+cli_ocr.py:102:1: W293 blank line contains whitespace
+cli_ocr.py:104:1: W293 blank line contains whitespace
+cli_ocr.py:111:1: W293 blank line contains whitespace
+cli_ocr.py:121:1: W293 blank line contains whitespace
+cli_ocr.py:135:80: E501 line too long (88 > 79 characters)
+cli_ocr.py:137:1: W293 blank line contains whitespace
+cli_ocr.py:138:71: W291 trailing whitespace
+cli_ocr.py:139:29: E128 continuation line under-indented for visual indent
+cli_ocr.py:139:80: E501 line too long (86 > 79 characters)
+cli_ocr.py:144:1: W293 blank line contains whitespace
+cli_ocr.py:148:1: W293 blank line contains whitespace
+cli_ocr.py:151:1: W293 blank line contains whitespace
+cli_ocr.py:154:1: W293 blank line contains whitespace
+cli_ocr.py:156:80: E501 line too long (94 > 79 characters)
+cli_ocr.py:160:1: W293 blank line contains whitespace
+cli_ocr.py:163:1: W293 blank line contains whitespace
+cli_ocr.py:168:1: W293 blank line contains whitespace
+cli_ocr.py:170:1: W293 blank line contains whitespace
+cli_ocr.py:176:1: W293 blank line contains whitespace
+cli_ocr.py:178:80: E501 line too long (80 > 79 characters)
+cli_ocr.py:179:1: W293 blank line contains whitespace
+cli_ocr.py:184:1: W293 blank line contains whitespace
+cli_ocr.py:186:1: W293 blank line contains whitespace
+cli_ocr.py:190:17: F821 undefined name 'convert_to_markdown'
+cli_ocr.py:192:1: W293 blank line contains whitespace
+cli_ocr.py:196:1: W293 blank line contains whitespace
+cli_ocr.py:197:80: E501 line too long (85 > 79 characters)
+cli_ocr.py:200:80: E501 line too long (109 > 79 characters)
+cli_ocr.py:201:1: W293 blank line contains whitespace
+cli_ocr.py:204:1: W293 blank line contains whitespace
+cli_ocr.py:214:1: W293 blank line contains whitespace
+cli_ocr.py:216:1: W293 blank line contains whitespace
+cli_ocr.py:222:1: W293 blank line contains whitespace
+cli_ocr.py:225:1: W293 blank line contains whitespace
+cli_ocr.py:229:1: W293 blank line contains whitespace
+cli_ocr.py:235:1: W293 blank line contains whitespace
+cli_ocr.py:237:49: W291 trailing whitespace
+cli_ocr.py:240:1: W293 blank line contains whitespace
+cli_ocr.py:247:1: W293 blank line contains whitespace
+cli_ocr.py:252:1: W293 blank line contains whitespace
+cli_ocr.py:255:1: W293 blank line contains whitespace
+cli_ocr.py:257:1: W293 blank line contains whitespace
+cli_ocr.py:260:1: W293 blank line contains whitespace
+cli_ocr.py:264:1: W293 blank line contains whitespace
+cli_ocr.py:266:1: W293 blank line contains whitespace
+cli_ocr.py:271:1: W293 blank line contains whitespace
+cli_ocr.py:276:1: W293 blank line contains whitespace
+cli_ocr.py:279:1: W293 blank line contains whitespace
+cli_ocr.py:284:1: W293 blank line contains whitespace
+cli_ocr.py:288:1: W293 blank line contains whitespace
+cli_ocr.py:292:1: W293 blank line contains whitespace
+cli_ocr.py:296:1: E305 expected 2 blank lines after class or function definition, found 1
+cli_ocr.py:298:24: W292 no newline at end of file
+convert_recursive.py:4:80: E501 line too long (81 > 79 characters)
+convert_recursive.py:8:1: F401 'sys' imported but unused
+convert_recursive.py:12:1: E302 expected 2 blank lines, found 1
+convert_recursive.py:19:1: W293 blank line contains whitespace
+convert_recursive.py:28:1: E302 expected 2 blank lines, found 1
+convert_recursive.py:32:1: W293 blank line contains whitespace
+convert_recursive.py:35:1: W293 blank line contains whitespace
+convert_recursive.py:49:1: W293 blank line contains whitespace
+convert_recursive.py:51:1: W293 blank line contains whitespace
+convert_recursive.py:56:1: E302 expected 2 blank lines, found 1
+convert_recursive.py:60:1: W293 blank line contains whitespace
+convert_recursive.py:62:1: W293 blank line contains whitespace
+convert_recursive.py:65:1: W293 blank line contains whitespace
+convert_recursive.py:79:1: W293 blank line contains whitespace
+convert_recursive.py:81:1: W293 blank line contains whitespace
+convert_recursive.py:86:1: E302 expected 2 blank lines, found 1
+convert_recursive.py:91:1: W293 blank line contains whitespace
+convert_recursive.py:95:1: W293 blank line contains whitespace
+convert_recursive.py:105:1: W293 blank line contains whitespace
+convert_recursive.py:107:1: W293 blank line contains whitespace
+convert_recursive.py:112:1: E302 expected 2 blank lines, found 1
+convert_recursive.py:116:1: W293 blank line contains whitespace
+convert_recursive.py:119:1: W293 blank line contains whitespace
+convert_recursive.py:122:1: W293 blank line contains whitespace
+convert_recursive.py:124:1: W293 blank line contains whitespace
+convert_recursive.py:134:1: W293 blank line contains whitespace
+convert_recursive.py:139:1: W293 blank line contains whitespace
+convert_recursive.py:143:1: W293 blank line contains whitespace
+convert_recursive.py:150:1: E302 expected 2 blank lines, found 1
+convert_recursive.py:154:1: W293 blank line contains whitespace
+convert_recursive.py:158:1: W293 blank line contains whitespace
+convert_recursive.py:162:1: W293 blank line contains whitespace
+convert_recursive.py:166:1: W293 blank line contains whitespace
+convert_recursive.py:171:1: W293 blank line contains whitespace
+convert_recursive.py:173:1: W293 blank line contains whitespace
+convert_recursive.py:181:1: W293 blank line contains whitespace
+convert_recursive.py:185:19: F541 f-string is missing placeholders
+convert_recursive.py:190:1: W293 blank line contains whitespace
+convert_recursive.py:193:1: W293 blank line contains whitespace
+convert_recursive.py:197:1: W293 blank line contains whitespace
+convert_recursive.py:205:1: W293 blank line contains whitespace
+convert_recursive.py:210:1: W293 blank line contains whitespace
+convert_recursive.py:213:1: E302 expected 2 blank lines, found 1
+convert_recursive.py:214:80: E501 line too long (93 > 79 characters)
+convert_recursive.py:215:61: W291 trailing whitespace
+convert_recursive.py:216:24: E128 continuation line under-indented for visual indent
+convert_recursive.py:217:69: W291 trailing whitespace
+convert_recursive.py:218:24: E128 continuation line under-indented for visual indent
+convert_recursive.py:219:58: W291 trailing whitespace
+convert_recursive.py:220:24: E128 continuation line under-indented for visual indent
+convert_recursive.py:222:24: E128 continuation line under-indented for visual indent
+convert_recursive.py:222:80: E501 line too long (80 > 79 characters)
+convert_recursive.py:223:1: W293 blank line contains whitespace
+convert_recursive.py:225:1: W293 blank line contains whitespace
+convert_recursive.py:229:1: W293 blank line contains whitespace
+convert_recursive.py:230:80: E501 line too long (80 > 79 characters)
+convert_recursive.py:231:1: W293 blank line contains whitespace
+convert_recursive.py:233:11: F541 f-string is missing placeholders
+convert_recursive.py:236:1: W293 blank line contains whitespace
+convert_recursive.py:241:1: E305 expected 2 blank lines after class or function definition, found 1
+convert_recursive.py:242:11: W291 trailing whitespace
+convert_recursive.py:242:12: W292 no newline at end of file
+convert_to_markdown.py:8:1: F401 'sys' imported but unused
+convert_to_markdown.py:12:1: E302 expected 2 blank lines, found 1
+convert_to_markdown.py:19:1: W293 blank line contains whitespace
+convert_to_markdown.py:28:1: E302 expected 2 blank lines, found 1
+convert_to_markdown.py:32:1: W293 blank line contains whitespace
+convert_to_markdown.py:35:1: W293 blank line contains whitespace
+convert_to_markdown.py:49:1: W293 blank line contains whitespace
+convert_to_markdown.py:51:1: W293 blank line contains whitespace
+convert_to_markdown.py:56:1: E302 expected 2 blank lines, found 1
+convert_to_markdown.py:60:1: W293 blank line contains whitespace
+convert_to_markdown.py:62:1: W293 blank line contains whitespace
+convert_to_markdown.py:65:1: W293 blank line contains whitespace
+convert_to_markdown.py:79:1: W293 blank line contains whitespace
+convert_to_markdown.py:81:1: W293 blank line contains whitespace
+convert_to_markdown.py:86:1: E302 expected 2 blank lines, found 1
+convert_to_markdown.py:91:1: W293 blank line contains whitespace
+convert_to_markdown.py:95:1: W293 blank line contains whitespace
+convert_to_markdown.py:105:1: W293 blank line contains whitespace
+convert_to_markdown.py:107:1: W293 blank line contains whitespace
+convert_to_markdown.py:112:1: E302 expected 2 blank lines, found 1
+convert_to_markdown.py:116:1: W293 blank line contains whitespace
+convert_to_markdown.py:119:1: W293 blank line contains whitespace
+convert_to_markdown.py:122:1: W293 blank line contains whitespace
+convert_to_markdown.py:124:1: W293 blank line contains whitespace
+convert_to_markdown.py:134:1: W293 blank line contains whitespace
+convert_to_markdown.py:139:1: W293 blank line contains whitespace
+convert_to_markdown.py:143:1: W293 blank line contains whitespace
+convert_to_markdown.py:150:1: E302 expected 2 blank lines, found 1
+convert_to_markdown.py:151:80: E501 line too long (81 > 79 characters)
+convert_to_markdown.py:152:61: W291 trailing whitespace
+convert_to_markdown.py:153:24: E128 continuation line under-indented for visual indent
+convert_to_markdown.py:154:69: W291 trailing whitespace
+convert_to_markdown.py:155:24: E128 continuation line under-indented for visual indent
+convert_to_markdown.py:156:58: W291 trailing whitespace
+convert_to_markdown.py:157:24: E128 continuation line under-indented for visual indent
+convert_to_markdown.py:158:1: W293 blank line contains whitespace
+convert_to_markdown.py:160:1: W293 blank line contains whitespace
+convert_to_markdown.py:164:1: W293 blank line contains whitespace
+convert_to_markdown.py:167:1: W293 blank line contains whitespace
+convert_to_markdown.py:171:1: W293 blank line contains whitespace
+convert_to_markdown.py:175:1: W293 blank line contains whitespace
+convert_to_markdown.py:178:1: W293 blank line contains whitespace
+convert_to_markdown.py:183:1: W293 blank line contains whitespace
+convert_to_markdown.py:187:1: W293 blank line contains whitespace
+convert_to_markdown.py:190:1: W293 blank line contains whitespace
+convert_to_markdown.py:194:1: W293 blank line contains whitespace
+convert_to_markdown.py:200:1: W293 blank line contains whitespace
+convert_to_markdown.py:202:11: F541 f-string is missing placeholders
+convert_to_markdown.py:205:1: W293 blank line contains whitespace
+convert_to_markdown.py:209:1: E305 expected 2 blank lines after class or function definition, found 1
+convert_to_markdown.py:210:11: W291 trailing whitespace
+convert_to_markdown.py:211:1: E302 expected 2 blank lines, found 0
+convert_to_markdown.py:214:1: W293 blank line contains whitespace
+convert_to_markdown.py:219:1: W293 blank line contains whitespace
+convert_to_markdown.py:221:1: W293 blank line contains whitespace
+convert_to_markdown.py:231:1: W293 blank line contains whitespace
+convert_to_markdown.py:234:1: W293 blank line contains whitespace
+convert_to_markdown.py:236:1: W293 blank line contains whitespace
+convert_to_markdown.py:239:20: W292 no newline at end of file
+create_desktop_shortcut.py:9:1: E302 expected 2 blank lines, found 1
+create_desktop_shortcut.py:15:1: W293 blank line contains whitespace
+create_desktop_shortcut.py:19:1: W293 blank line contains whitespace
+create_desktop_shortcut.py:22:1: W293 blank line contains whitespace
+create_desktop_shortcut.py:27:80: E501 line too long (86 > 79 characters)
+create_desktop_shortcut.py:29:1: W293 blank line contains whitespace
+create_desktop_shortcut.py:31:1: W293 blank line contains whitespace
+create_desktop_shortcut.py:43:1: W293 blank line contains whitespace
+create_desktop_shortcut.py:47:1: W293 blank line contains whitespace
+create_desktop_shortcut.py:51:1: W293 blank line contains whitespace
+create_desktop_shortcut.py:65:1: W293 blank line contains whitespace
+create_desktop_shortcut.py:68:80: E501 line too long (96 > 79 characters)
+create_desktop_shortcut.py:70:1: E305 expected 2 blank lines after class or function definition, found 1
+create_desktop_shortcut.py:71:30: W291 trailing whitespace
+create_desktop_shortcut.py:71:31: W292 no newline at end of file
+create_executable.py:7:1: F401 'os' imported but unused
+create_executable.py:11:1: F401 'shutil' imported but unused
+create_executable.py:13:1: E302 expected 2 blank lines, found 1
+create_executable.py:16:9: F401 'PyInstaller' imported but unused
+create_executable.py:21:1: E302 expected 2 blank lines, found 1
+create_executable.py:25:80: E501 line too long (86 > 79 characters)
+create_executable.py:31:1: E302 expected 2 blank lines, found 1
+create_executable.py:33:5: F841 local variable 'icon_content' is assigned to but never used
+create_executable.py:41:1: E302 expected 2 blank lines, found 1
+create_executable.py:45:1: W293 blank line contains whitespace
+create_executable.py:49:1: W293 blank line contains whitespace
+create_executable.py:64:1: W293 blank line contains whitespace
+create_executable.py:71:1: W293 blank line contains whitespace
+create_executable.py:74:1: W293 blank line contains whitespace
+create_executable.py:82:1: E302 expected 2 blank lines, found 1
+create_executable.py:86:1: W293 blank line contains whitespace
+create_executable.py:94:1: W293 blank line contains whitespace
+create_executable.py:96:1: W293 blank line contains whitespace
+create_executable.py:101:1: W293 blank line contains whitespace
+create_executable.py:104:1: W293 blank line contains whitespace
+create_executable.py:113:1: W293 blank line contains whitespace
+create_executable.py:115:80: E501 line too long (101 > 79 characters)
+create_executable.py:120:1: W293 blank line contains whitespace
+create_executable.py:127:80: E501 line too long (93 > 79 characters)
+create_executable.py:129:1: W293 blank line contains whitespace
+create_executable.py:131:1: W293 blank line contains whitespace
+create_executable.py:134:80: E501 line too long (95 > 79 characters)
+create_executable.py:135:1: W293 blank line contains whitespace
+create_executable.py:142:1: W293 blank line contains whitespace
+create_executable.py:145:1: E305 expected 2 blank lines after class or function definition, found 1
+create_icon.py:11:1: E302 expected 2 blank lines, found 1
+create_icon.py:16:1: W293 blank line contains whitespace
+create_icon.py:19:1: W293 blank line contains whitespace
+create_icon.py:26:1: W293 blank line contains whitespace
+create_icon.py:32:1: W293 blank line contains whitespace
+create_icon.py:33:63: W291 trailing whitespace
+create_icon.py:34:19: E128 continuation line under-indented for visual indent
+create_icon.py:34:80: E501 line too long (84 > 79 characters)
+create_icon.py:35:1: W293 blank line contains whitespace
+create_icon.py:45:1: W293 blank line contains whitespace
+create_icon.py:52:1: W293 blank line contains whitespace
+create_icon.py:58:1: W293 blank line contains whitespace
+create_icon.py:61:56: W291 trailing whitespace
+create_icon.py:62:18: E128 continuation line under-indented for visual indent
+create_icon.py:63:1: W293 blank line contains whitespace
+create_icon.py:69:1: W293 blank line contains whitespace
+create_icon.py:76:1: W293 blank line contains whitespace
+create_icon.py:79:1: E302 expected 2 blank lines, found 1
+create_icon.py:83:1: W293 blank line contains whitespace
+create_icon.py:89:1: W293 blank line contains whitespace
+create_icon.py:97:1: W293 blank line contains whitespace
+create_icon.py:101:1: E302 expected 2 blank lines, found 1
+create_icon.py:105:1: W293 blank line contains whitespace
+create_icon.py:108:9: F401 'PIL.Image' imported but unused
+create_icon.py:108:9: F401 'PIL.ImageDraw' imported but unused
+create_icon.py:113:1: W293 blank line contains whitespace
+create_icon.py:116:1: W293 blank line contains whitespace
+create_icon.py:119:15: F541 f-string is missing placeholders
+create_icon.py:122:1: W293 blank line contains whitespace
+create_icon.py:127:1: E305 expected 2 blank lines after class or function definition, found 1
+create_icon.py:128:11: W291 trailing whitespace
+create_icon.py:128:12: W292 no newline at end of file
+create_installer.py:1:1: F401 'os' imported but unused
+create_installer.py:6:1: E302 expected 2 blank lines, found 1
+create_installer.py:8:1: W293 blank line contains whitespace
+create_installer.py:14:1: W293 blank line contains whitespace
+create_installer.py:21:1: W293 blank line contains whitespace
+create_installer.py:27:1: W293 blank line contains whitespace
+create_installer.py:29:19: F541 f-string is missing placeholders
+create_installer.py:45:80: E501 line too long (86 > 79 characters)
+create_installer.py:50:80: E501 line too long (94 > 79 characters)
+create_installer.py:51:80: E501 line too long (102 > 79 characters)
+create_installer.py:54:80: E501 line too long (112 > 79 characters)
+create_installer.py:64:1: W293 blank line contains whitespace
+create_installer.py:75:1: E305 expected 2 blank lines after class or function definition, found 1
+create_installer.py:78:1: W293 blank line contains whitespace
+create_installer.py:85:1: W293 blank line contains whitespace
+create_simple_installer.py:12:1: E302 expected 2 blank lines, found 1
+create_simple_installer.py:15:1: W293 blank line contains whitespace
+create_simple_installer.py:19:1: W293 blank line contains whitespace
+create_simple_installer.py:33:1: W293 blank line contains whitespace
+create_simple_installer.py:40:1: W293 blank line contains whitespace
+create_simple_installer.py:50:1: W293 blank line contains whitespace
+create_simple_installer.py:59:1: W293 blank line contains whitespace
+create_simple_installer.py:61:11: F541 f-string is missing placeholders
+create_simple_installer.py:62:1: W293 blank line contains whitespace
+create_simple_installer.py:65:1: W293 blank line contains whitespace
+create_simple_installer.py:68:1: E305 expected 2 blank lines after class or function definition, found 1
+create_simple_installer.py:71:1: W293 blank line contains whitespace
+create_simple_installer.py:73:1: W293 blank line contains whitespace
+create_simple_installer.py:81:1: W293 blank line contains whitespace
+create_windows_installer.py:11:1: F401 'tempfile' imported but unused
+create_windows_installer.py:12:1: F401 'winreg' imported but unused
+create_windows_installer.py:14:1: F401 'typing.List' imported but unused
+create_windows_installer.py:14:1: F401 'typing.Optional' imported but unused
+create_windows_installer.py:15:1: F401 'json' imported but unused
+create_windows_installer.py:17:1: E302 expected 2 blank lines, found 1
+create_windows_installer.py:19:1: W293 blank line contains whitespace
+create_windows_installer.py:27:1: W293 blank line contains whitespace
+create_windows_installer.py:36:1: W293 blank line contains whitespace
+create_windows_installer.py:39:13: F401 'PyInstaller' imported but unused
+create_windows_installer.py:43:1: W293 blank line contains whitespace
+create_windows_installer.py:46:13: F401 'win32com.client' imported but unused
+create_windows_installer.py:50:1: W293 blank line contains whitespace
+create_windows_installer.py:53:62: W291 trailing whitespace
+create_windows_installer.py:54:35: E128 continuation line under-indented for visual indent
+create_windows_installer.py:59:1: W293 blank line contains whitespace
+create_windows_installer.py:62:13: F401 'PIL' imported but unused
+create_windows_installer.py:66:1: W293 blank line contains whitespace
+create_windows_installer.py:68:1: W293 blank line contains whitespace
+create_windows_installer.py:72:1: W293 blank line contains whitespace
+create_windows_installer.py:79:1: W293 blank line contains whitespace
+create_windows_installer.py:90:1: W293 blank line contains whitespace
+create_windows_installer.py:94:1: W293 blank line contains whitespace
+create_windows_installer.py:121:1: W293 blank line contains whitespace
+create_windows_installer.py:127:1: W293 blank line contains whitespace
+create_windows_installer.py:135:1: W293 blank line contains whitespace
+create_windows_installer.py:137:80: E501 line too long (83 > 79 characters)
+create_windows_installer.py:139:1: W293 blank line contains whitespace
+create_windows_installer.py:141:1: W293 blank line contains whitespace
+create_windows_installer.py:151:1: W293 blank line contains whitespace
+create_windows_installer.py:156:37: W291 trailing whitespace
+create_windows_installer.py:161:1: W293 blank line contains whitespace
+create_windows_installer.py:167:1: W293 blank line contains whitespace
+create_windows_installer.py:173:1: W293 blank line contains whitespace
+create_windows_installer.py:175:1: W293 blank line contains whitespace
+create_windows_installer.py:178:80: E501 line too long (96 > 79 characters)
+create_windows_installer.py:183:1: W293 blank line contains whitespace
+create_windows_installer.py:186:80: E501 line too long (83 > 79 characters)
+create_windows_installer.py:187:1: W293 blank line contains whitespace
+create_windows_installer.py:199:1: W293 blank line contains whitespace
+create_windows_installer.py:203:1: W293 blank line contains whitespace
+create_windows_installer.py:205:1: W293 blank line contains whitespace
+create_windows_installer.py:209:1: W293 blank line contains whitespace
+create_windows_installer.py:210:21: F541 f-string is missing placeholders
+create_windows_installer.py:221:80: E501 line too long (81 > 79 characters)
+create_windows_installer.py:255:1: W293 blank line contains whitespace
+create_windows_installer.py:263:1: W293 blank line contains whitespace
+create_windows_installer.py:266:1: W293 blank line contains whitespace
+create_windows_installer.py:269:80: E501 line too long (129 > 79 characters)
+create_windows_installer.py:270:80: E501 line too long (127 > 79 characters)
+create_windows_installer.py:271:80: E501 line too long (87 > 79 characters)
+create_windows_installer.py:272:1: W293 blank line contains whitespace
+create_windows_installer.py:274:80: E501 line too long (112 > 79 characters)
+create_windows_installer.py:275:1: W293 blank line contains whitespace
+create_windows_installer.py:277:80: E501 line too long (121 > 79 characters)
+create_windows_installer.py:278:80: E501 line too long (136 > 79 characters)
+create_windows_installer.py:279:80: E501 line too long (144 > 79 characters)
+create_windows_installer.py:280:80: E501 line too long (121 > 79 characters)
+create_windows_installer.py:281:80: E501 line too long (127 > 79 characters)
+create_windows_installer.py:282:80: E501 line too long (123 > 79 characters)
+create_windows_installer.py:283:80: E501 line too long (118 > 79 characters)
+create_windows_installer.py:284:80: E501 line too long (125 > 79 characters)
+create_windows_installer.py:285:80: E501 line too long (123 > 79 characters)
+create_windows_installer.py:286:80: E501 line too long (165 > 79 characters)
+create_windows_installer.py:287:80: E501 line too long (127 > 79 characters)
+create_windows_installer.py:288:80: E501 line too long (127 > 79 characters)
+create_windows_installer.py:289:80: E501 line too long (107 > 79 characters)
+create_windows_installer.py:290:80: E501 line too long (107 > 79 characters)
+create_windows_installer.py:291:80: E501 line too long (127 > 79 characters)
+create_windows_installer.py:292:1: W293 blank line contains whitespace
+create_windows_installer.py:295:80: E501 line too long (87 > 79 characters)
+create_windows_installer.py:296:80: E501 line too long (122 > 79 characters)
+create_windows_installer.py:297:1: W293 blank line contains whitespace
+create_windows_installer.py:299:80: E501 line too long (93 > 79 characters)
+create_windows_installer.py:300:80: E501 line too long (110 > 79 characters)
+create_windows_installer.py:301:1: W293 blank line contains whitespace
+create_windows_installer.py:303:80: E501 line too long (117 > 79 characters)
+create_windows_installer.py:304:1: W293 blank line contains whitespace
+create_windows_installer.py:317:1: W293 blank line contains whitespace
+create_windows_installer.py:324:1: W293 blank line contains whitespace
+create_windows_installer.py:326:80: E501 line too long (93 > 79 characters)
+create_windows_installer.py:330:80: E501 line too long (95 > 79 characters)
+create_windows_installer.py:331:1: W293 blank line contains whitespace
+create_windows_installer.py:334:1: W293 blank line contains whitespace
+create_windows_installer.py:337:1: W293 blank line contains whitespace
+create_windows_installer.py:339:1: W293 blank line contains whitespace
+create_windows_installer.py:343:1: W293 blank line contains whitespace
+create_windows_installer.py:345:21: F541 f-string is missing placeholders
+create_windows_installer.py:403:1: W293 blank line contains whitespace
+create_windows_installer.py:405:21: F541 f-string is missing placeholders
+create_windows_installer.py:455:1: W293 blank line contains whitespace
+create_windows_installer.py:459:1: W293 blank line contains whitespace
+create_windows_installer.py:464:1: W293 blank line contains whitespace
+create_windows_installer.py:466:24: F541 f-string is missing placeholders
+create_windows_installer.py:496:1: W293 blank line contains whitespace
+create_windows_installer.py:500:1: W293 blank line contains whitespace
+create_windows_installer.py:502:80: E501 line too long (86 > 79 characters)
+create_windows_installer.py:503:1: W293 blank line contains whitespace
+create_windows_installer.py:510:1: W293 blank line contains whitespace
+create_windows_installer.py:516:1: W293 blank line contains whitespace
+create_windows_installer.py:520:1: W293 blank line contains whitespace
+create_windows_installer.py:523:53: W291 trailing whitespace
+create_windows_installer.py:526:1: W293 blank line contains whitespace
+create_windows_installer.py:529:53: W291 trailing whitespace
+create_windows_installer.py:532:1: W293 blank line contains whitespace
+create_windows_installer.py:534:1: W293 blank line contains whitespace
+create_windows_installer.py:540:1: W293 blank line contains whitespace
+create_windows_installer.py:545:1: W293 blank line contains whitespace
+create_windows_installer.py:549:1: W293 blank line contains whitespace
+create_windows_installer.py:551:80: E501 line too long (85 > 79 characters)
+create_windows_installer.py:553:1: W293 blank line contains whitespace
+create_windows_installer.py:556:1: W293 blank line contains whitespace
+create_windows_installer.py:560:1: W293 blank line contains whitespace
+create_windows_installer.py:564:1: W293 blank line contains whitespace
+create_windows_installer.py:568:1: W293 blank line contains whitespace
+create_windows_installer.py:573:1: W293 blank line contains whitespace
+create_windows_installer.py:577:1: W293 blank line contains whitespace
+create_windows_installer.py:582:1: W293 blank line contains whitespace
+create_windows_installer.py:586:1: W293 blank line contains whitespace
+create_windows_installer.py:593:80: E501 line too long (93 > 79 characters)
+create_windows_installer.py:598:1: W293 blank line contains whitespace
+create_windows_installer.py:600:1: W293 blank line contains whitespace
+create_windows_installer.py:605:1: W293 blank line contains whitespace
+create_windows_installer.py:623:80: E501 line too long (242 > 79 characters)
+create_windows_installer.py:626:80: E501 line too long (160 > 79 characters)
+create_windows_installer.py:627:80: E501 line too long (288 > 79 characters)
+create_windows_installer.py:638:1: W293 blank line contains whitespace
+create_windows_installer.py:641:1: W293 blank line contains whitespace
+create_windows_installer.py:644:1: E302 expected 2 blank lines, found 1
+create_windows_installer.py:648:1: W293 blank line contains whitespace
+create_windows_installer.py:650:1: W293 blank line contains whitespace
+create_windows_installer.py:663:1: W293 blank line contains whitespace
+create_windows_installer.py:670:1: W293 blank line contains whitespace
+create_windows_installer.py:673:1: W293 blank line contains whitespace
+create_windows_installer.py:676:1: E305 expected 2 blank lines after class or function definition, found 1
+create_windows_installer.py:677:11: W291 trailing whitespace
+create_windows_installer.py:677:12: W292 no newline at end of file
+demo_system_tray.py:7:1: F401 'tkinter as tk' imported but unused
+demo_system_tray.py:8:1: F401 'tkinter.messagebox' imported but unused
+demo_system_tray.py:10:1: F401 'os' imported but unused
+demo_system_tray.py:16:1: E302 expected 2 blank lines, found 1
+demo_system_tray.py:19:1: W293 blank line contains whitespace
+demo_system_tray.py:21:9: F401 'pystray' imported but unused
+demo_system_tray.py:24:1: W293 blank line contains whitespace
+demo_system_tray.py:26:9: F401 'PIL' imported but unused
+demo_system_tray.py:29:1: W293 blank line contains whitespace
+demo_system_tray.py:32:1: E302 expected 2 blank lines, found 1
+demo_system_tray.py:35:1: W293 blank line contains whitespace
+demo_system_tray.py:39:1: W293 blank line contains whitespace
+demo_system_tray.py:41:1: W293 blank line contains whitespace
+demo_system_tray.py:46:80: E501 line too long (80 > 79 characters)
+demo_system_tray.py:47:1: W293 blank line contains whitespace
+demo_system_tray.py:50:1: W293 blank line contains whitespace
+demo_system_tray.py:55:1: E302 expected 2 blank lines, found 1
+demo_system_tray.py:58:1: W293 blank line contains whitespace
+demo_system_tray.py:63:80: E501 line too long (81 > 79 characters)
+demo_system_tray.py:70:1: W293 blank line contains whitespace
+demo_system_tray.py:74:1: W293 blank line contains whitespace
+demo_system_tray.py:76:80: E501 line too long (81 > 79 characters)
+demo_system_tray.py:79:1: W293 blank line contains whitespace
+demo_system_tray.py:82:1: W293 blank line contains whitespace
+demo_system_tray.py:85:80: E501 line too long (82 > 79 characters)
+demo_system_tray.py:91:1: E302 expected 2 blank lines, found 1
+demo_system_tray.py:95:1: W293 blank line contains whitespace
+demo_system_tray.py:98:1: W293 blank line contains whitespace
+demo_system_tray.py:105:1: W293 blank line contains whitespace
+demo_system_tray.py:112:1: W293 blank line contains whitespace
+demo_system_tray.py:114:1: W293 blank line contains whitespace
+demo_system_tray.py:117:1: W293 blank line contains whitespace
+demo_system_tray.py:120:1: E305 expected 2 blank lines after class or function definition, found 1
+demo_system_tray.py:121:11: W291 trailing whitespace
+demo_system_tray.py:121:12: W292 no newline at end of file
+direct_launch.py:7:1: F401 'os' imported but unused
+direct_launch.py:10:1: E302 expected 2 blank lines, found 1
+direct_launch.py:19:1: E302 expected 2 blank lines, found 1
+direct_launch.py:22:1: W293 blank line contains whitespace
+direct_launch.py:26:1: W293 blank line contains whitespace
+direct_launch.py:32:1: W293 blank line contains whitespace
+direct_launch.py:35:80: E501 line too long (93 > 79 characters)
+direct_launch.py:36:1: W293 blank line contains whitespace
+direct_launch.py:39:1: W293 blank line contains whitespace
+direct_launch.py:43:1: W293 blank line contains whitespace
+direct_launch.py:47:1: W293 blank line contains whitespace
+direct_launch.py:50:9: F841 local variable 'app' is assigned to but never used
+direct_launch.py:51:1: W293 blank line contains whitespace
+direct_launch.py:57:1: W293 blank line contains whitespace
+direct_launch.py:61:1: W293 blank line contains whitespace
+direct_launch.py:64:1: W293 blank line contains whitespace
+direct_launch.py:67:1: W293 blank line contains whitespace
+direct_launch.py:71:80: E501 line too long (80 > 79 characters)
+direct_launch.py:73:1: W293 blank line contains whitespace
+direct_launch.py:77:1: W293 blank line contains whitespace
+direct_launch.py:83:1: W293 blank line contains whitespace
+direct_launch.py:84:80: E501 line too long (115 > 79 characters)
+direct_launch.py:84:116: W291 trailing whitespace
+direct_launch.py:85:28: E128 continuation line under-indented for visual indent
+direct_launch.py:87:1: W293 blank line contains whitespace
+direct_launch.py:90:1: W293 blank line contains whitespace
+direct_launch.py:95:1: E305 expected 2 blank lines after class or function definition, found 1
+direct_launch.py:96:11: W291 trailing whitespace
+direct_launch.py:96:12: W292 no newline at end of file
+document_converter_gui.py:12:1: F401 'sys' imported but unused
+document_converter_gui.py:14:1: E302 expected 2 blank lines, found 1
+document_converter_gui.py:20:1: W293 blank line contains whitespace
+document_converter_gui.py:26:1: W293 blank line contains whitespace
+document_converter_gui.py:31:1: W293 blank line contains whitespace
+document_converter_gui.py:33:1: W293 blank line contains whitespace
+document_converter_gui.py:39:1: W293 blank line contains whitespace
+document_converter_gui.py:44:1: W293 blank line contains whitespace
+document_converter_gui.py:46:80: E501 line too long (82 > 79 characters)
+document_converter_gui.py:46:83: W291 trailing whitespace
+document_converter_gui.py:47:32: E128 continuation line under-indented for visual indent
+document_converter_gui.py:49:1: W293 blank line contains whitespace
+document_converter_gui.py:51:80: E501 line too long (86 > 79 characters)
+document_converter_gui.py:53:1: W293 blank line contains whitespace
+document_converter_gui.py:55:80: E501 line too long (90 > 79 characters)
+document_converter_gui.py:57:1: W293 blank line contains whitespace
+document_converter_gui.py:58:80: W291 trailing whitespace
+document_converter_gui.py:59:37: E128 continuation line under-indented for visual indent
+document_converter_gui.py:60:80: E501 line too long (80 > 79 characters)
+document_converter_gui.py:61:1: W293 blank line contains whitespace
+document_converter_gui.py:62:47: W291 trailing whitespace
+document_converter_gui.py:63:19: E128 continuation line under-indented for visual indent
+document_converter_gui.py:64:1: W293 blank line contains whitespace
+document_converter_gui.py:66:80: E501 line too long (86 > 79 characters)
+document_converter_gui.py:68:1: W293 blank line contains whitespace
+document_converter_gui.py:70:80: E501 line too long (91 > 79 characters)
+document_converter_gui.py:72:1: W293 blank line contains whitespace
+document_converter_gui.py:73:80: E501 line too long (82 > 79 characters)
+document_converter_gui.py:73:83: W291 trailing whitespace
+document_converter_gui.py:74:38: E128 continuation line under-indented for visual indent
+document_converter_gui.py:75:80: E501 line too long (81 > 79 characters)
+document_converter_gui.py:76:1: W293 blank line contains whitespace
+document_converter_gui.py:77:48: W291 trailing whitespace
+document_converter_gui.py:78:19: E128 continuation line under-indented for visual indent
+document_converter_gui.py:79:1: W293 blank line contains whitespace
+document_converter_gui.py:81:80: E501 line too long (80 > 79 characters)
+document_converter_gui.py:82:80: E501 line too long (92 > 79 characters)
+document_converter_gui.py:83:1: W293 blank line contains whitespace
+document_converter_gui.py:85:73: W291 trailing whitespace
+document_converter_gui.py:86:24: E128 continuation line under-indented for visual indent
+document_converter_gui.py:86:80: E501 line too long (91 > 79 characters)
+document_converter_gui.py:87:1: W293 blank line contains whitespace
+document_converter_gui.py:89:72: W291 trailing whitespace
+document_converter_gui.py:90:24: E128 continuation line under-indented for visual indent
+document_converter_gui.py:90:80: E501 line too long (91 > 79 characters)
+document_converter_gui.py:91:1: W293 blank line contains whitespace
+document_converter_gui.py:93:79: W291 trailing whitespace
+document_converter_gui.py:94:41: E128 continuation line under-indented for visual indent
+document_converter_gui.py:95:41: E128 continuation line under-indented for visual indent
+document_converter_gui.py:97:1: W293 blank line contains whitespace
+document_converter_gui.py:99:80: E501 line too long (81 > 79 characters)
+document_converter_gui.py:101:1: W293 blank line contains whitespace
+document_converter_gui.py:102:80: E501 line too long (83 > 79 characters)
+document_converter_gui.py:102:84: W291 trailing whitespace
+document_converter_gui.py:103:44: E128 continuation line under-indented for visual indent
+document_converter_gui.py:104:80: E501 line too long (96 > 79 characters)
+document_converter_gui.py:105:1: W293 blank line contains whitespace
+document_converter_gui.py:107:80: W291 trailing whitespace
+document_converter_gui.py:108:38: E128 continuation line under-indented for visual indent
+document_converter_gui.py:110:1: W293 blank line contains whitespace
+document_converter_gui.py:112:80: E501 line too long (80 > 79 characters)
+document_converter_gui.py:114:1: W293 blank line contains whitespace
+document_converter_gui.py:117:80: E501 line too long (102 > 79 characters)
+document_converter_gui.py:121:1: W293 blank line contains whitespace
+document_converter_gui.py:122:80: E501 line too long (93 > 79 characters)
+document_converter_gui.py:123:80: E501 line too long (98 > 79 characters)
+document_converter_gui.py:125:1: W293 blank line contains whitespace
+document_converter_gui.py:126:80: E501 line too long (80 > 79 characters)
+document_converter_gui.py:128:1: W293 blank line contains whitespace
+document_converter_gui.py:131:1: W293 blank line contains whitespace
+document_converter_gui.py:135:13: F401 'tkinterdnd2.TkinterDnD' imported but unused
+document_converter_gui.py:139:1: W293 blank line contains whitespace
+document_converter_gui.py:141:80: E501 line too long (96 > 79 characters)
+document_converter_gui.py:142:75: W291 trailing whitespace
+document_converter_gui.py:143:22: E128 continuation line under-indented for visual indent
+document_converter_gui.py:146:80: E501 line too long (80 > 79 characters)
+document_converter_gui.py:147:75: W291 trailing whitespace
+document_converter_gui.py:148:22: E128 continuation line under-indented for visual indent
+document_converter_gui.py:149:1: W293 blank line contains whitespace
+document_converter_gui.py:163:80: E501 line too long (86 > 79 characters)
+document_converter_gui.py:164:1: W293 blank line contains whitespace
+document_converter_gui.py:167:80: E501 line too long (95 > 79 characters)
+document_converter_gui.py:170:1: W293 blank line contains whitespace
+document_converter_gui.py:173:80: E501 line too long (89 > 79 characters)
+document_converter_gui.py:176:1: W293 blank line contains whitespace
+document_converter_gui.py:182:1: W293 blank line contains whitespace
+document_converter_gui.py:186:1: W293 blank line contains whitespace
+document_converter_gui.py:190:1: W293 blank line contains whitespace
+document_converter_gui.py:192:1: W293 blank line contains whitespace
+document_converter_gui.py:197:1: W293 blank line contains whitespace
+document_converter_gui.py:202:1: W293 blank line contains whitespace
+document_converter_gui.py:206:1: W293 blank line contains whitespace
+document_converter_gui.py:213:1: W293 blank line contains whitespace
+document_converter_gui.py:215:1: W293 blank line contains whitespace
+document_converter_gui.py:217:13: F401 'docx.Document' imported but unused
+document_converter_gui.py:218:13: F401 'PyPDF2' imported but unused
+document_converter_gui.py:219:1: W293 blank line contains whitespace
+document_converter_gui.py:222:1: W293 blank line contains whitespace
+document_converter_gui.py:226:1: W293 blank line contains whitespace
+document_converter_gui.py:229:1: W293 blank line contains whitespace
+document_converter_gui.py:231:80: E501 line too long (91 > 79 characters)
+document_converter_gui.py:232:1: W293 blank line contains whitespace
+document_converter_gui.py:234:1: W293 blank line contains whitespace
+document_converter_gui.py:236:80: E501 line too long (96 > 79 characters)
+document_converter_gui.py:240:1: W293 blank line contains whitespace
+document_converter_gui.py:243:1: W293 blank line contains whitespace
+document_converter_gui.py:246:1: W293 blank line contains whitespace
+document_converter_gui.py:249:1: W293 blank line contains whitespace
+document_converter_gui.py:255:80: E501 line too long (83 > 79 characters)
+document_converter_gui.py:258:1: W293 blank line contains whitespace
+document_converter_gui.py:261:1: W293 blank line contains whitespace
+document_converter_gui.py:263:80: E501 line too long (87 > 79 characters)
+document_converter_gui.py:264:80: E501 line too long (83 > 79 characters)
+document_converter_gui.py:266:1: W293 blank line contains whitespace
+document_converter_gui.py:276:1: W293 blank line contains whitespace
+document_converter_gui.py:280:1: W293 blank line contains whitespace
+document_converter_gui.py:283:1: W293 blank line contains whitespace
+document_converter_gui.py:287:1: W293 blank line contains whitespace
+document_converter_gui.py:291:1: W293 blank line contains whitespace
+document_converter_gui.py:293:30: F541 f-string is missing placeholders
+document_converter_gui.py:297:1: W293 blank line contains whitespace
+document_converter_gui.py:299:1: W293 blank line contains whitespace
+document_converter_gui.py:301:55: W291 trailing whitespace
+document_converter_gui.py:302:31: E128 continuation line under-indented for visual indent
+document_converter_gui.py:303:31: E128 continuation line under-indented for visual indent
+document_converter_gui.py:304:31: E128 continuation line under-indented for visual indent
+document_converter_gui.py:305:1: W293 blank line contains whitespace
+document_converter_gui.py:310:1: W293 blank line contains whitespace
+document_converter_gui.py:314:1: W293 blank line contains whitespace
+document_converter_gui.py:318:1: W293 blank line contains whitespace
+document_converter_gui.py:325:1: W293 blank line contains whitespace
+document_converter_gui.py:329:1: W293 blank line contains whitespace
+document_converter_gui.py:332:1: W293 blank line contains whitespace
+document_converter_gui.py:338:80: E501 line too long (118 > 79 characters)
+document_converter_gui.py:343:1: W293 blank line contains whitespace
+document_converter_gui.py:345:1: W293 blank line contains whitespace
+document_converter_gui.py:349:1: W293 blank line contains whitespace
+document_converter_gui.py:353:1: W293 blank line contains whitespace
+document_converter_gui.py:356:1: W293 blank line contains whitespace
+document_converter_gui.py:360:80: E501 line too long (80 > 79 characters)
+document_converter_gui.py:362:1: W293 blank line contains whitespace
+document_converter_gui.py:366:1: W293 blank line contains whitespace
+document_converter_gui.py:374:1: W293 blank line contains whitespace
+document_converter_gui.py:375:80: E501 line too long (98 > 79 characters)
+document_converter_gui.py:376:1: W293 blank line contains whitespace
+document_converter_gui.py:380:1: W293 blank line contains whitespace
+document_converter_gui.py:386:1: W293 blank line contains whitespace
+document_converter_gui.py:389:1: E302 expected 2 blank lines, found 1
+document_converter_gui.py:398:1: W293 blank line contains whitespace
+document_converter_gui.py:399:5: F841 local variable 'app' is assigned to but never used
+document_converter_gui.py:400:1: W293 blank line contains whitespace
+document_converter_gui.py:406:1: W293 blank line contains whitespace
+document_converter_gui.py:409:1: E305 expected 2 blank lines after class or function definition, found 1
+document_converter_gui.py:410:11: W291 trailing whitespace
+document_converter_gui.py:410:12: W292 no newline at end of file
+enhanced_system_tray.py:15:1: F401 'typing.Optional' imported but unused
+enhanced_system_tray.py:32:1: E302 expected 2 blank lines, found 1
+enhanced_system_tray.py:34:1: W293 blank line contains whitespace
+enhanced_system_tray.py:43:1: W293 blank line contains whitespace
+enhanced_system_tray.py:46:1: W293 blank line contains whitespace
+enhanced_system_tray.py:56:1: W293 blank line contains whitespace
+enhanced_system_tray.py:66:1: W293 blank line contains whitespace
+enhanced_system_tray.py:68:1: W293 blank line contains whitespace
+enhanced_system_tray.py:76:1: W293 blank line contains whitespace
+enhanced_system_tray.py:81:1: W293 blank line contains whitespace
+enhanced_system_tray.py:85:1: W293 blank line contains whitespace
+enhanced_system_tray.py:88:80: E501 line too long (102 > 79 characters)
+enhanced_system_tray.py:89:1: W293 blank line contains whitespace
+enhanced_system_tray.py:91:80: E501 line too long (86 > 79 characters)
+enhanced_system_tray.py:92:80: E501 line too long (82 > 79 characters)
+enhanced_system_tray.py:93:1: W293 blank line contains whitespace
+enhanced_system_tray.py:98:1: W293 blank line contains whitespace
+enhanced_system_tray.py:101:1: W293 blank line contains whitespace
+enhanced_system_tray.py:103:1: W293 blank line contains whitespace
+enhanced_system_tray.py:108:1: W293 blank line contains whitespace
+enhanced_system_tray.py:111:1: W293 blank line contains whitespace
+enhanced_system_tray.py:119:80: E501 line too long (104 > 79 characters)
+enhanced_system_tray.py:121:1: W293 blank line contains whitespace
+enhanced_system_tray.py:126:80: E501 line too long (89 > 79 characters)
+enhanced_system_tray.py:128:80: E501 line too long (98 > 79 characters)
+enhanced_system_tray.py:130:80: E501 line too long (80 > 79 characters)
+enhanced_system_tray.py:131:1: W293 blank line contains whitespace
+enhanced_system_tray.py:138:1: W293 blank line contains whitespace
+enhanced_system_tray.py:143:80: E501 line too long (80 > 79 characters)
+enhanced_system_tray.py:153:1: W293 blank line contains whitespace
+enhanced_system_tray.py:156:80: E501 line too long (84 > 79 characters)
+enhanced_system_tray.py:158:1: W293 blank line contains whitespace
+enhanced_system_tray.py:167:1: W293 blank line contains whitespace
+enhanced_system_tray.py:169:70: W291 trailing whitespace
+enhanced_system_tray.py:170:46: E128 continuation line under-indented for visual indent
+enhanced_system_tray.py:170:80: E501 line too long (86 > 79 characters)
+enhanced_system_tray.py:172:80: E501 line too long (94 > 79 characters)
+enhanced_system_tray.py:174:80: E501 line too long (92 > 79 characters)
+enhanced_system_tray.py:175:1: W293 blank line contains whitespace
+enhanced_system_tray.py:177:1: W293 blank line contains whitespace
+enhanced_system_tray.py:179:80: E501 line too long (82 > 79 characters)
+enhanced_system_tray.py:180:1: W293 blank line contains whitespace
+enhanced_system_tray.py:187:1: W293 blank line contains whitespace
+enhanced_system_tray.py:190:1: W293 blank line contains whitespace
+enhanced_system_tray.py:193:80: E501 line too long (93 > 79 characters)
+enhanced_system_tray.py:194:80: E501 line too long (95 > 79 characters)
+enhanced_system_tray.py:196:1: W293 blank line contains whitespace
+enhanced_system_tray.py:200:1: W293 blank line contains whitespace
+enhanced_system_tray.py:202:73: W291 trailing whitespace
+enhanced_system_tray.py:203:32: E128 continuation line under-indented for visual indent
+enhanced_system_tray.py:205:1: W293 blank line contains whitespace
+enhanced_system_tray.py:207:80: E501 line too long (81 > 79 characters)
+enhanced_system_tray.py:208:79: W291 trailing whitespace
+enhanced_system_tray.py:209:40: E128 continuation line under-indented for visual indent
+enhanced_system_tray.py:211:1: W293 blank line contains whitespace
+enhanced_system_tray.py:213:80: E501 line too long (92 > 79 characters)
+enhanced_system_tray.py:214:80: E501 line too long (81 > 79 characters)
+enhanced_system_tray.py:214:82: W291 trailing whitespace
+enhanced_system_tray.py:215:43: E128 continuation line under-indented for visual indent
+enhanced_system_tray.py:217:1: W293 blank line contains whitespace
+enhanced_system_tray.py:219:80: E501 line too long (95 > 79 characters)
+enhanced_system_tray.py:220:80: E501 line too long (83 > 79 characters)
+enhanced_system_tray.py:220:84: W291 trailing whitespace
+enhanced_system_tray.py:221:43: E128 continuation line under-indented for visual indent
+enhanced_system_tray.py:223:1: W293 blank line contains whitespace
+enhanced_system_tray.py:225:80: E501 line too long (92 > 79 characters)
+enhanced_system_tray.py:226:80: E501 line too long (93 > 79 characters)
+enhanced_system_tray.py:228:36: E128 continuation line under-indented for visual indent
+enhanced_system_tray.py:228:80: E501 line too long (85 > 79 characters)
+enhanced_system_tray.py:229:36: E128 continuation line under-indented for visual indent
+enhanced_system_tray.py:231:1: W293 blank line contains whitespace
+enhanced_system_tray.py:235:1: W293 blank line contains whitespace
+enhanced_system_tray.py:242:1: W293 blank line contains whitespace
+enhanced_system_tray.py:245:1: W293 blank line contains whitespace
+enhanced_system_tray.py:248:1: W293 blank line contains whitespace
+enhanced_system_tray.py:251:1: W293 blank line contains whitespace
+enhanced_system_tray.py:252:80: E501 line too long (102 > 79 characters)
+enhanced_system_tray.py:253:80: E501 line too long (93 > 79 characters)
+enhanced_system_tray.py:254:1: W293 blank line contains whitespace
+enhanced_system_tray.py:257:1: W293 blank line contains whitespace
+enhanced_system_tray.py:262:1: W293 blank line contains whitespace
+enhanced_system_tray.py:265:1: W293 blank line contains whitespace
+enhanced_system_tray.py:266:80: E501 line too long (100 > 79 characters)
+enhanced_system_tray.py:270:80: E501 line too long (89 > 79 characters)
+enhanced_system_tray.py:278:1: W293 blank line contains whitespace
+enhanced_system_tray.py:286:1: W293 blank line contains whitespace
+enhanced_system_tray.py:289:80: E501 line too long (87 > 79 characters)
+enhanced_system_tray.py:290:80: E501 line too long (89 > 79 characters)
+enhanced_system_tray.py:292:1: W293 blank line contains whitespace
+enhanced_system_tray.py:296:1: W293 blank line contains whitespace
+enhanced_system_tray.py:312:1: W293 blank line contains whitespace
+enhanced_system_tray.py:315:1: W293 blank line contains whitespace
+enhanced_system_tray.py:317:48: W291 trailing whitespace
+enhanced_system_tray.py:318:19: E128 continuation line under-indented for visual indent
+enhanced_system_tray.py:319:1: W293 blank line contains whitespace
+enhanced_system_tray.py:321:1: W293 blank line contains whitespace
+enhanced_system_tray.py:328:1: W293 blank line contains whitespace
+enhanced_system_tray.py:334:1: W293 blank line contains whitespace
+enhanced_system_tray.py:338:80: E501 line too long (96 > 79 characters)
+enhanced_system_tray.py:340:1: W293 blank line contains whitespace
+enhanced_system_tray.py:343:80: E501 line too long (97 > 79 characters)
+enhanced_system_tray.py:344:1: W293 blank line contains whitespace
+enhanced_system_tray.py:352:1: W293 blank line contains whitespace
+enhanced_system_tray.py:354:1: W293 blank line contains whitespace
+enhanced_system_tray.py:358:49: W291 trailing whitespace
+enhanced_system_tray.py:359:27: E128 continuation line under-indented for visual indent
+enhanced_system_tray.py:359:80: E501 line too long (91 > 79 characters)
+enhanced_system_tray.py:360:27: E128 continuation line under-indented for visual indent
+enhanced_system_tray.py:362:1: W293 blank line contains whitespace
+enhanced_system_tray.py:364:1: W293 blank line contains whitespace
+enhanced_system_tray.py:367:1: W293 blank line contains whitespace
+enhanced_system_tray.py:370:80: E501 line too long (83 > 79 characters)
+enhanced_system_tray.py:371:1: W293 blank line contains whitespace
+enhanced_system_tray.py:378:80: E501 line too long (88 > 79 characters)
+enhanced_system_tray.py:379:1: W293 blank line contains whitespace
+enhanced_system_tray.py:380:80: E501 line too long (83 > 79 characters)
+enhanced_system_tray.py:381:1: W293 blank line contains whitespace
+enhanced_system_tray.py:388:1: E302 expected 2 blank lines, found 1
+enhanced_system_tray.py:395:56: W291 trailing whitespace
+enhanced_system_tray.py:396:42: W291 trailing whitespace
+enhanced_system_tray.py:399:5: E129 visually indented line with same indent as next logical line
+enhanced_system_tray.py:404:1: W293 blank line contains whitespace
+enhanced_system_tray.py:409:1: E305 expected 2 blank lines after class or function definition, found 1
+enhanced_system_tray.py:410:11: W291 trailing whitespace
+enhanced_system_tray.py:410:12: W292 no newline at end of file
+gui_ocr.py:6:1: F401 'logging' imported but unused
+gui_ocr.py:9:1: E302 expected 2 blank lines, found 1
+gui_ocr.py:14:1: W293 blank line contains whitespace
+gui_ocr.py:19:1: W293 blank line contains whitespace
+gui_ocr.py:23:1: W293 blank line contains whitespace
+gui_ocr.py:26:1: W293 blank line contains whitespace
+gui_ocr.py:30:1: W293 blank line contains whitespace
+gui_ocr.py:32:75: W291 trailing whitespace
+gui_ocr.py:33:32: E128 continuation line under-indented for visual indent
+gui_ocr.py:35:1: W293 blank line contains whitespace
+gui_ocr.py:38:36: E128 continuation line under-indented for visual indent
+gui_ocr.py:40:1: W293 blank line contains whitespace
+gui_ocr.py:42:80: E501 line too long (84 > 79 characters)
+gui_ocr.py:43:80: E501 line too long (89 > 79 characters)
+gui_ocr.py:44:1: W293 blank line contains whitespace
+gui_ocr.py:46:80: E501 line too long (96 > 79 characters)
+gui_ocr.py:48:80: E501 line too long (81 > 79 characters)
+gui_ocr.py:50:1: W293 blank line contains whitespace
+gui_ocr.py:52:80: E501 line too long (113 > 79 characters)
+gui_ocr.py:53:80: E501 line too long (115 > 79 characters)
+gui_ocr.py:54:1: W293 blank line contains whitespace
+gui_ocr.py:56:80: E501 line too long (91 > 79 characters)
+gui_ocr.py:57:80: E501 line too long (92 > 79 characters)
+gui_ocr.py:58:1: W293 blank line contains whitespace
+gui_ocr.py:61:74: W291 trailing whitespace
+gui_ocr.py:62:24: E128 continuation line under-indented for visual indent
+gui_ocr.py:62:80: E501 line too long (80 > 79 characters)
+gui_ocr.py:63:1: W293 blank line contains whitespace
+gui_ocr.py:65:80: E501 line too long (90 > 79 characters)
+gui_ocr.py:67:80: E501 line too long (84 > 79 characters)
+gui_ocr.py:67:85: W291 trailing whitespace
+gui_ocr.py:68:38: E128 continuation line under-indented for visual indent
+gui_ocr.py:68:80: E501 line too long (98 > 79 characters)
+gui_ocr.py:70:1: W293 blank line contains whitespace
+gui_ocr.py:72:80: E501 line too long (82 > 79 characters)
+gui_ocr.py:73:80: E501 line too long (93 > 79 characters)
+gui_ocr.py:74:1: W293 blank line contains whitespace
+gui_ocr.py:76:80: E501 line too long (87 > 79 characters)
+gui_ocr.py:78:1: W293 blank line contains whitespace
+gui_ocr.py:82:1: W293 blank line contains whitespace
+gui_ocr.py:84:80: E501 line too long (83 > 79 characters)
+gui_ocr.py:85:80: E501 line too long (100 > 79 characters)
+gui_ocr.py:86:1: W293 blank line contains whitespace
+gui_ocr.py:90:1: W293 blank line contains whitespace
+gui_ocr.py:91:80: E501 line too long (94 > 79 characters)
+gui_ocr.py:94:1: W293 blank line contains whitespace
+gui_ocr.py:98:1: W293 blank line contains whitespace
+gui_ocr.py:99:58: W291 trailing whitespace
+gui_ocr.py:100:19: E128 continuation line under-indented for visual indent
+gui_ocr.py:100:80: E501 line too long (83 > 79 characters)
+gui_ocr.py:101:51: W291 trailing whitespace
+gui_ocr.py:102:19: E128 continuation line under-indented for visual indent
+gui_ocr.py:103:46: W291 trailing whitespace
+gui_ocr.py:104:19: E128 continuation line under-indented for visual indent
+gui_ocr.py:105:1: W293 blank line contains whitespace
+gui_ocr.py:111:1: W293 blank line contains whitespace
+gui_ocr.py:114:1: W293 blank line contains whitespace
+gui_ocr.py:118:80: E501 line too long (80 > 79 characters)
+gui_ocr.py:120:80: E501 line too long (89 > 79 characters)
+gui_ocr.py:120:90: W291 trailing whitespace
+gui_ocr.py:121:34: E128 continuation line under-indented for visual indent
+gui_ocr.py:122:1: W293 blank line contains whitespace
+gui_ocr.py:128:80: E501 line too long (83 > 79 characters)
+gui_ocr.py:134:1: W293 blank line contains whitespace
+gui_ocr.py:140:1: W293 blank line contains whitespace
+gui_ocr.py:146:1: W293 blank line contains whitespace
+gui_ocr.py:150:1: W293 blank line contains whitespace
+gui_ocr.py:155:80: E501 line too long (85 > 79 characters)
+gui_ocr.py:157:1: W293 blank line contains whitespace
+gui_ocr.py:162:1: W293 blank line contains whitespace
+gui_ocr.py:168:1: W293 blank line contains whitespace
+gui_ocr.py:174:80: E501 line too long (109 > 79 characters)
+gui_ocr.py:179:1: W293 blank line contains whitespace
+gui_ocr.py:183:1: W293 blank line contains whitespace
+gui_ocr.py:186:1: W293 blank line contains whitespace
+gui_ocr.py:189:80: E501 line too long (101 > 79 characters)
+gui_ocr.py:190:1: W293 blank line contains whitespace
+gui_ocr.py:193:80: E501 line too long (80 > 79 characters)
+gui_ocr.py:194:1: W293 blank line contains whitespace
+gui_ocr.py:199:80: E501 line too long (122 > 79 characters)
+gui_ocr.py:201:80: E501 line too long (95 > 79 characters)
+gui_ocr.py:202:1: W293 blank line contains whitespace
+gui_ocr.py:205:1: W293 blank line contains whitespace
+gui_ocr.py:209:1: W293 blank line contains whitespace
+gui_ocr.py:211:1: W293 blank line contains whitespace
+gui_ocr.py:215:1: W293 blank line contains whitespace
+gui_ocr.py:220:1: W293 blank line contains whitespace
+gui_ocr.py:224:80: E501 line too long (84 > 79 characters)
+gui_ocr.py:228:1: W293 blank line contains whitespace
+gui_ocr.py:234:1: W293 blank line contains whitespace
+gui_ocr.py:236:1: W293 blank line contains whitespace
+gui_ocr.py:240:80: E501 line too long (93 > 79 characters)
+gui_ocr.py:252:1: W293 blank line contains whitespace
+gui_ocr.py:258:1: W293 blank line contains whitespace
+gui_ocr.py:260:1: W293 blank line contains whitespace
+gui_ocr.py:262:1: W293 blank line contains whitespace
+gui_ocr.py:266:1: W293 blank line contains whitespace
+gui_ocr.py:271:1: E305 expected 2 blank lines after class or function definition, found 1
+gui_ocr.py:273:14: W292 no newline at end of file
+install_converter.py:13:1: E302 expected 2 blank lines, found 1
+install_converter.py:22:1: W293 blank line contains whitespace
+install_converter.py:27:80: E501 line too long (84 > 79 characters)
+install_converter.py:32:1: W293 blank line contains whitespace
+install_converter.py:33:1: E302 expected 2 blank lines, found 1
+install_converter.py:38:1: W293 blank line contains whitespace
+install_converter.py:41:80: E501 line too long (94 > 79 characters)
+install_converter.py:44:1: W293 blank line contains whitespace
+install_converter.py:52:1: W293 blank line contains whitespace
+install_converter.py:54:1: W293 blank line contains whitespace
+install_converter.py:61:1: E302 expected 2 blank lines, found 1
+install_converter.py:64:80: E501 line too long (90 > 79 characters)
+install_converter.py:65:9: F841 local variable 'shortcut_path' is assigned to but never used
+install_converter.py:66:1: W293 blank line contains whitespace
+install_converter.py:70:1: W293 blank line contains whitespace
+install_converter.py:76:1: W293 blank line contains whitespace
+install_converter.py:80:1: W293 blank line contains whitespace
+install_converter.py:82:1: W293 blank line contains whitespace
+install_converter.py:86:1: E302 expected 2 blank lines, found 1
+install_converter.py:90:1: W293 blank line contains whitespace
+install_converter.py:95:1: W293 blank line contains whitespace
+install_converter.py:97:1: W293 blank line contains whitespace
+install_converter.py:100:1: W293 blank line contains whitespace
+install_converter.py:106:1: W293 blank line contains whitespace
+install_converter.py:113:1: W293 blank line contains whitespace
+install_converter.py:121:1: W293 blank line contains whitespace
+install_converter.py:124:1: E305 expected 2 blank lines after class or function definition, found 1
+ocr_engine.py:2:1: F401 'sys' imported but unused
+ocr_engine.py:11:1: E302 expected 2 blank lines, found 1
+ocr_engine.py:16:1: W293 blank line contains whitespace
+ocr_engine.py:20:1: W293 blank line contains whitespace
+ocr_engine.py:28:1: W293 blank line contains whitespace
+ocr_engine.py:35:80: E501 line too long (107 > 79 characters)
+ocr_engine.py:40:1: W293 blank line contains whitespace
+ocr_engine.py:48:1: W293 blank line contains whitespace
+ocr_engine.py:51:68: W291 trailing whitespace
+ocr_engine.py:52:39: E128 continuation line under-indented for visual indent
+ocr_engine.py:60:1: W293 blank line contains whitespace
+ocr_engine.py:61:80: E501 line too long (89 > 79 characters)
+ocr_engine.py:63:1: W293 blank line contains whitespace
+ocr_engine.py:67:1: W293 blank line contains whitespace
+ocr_engine.py:71:1: W293 blank line contains whitespace
+ocr_engine.py:76:1: W293 blank line contains whitespace
+ocr_engine.py:79:75: W291 trailing whitespace
+ocr_engine.py:80:35: E128 continuation line under-indented for visual indent
+ocr_engine.py:84:80: E501 line too long (80 > 79 characters)
+ocr_engine.py:88:1: W293 blank line contains whitespace
+ocr_engine.py:90:1: W293 blank line contains whitespace
+ocr_engine.py:94:1: W293 blank line contains whitespace
+ocr_engine.py:98:1: W293 blank line contains whitespace
+ocr_engine.py:105:1: W293 blank line contains whitespace
+ocr_engine.py:111:1: W293 blank line contains whitespace
+ocr_engine.py:114:1: W293 blank line contains whitespace
+ocr_engine.py:116:80: E501 line too long (90 > 79 characters)
+ocr_engine.py:116:91: W291 trailing whitespace
+ocr_engine.py:118:1: W293 blank line contains whitespace
+ocr_engine.py:120:1: W293 blank line contains whitespace
+ocr_engine.py:127:1: W293 blank line contains whitespace
+ocr_engine.py:133:1: W293 blank line contains whitespace
+ocr_engine.py:136:1: W293 blank line contains whitespace
+ocr_engine.py:140:1: E305 expected 2 blank lines after class or function definition, found 1
+ocr_engine.py:143:1: W293 blank line contains whitespace
+ocr_engine.py:146:1: W293 blank line contains whitespace
+ocr_engine.py:161:80: E501 line too long (87 > 79 characters)
+ocr_engine.py:161:88: W292 no newline at end of file
+ocr_engine_fixed.py:2:1: F401 'sys' imported but unused
+ocr_engine_fixed.py:4:1: F401 'pathlib.Path' imported but unused
+ocr_engine_fixed.py:7:1: F401 'cv2' imported but unused
+ocr_engine_fixed.py:8:1: F401 'numpy as np' imported but unused
+ocr_engine_fixed.py:14:1: E302 expected 2 blank lines, found 1
+ocr_engine_fixed.py:19:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:23:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:31:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:38:80: E501 line too long (107 > 79 characters)
+ocr_engine_fixed.py:43:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:50:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:56:80: E501 line too long (93 > 79 characters)
+ocr_engine_fixed.py:58:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:62:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:66:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:70:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:77:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:81:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:85:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:88:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:91:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:95:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:99:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:104:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:113:1: E305 expected 2 blank lines after class or function definition, found 1
+ocr_engine_fixed.py:116:1: W293 blank line contains whitespace
+ocr_engine_fixed.py:127:61: W292 no newline at end of file
+ocr_gui_integration.py:9:1: F401 'tkinter.filedialog' imported but unused
+ocr_gui_integration.py:10:1: F401 'threading' imported but unused
+ocr_gui_integration.py:11:1: F401 'os' imported but unused
+ocr_gui_integration.py:12:1: F401 'pathlib.Path' imported but unused
+ocr_gui_integration.py:13:1: F401 'sys' imported but unused
+ocr_gui_integration.py:14:1: F401 'typing.Optional' imported but unused
+ocr_gui_integration.py:20:1: E302 expected 2 blank lines, found 1
+ocr_gui_integration.py:22:1: W293 blank line contains whitespace
+ocr_gui_integration.py:28:1: W293 blank line contains whitespace
+ocr_gui_integration.py:32:1: W293 blank line contains whitespace
+ocr_gui_integration.py:36:80: E501 line too long (81 > 79 characters)
+ocr_gui_integration.py:37:80: E501 line too long (88 > 79 characters)
+ocr_gui_integration.py:38:1: W293 blank line contains whitespace
+ocr_gui_integration.py:42:23: W291 trailing whitespace
+ocr_gui_integration.py:48:1: W293 blank line contains whitespace
+ocr_gui_integration.py:51:80: E501 line too long (102 > 79 characters)
+ocr_gui_integration.py:52:1: W293 blank line contains whitespace
+ocr_gui_integration.py:54:80: E501 line too long (111 > 79 characters)
+ocr_gui_integration.py:65:1: W293 blank line contains whitespace
+ocr_gui_integration.py:67:80: E501 line too long (114 > 79 characters)
+ocr_gui_integration.py:78:1: W293 blank line contains whitespace
+ocr_gui_integration.py:80:80: E501 line too long (122 > 79 characters)
+ocr_gui_integration.py:91:1: W293 blank line contains whitespace
+ocr_gui_integration.py:93:80: E501 line too long (121 > 79 characters)
+ocr_gui_integration.py:104:1: W293 blank line contains whitespace
+ocr_gui_integration.py:107:1: W293 blank line contains whitespace
+ocr_gui_integration.py:109:1: W293 blank line contains whitespace
+ocr_gui_integration.py:115:1: W293 blank line contains whitespace
+ocr_gui_integration.py:119:1: W293 blank line contains whitespace
+ocr_gui_integration.py:126:1: W293 blank line contains whitespace
+ocr_gui_integration.py:133:1: W293 blank line contains whitespace
+ocr_gui_integration.py:136:1: W293 blank line contains whitespace
+ocr_gui_integration.py:139:80: E501 line too long (87 > 79 characters)
+ocr_gui_integration.py:140:1: W293 blank line contains whitespace
+ocr_gui_integration.py:147:80: E501 line too long (94 > 79 characters)
+ocr_gui_integration.py:148:1: W293 blank line contains whitespace
+ocr_gui_integration.py:151:80: E501 line too long (80 > 79 characters)
+ocr_gui_integration.py:152:1: W293 blank line contains whitespace
+ocr_gui_integration.py:157:1: W293 blank line contains whitespace
+ocr_gui_integration.py:161:80: E501 line too long (95 > 79 characters)
+ocr_gui_integration.py:162:80: E501 line too long (98 > 79 characters)
+ocr_gui_integration.py:163:80: E501 line too long (114 > 79 characters)
+ocr_gui_integration.py:165:1: W293 blank line contains whitespace
+ocr_gui_integration.py:172:1: W293 blank line contains whitespace
+ocr_gui_integration.py:177:1: W293 blank line contains whitespace
+ocr_gui_integration.py:179:1: W293 blank line contains whitespace
+ocr_gui_integration.py:180:72: W291 trailing whitespace
+ocr_gui_integration.py:181:26: E128 continuation line under-indented for visual indent
+ocr_gui_integration.py:189:80: E501 line too long (112 > 79 characters)
+ocr_gui_integration.py:201:1: W293 blank line contains whitespace
+ocr_gui_integration.py:206:1: E302 expected 2 blank lines, found 1
+ocr_gui_integration.py:208:1: W293 blank line contains whitespace
+ocr_gui_integration.py:212:1: W293 blank line contains whitespace
+ocr_gui_integration.py:218:1: W293 blank line contains whitespace
+ocr_gui_integration.py:221:1: W293 blank line contains whitespace
+ocr_gui_integration.py:226:1: W293 blank line contains whitespace
+ocr_gui_integration.py:228:80: E501 line too long (82 > 79 characters)
+ocr_gui_integration.py:230:1: W293 blank line contains whitespace
+ocr_gui_integration.py:232:1: W293 blank line contains whitespace
+ocr_gui_integration.py:233:80: E501 line too long (109 > 79 characters)
+ocr_gui_integration.py:234:1: W293 blank line contains whitespace
+ocr_gui_integration.py:236:80: E501 line too long (87 > 79 characters)
+ocr_gui_integration.py:238:1: W293 blank line contains whitespace
+ocr_gui_integration.py:239:56: W291 trailing whitespace
+ocr_gui_integration.py:240:19: E128 continuation line under-indented for visual indent
+ocr_gui_integration.py:241:1: W293 blank line contains whitespace
+ocr_gui_integration.py:244:80: E501 line too long (83 > 79 characters)
+ocr_gui_integration.py:246:39: W291 trailing whitespace
+ocr_gui_integration.py:247:26: E128 continuation line under-indented for visual indent
+ocr_gui_integration.py:247:80: E501 line too long (115 > 79 characters)
+ocr_gui_integration.py:249:9: E722 do not use bare 'except'
+ocr_gui_integration.py:251:1: W293 blank line contains whitespace
+ocr_gui_integration.py:255:80: E501 line too long (103 > 79 characters)
+ocr_gui_integration.py:256:80: E501 line too long (105 > 79 characters)
+ocr_gui_integration.py:258:1: W293 blank line contains whitespace
+ocr_gui_integration.py:264:80: E501 line too long (80 > 79 characters)
+ocr_gui_integration.py:268:78: W292 no newline at end of file
+run_app.py:7:1: F401 'os' imported but unused
+run_app.py:12:1: E302 expected 2 blank lines, found 1
+run_app.py:15:1: W293 blank line contains whitespace
+run_app.py:17:9: F401 'tkinter' imported but unused
+run_app.py:20:1: W293 blank line contains whitespace
+run_app.py:24:28: W291 trailing whitespace
+run_app.py:29:1: W293 blank line contains whitespace
+run_app.py:42:1: W293 blank line contains whitespace
+run_app.py:45:1: E302 expected 2 blank lines, found 1
+run_app.py:49:1: W293 blank line contains whitespace
+run_app.py:54:80: E501 line too long (84 > 79 characters)
+run_app.py:60:1: E302 expected 2 blank lines, found 1
+run_app.py:64:1: W293 blank line contains whitespace
+run_app.py:69:80: E501 line too long (97 > 79 characters)
+run_app.py:72:1: W293 blank line contains whitespace
+run_app.py:75:1: W293 blank line contains whitespace
+run_app.py:81:1: W293 blank line contains whitespace
+run_app.py:87:80: E501 line too long (84 > 79 characters)
+run_app.py:89:1: W293 blank line contains whitespace
+run_app.py:106:1: E305 expected 2 blank lines after class or function definition, found 1
+run_converter.py:10:1: F401 'os' imported but unused
+run_converter.py:13:1: E302 expected 2 blank lines, found 1
+run_converter.py:22:1: E302 expected 2 blank lines, found 1
+run_converter.py:25:1: W293 blank line contains whitespace
+run_converter.py:28:18: W291 trailing whitespace
+run_converter.py:33:1: W293 blank line contains whitespace
+run_converter.py:37:80: E501 line too long (84 > 79 characters)
+run_converter.py:37:85: W291 trailing whitespace
+run_converter.py:38:33: E128 continuation line under-indented for visual indent
+run_converter.py:38:80: E501 line too long (85 > 79 characters)
+run_converter.py:41:1: W293 blank line contains whitespace
+run_converter.py:44:1: E302 expected 2 blank lines, found 1
+run_converter.py:49:33: W291 trailing whitespace
+run_converter.py:53:1: W293 blank line contains whitespace
+run_converter.py:60:1: W293 blank line contains whitespace
+run_converter.py:63:1: E302 expected 2 blank lines, found 1
+run_converter.py:68:1: W293 blank line contains whitespace
+run_converter.py:73:1: W293 blank line contains whitespace
+run_converter.py:76:1: W293 blank line contains whitespace
+run_converter.py:79:80: E501 line too long (81 > 79 characters)
+run_converter.py:80:1: W293 blank line contains whitespace
+run_converter.py:85:1: W293 blank line contains whitespace
+run_converter.py:94:80: E501 line too long (88 > 79 characters)
+run_converter.py:100:1: E305 expected 2 blank lines after class or function definition, found 1
+run_converter.py:101:11: W291 trailing whitespace
+run_converter.py:101:12: W292 no newline at end of file
+setup_ocr.py:14:80: E501 line too long (91 > 79 characters)
+setup_ocr.py:17:1: E302 expected 2 blank lines, found 1
+setup_ocr.py:19:1: W293 blank line contains whitespace
+setup_ocr.py:23:1: W293 blank line contains whitespace
+setup_ocr.py:32:9: E722 do not use bare 'except'
+setup_ocr.py:34:1: W293 blank line contains whitespace
+setup_ocr.py:38:1: W293 blank line contains whitespace
+setup_ocr.py:41:80: E501 line too long (88 > 79 characters)
+setup_ocr.py:48:1: W293 blank line contains whitespace
+setup_ocr.py:52:1: W293 blank line contains whitespace
+setup_ocr.py:56:80: E501 line too long (80 > 79 characters)
+setup_ocr.py:58:1: W293 blank line contains whitespace
+setup_ocr.py:63:80: E501 line too long (82 > 79 characters)
+setup_ocr.py:64:1: W293 blank line contains whitespace
+setup_ocr.py:69:1: W293 blank line contains whitespace
+setup_ocr.py:71:80: E501 line too long (82 > 79 characters)
+setup_ocr.py:76:1: W293 blank line contains whitespace
+setup_ocr.py:80:1: W293 blank line contains whitespace
+setup_ocr.py:84:1: W293 blank line contains whitespace
+setup_ocr.py:94:1: W293 blank line contains whitespace
+setup_ocr.py:98:1: W293 blank line contains whitespace
+setup_ocr.py:117:1: W293 blank line contains whitespace
+setup_ocr.py:125:1: W293 blank line contains whitespace
+setup_ocr.py:136:1: W293 blank line contains whitespace
+setup_ocr.py:142:80: E501 line too long (107 > 79 characters)
+setup_ocr.py:153:1: W293 blank line contains whitespace
+setup_ocr.py:155:1: W293 blank line contains whitespace
+setup_ocr.py:167:1: W293 blank line contains whitespace
+setup_ocr.py:170:1: W293 blank line contains whitespace
+setup_ocr.py:174:1: W293 blank line contains whitespace
+setup_ocr.py:179:1: W293 blank line contains whitespace
+setup_ocr.py:182:1: W293 blank line contains whitespace
+setup_ocr.py:188:13: F841 local variable 'tesseract_installed' is assigned to but never used
+setup_ocr.py:189:1: W293 blank line contains whitespace
+setup_ocr.py:194:1: W293 blank line contains whitespace
+setup_ocr.py:204:80: E501 line too long (86 > 79 characters)
+setup_ocr.py:209:1: W293 blank line contains whitespace
+setup_ocr.py:215:1: W293 blank line contains whitespace
+setup_ocr.py:232:1: W293 blank line contains whitespace
+setup_ocr.py:247:1: W293 blank line contains whitespace
+setup_ocr.py:264:1: W293 blank line contains whitespace
+setup_ocr.py:278:1: E305 expected 2 blank lines after class or function definition, found 1
+setup_ocr.py:280:1: W293 blank line contains whitespace
+setup_ocr.py:286:35: W292 no newline at end of file
+setup_ocr_environment.py:4:80: E501 line too long (88 > 79 characters)
+setup_ocr_environment.py:12:1: F401 'pathlib.Path' imported but unused
+setup_ocr_environment.py:15:80: E501 line too long (91 > 79 characters)
+setup_ocr_environment.py:18:1: E302 expected 2 blank lines, found 1
+setup_ocr_environment.py:20:1: W293 blank line contains whitespace
+setup_ocr_environment.py:25:1: W293 blank line contains whitespace
+setup_ocr_environment.py:30:80: E501 line too long (89 > 79 characters)
+setup_ocr_environment.py:31:1: W293 blank line contains whitespace
+setup_ocr_environment.py:38:1: W293 blank line contains whitespace
+setup_ocr_environment.py:42:1: W293 blank line contains whitespace
+setup_ocr_environment.py:59:1: W293 blank line contains whitespace
+setup_ocr_environment.py:65:1: W293 blank line contains whitespace
+setup_ocr_environment.py:66:80: E501 line too long (81 > 79 characters)
+setup_ocr_environment.py:68:1: W293 blank line contains whitespace
+setup_ocr_environment.py:80:1: W293 blank line contains whitespace
+setup_ocr_environment.py:84:1: W293 blank line contains whitespace
+setup_ocr_environment.py:88:80: E501 line too long (81 > 79 characters)
+setup_ocr_environment.py:90:1: W293 blank line contains whitespace
+setup_ocr_environment.py:98:1: W293 blank line contains whitespace
+setup_ocr_environment.py:103:1: W293 blank line contains whitespace
+setup_ocr_environment.py:105:1: W293 blank line contains whitespace
+setup_ocr_environment.py:109:1: W293 blank line contains whitespace
+setup_ocr_environment.py:112:80: E501 line too long (83 > 79 characters)
+setup_ocr_environment.py:114:1: W293 blank line contains whitespace
+setup_ocr_environment.py:120:1: W293 blank line contains whitespace
+setup_ocr_environment.py:125:1: W293 blank line contains whitespace
+setup_ocr_environment.py:127:1: W293 blank line contains whitespace
+setup_ocr_environment.py:131:1: W293 blank line contains whitespace
+setup_ocr_environment.py:134:80: E501 line too long (121 > 79 characters)
+setup_ocr_environment.py:138:1: W293 blank line contains whitespace
+setup_ocr_environment.py:142:1: W293 blank line contains whitespace
+setup_ocr_environment.py:145:1: W293 blank line contains whitespace
+setup_ocr_environment.py:153:1: W293 blank line contains whitespace
+setup_ocr_environment.py:161:1: W293 blank line contains whitespace
+setup_ocr_environment.py:163:1: W293 blank line contains whitespace
+setup_ocr_environment.py:173:1: W293 blank line contains whitespace
+setup_ocr_environment.py:180:1: W293 blank line contains whitespace
+setup_ocr_environment.py:184:1: W293 blank line contains whitespace
+setup_ocr_environment.py:186:1: W293 blank line contains whitespace
+setup_ocr_environment.py:196:1: W293 blank line contains whitespace
+setup_ocr_environment.py:201:1: W293 blank line contains whitespace
+setup_ocr_environment.py:207:1: W293 blank line contains whitespace
+setup_ocr_environment.py:216:1: W293 blank line contains whitespace
+setup_ocr_environment.py:218:13: F821 undefined name 'json'
+setup_ocr_environment.py:219:1: W293 blank line contains whitespace
+setup_ocr_environment.py:221:1: W293 blank line contains whitespace
+setup_ocr_environment.py:227:80: E501 line too long (107 > 79 characters)
+setup_ocr_environment.py:229:1: W293 blank line contains whitespace
+setup_ocr_environment.py:233:1: W293 blank line contains whitespace
+setup_ocr_environment.py:236:80: E501 line too long (95 > 79 characters)
+setup_ocr_environment.py:239:13: E722 do not use bare 'except'
+setup_ocr_environment.py:241:1: W293 blank line contains whitespace
+setup_ocr_environment.py:243:1: W293 blank line contains whitespace
+setup_ocr_environment.py:251:1: W293 blank line contains whitespace
+setup_ocr_environment.py:258:1: W293 blank line contains whitespace
+setup_ocr_environment.py:267:1: W293 blank line contains whitespace
+setup_ocr_environment.py:272:1: W293 blank line contains whitespace
+setup_ocr_environment.py:281:1: E302 expected 2 blank lines, found 1
+setup_ocr_environment.py:286:1: E305 expected 2 blank lines after class or function definition, found 1
+setup_ocr_environment.py:288:34: W292 no newline at end of file
+setup_shortcuts.py:9:1: F401 'shutil' imported but unused
+setup_shortcuts.py:13:1: E302 expected 2 blank lines, found 1
+setup_shortcuts.py:17:18: W291 trailing whitespace
+setup_shortcuts.py:23:1: W293 blank line contains whitespace
+setup_shortcuts.py:25:1: W293 blank line contains whitespace
+setup_shortcuts.py:29:17: F401 'docx' imported but unused
+setup_shortcuts.py:31:17: F401 'PyPDF2' imported but unused
+setup_shortcuts.py:33:17: F401 'bs4.BeautifulSoup' imported but unused
+setup_shortcuts.py:35:17: F401 'striprtf.striprtf.rtf_to_text' imported but unused
+setup_shortcuts.py:37:17: F401 'ebooklib' imported but unused
+setup_shortcuts.py:39:17: F401 'tkinterdnd2' imported but unused
+setup_shortcuts.py:42:1: W293 blank line contains whitespace
+setup_shortcuts.py:48:80: E501 line too long (88 > 79 characters)
+setup_shortcuts.py:54:1: E302 expected 2 blank lines, found 1
+setup_shortcuts.py:61:1: W293 blank line contains whitespace
+setup_shortcuts.py:65:1: W293 blank line contains whitespace
+setup_shortcuts.py:69:1: W293 blank line contains whitespace
+setup_shortcuts.py:71:80: E501 line too long (90 > 79 characters)
+setup_shortcuts.py:73:1: W293 blank line contains whitespace
+setup_shortcuts.py:77:1: W293 blank line contains whitespace
+setup_shortcuts.py:79:1: W293 blank line contains whitespace
+setup_shortcuts.py:84:80: E501 line too long (106 > 79 characters)
+setup_shortcuts.py:87:1: W293 blank line contains whitespace
+setup_shortcuts.py:92:80: E501 line too long (106 > 79 characters)
+setup_shortcuts.py:95:1: W293 blank line contains whitespace
+setup_shortcuts.py:97:1: W293 blank line contains whitespace
+setup_shortcuts.py:101:80: E501 line too long (90 > 79 characters)
+setup_shortcuts.py:107:1: W293 blank line contains whitespace
+setup_shortcuts.py:112:1: E302 expected 2 blank lines, found 1
+setup_shortcuts.py:117:1: W293 blank line contains whitespace
+setup_shortcuts.py:121:1: W293 blank line contains whitespace
+setup_shortcuts.py:133:1: W293 blank line contains whitespace
+setup_shortcuts.py:137:1: W293 blank line contains whitespace
+setup_shortcuts.py:140:1: W293 blank line contains whitespace
+setup_shortcuts.py:144:1: W293 blank line contains whitespace
+setup_shortcuts.py:149:1: W293 blank line contains whitespace
+setup_shortcuts.py:152:1: W293 blank line contains whitespace
+setup_shortcuts.py:155:1: W293 blank line contains whitespace
+setup_shortcuts.py:157:1: W293 blank line contains whitespace
+setup_shortcuts.py:162:1: E302 expected 2 blank lines, found 1
+setup_shortcuts.py:196:80: E501 line too long (80 > 79 characters)
+setup_shortcuts.py:207:80: E501 line too long (84 > 79 characters)
+setup_shortcuts.py:210:80: E501 line too long (82 > 79 characters)
+setup_shortcuts.py:221:80: E501 line too long (94 > 79 characters)
+setup_shortcuts.py:237:80: E501 line too long (83 > 79 characters)
+setup_shortcuts.py:244:15: F541 f-string is missing placeholders
+setup_shortcuts.py:262:1: E305 expected 2 blank lines after class or function definition, found 1
+simple_gui.py:15:5: F401 'universal_document_converter.FormatDetector' imported but unused
+simple_gui.py:20:1: E302 expected 2 blank lines, found 1
+simple_gui.py:25:1: W293 blank line contains whitespace
+simple_gui.py:33:1: W293 blank line contains whitespace
+simple_gui.py:37:1: W293 blank line contains whitespace
+simple_gui.py:40:1: W293 blank line contains whitespace
+simple_gui.py:42:1: W293 blank line contains whitespace
+simple_gui.py:47:1: W293 blank line contains whitespace
+simple_gui.py:51:1: W293 blank line contains whitespace
+simple_gui.py:54:26: E128 continuation line under-indented for visual indent
+simple_gui.py:56:1: W293 blank line contains whitespace
+simple_gui.py:58:80: E501 line too long (91 > 79 characters)
+simple_gui.py:60:1: W293 blank line contains whitespace
+simple_gui.py:62:80: E501 line too long (90 > 79 characters)
+simple_gui.py:64:1: W293 blank line contains whitespace
+simple_gui.py:66:80: E501 line too long (81 > 79 characters)
+simple_gui.py:67:1: W293 blank line contains whitespace
+simple_gui.py:68:53: W291 trailing whitespace
+simple_gui.py:69:19: E128 continuation line under-indented for visual indent
+simple_gui.py:70:54: W291 trailing whitespace
+simple_gui.py:71:19: E128 continuation line under-indented for visual indent
+simple_gui.py:72:1: W293 blank line contains whitespace
+simple_gui.py:74:80: E501 line too long (86 > 79 characters)
+simple_gui.py:76:1: W293 blank line contains whitespace
+simple_gui.py:78:80: E501 line too long (91 > 79 characters)
+simple_gui.py:80:1: W293 blank line contains whitespace
+simple_gui.py:81:80: E501 line too long (82 > 79 characters)
+simple_gui.py:82:80: E501 line too long (82 > 79 characters)
+simple_gui.py:83:1: W293 blank line contains whitespace
+simple_gui.py:84:48: W291 trailing whitespace
+simple_gui.py:85:19: E128 continuation line under-indented for visual indent
+simple_gui.py:86:1: W293 blank line contains whitespace
+simple_gui.py:88:80: E501 line too long (86 > 79 characters)
+simple_gui.py:89:80: E501 line too long (91 > 79 characters)
+simple_gui.py:92:1: W293 blank line contains whitespace
+simple_gui.py:93:80: E501 line too long (93 > 79 characters)
+simple_gui.py:94:1: W293 blank line contains whitespace
+simple_gui.py:96:80: E501 line too long (85 > 79 characters)
+simple_gui.py:97:40: E128 continuation line under-indented for visual indent
+simple_gui.py:98:80: E501 line too long (81 > 79 characters)
+simple_gui.py:99:1: W293 blank line contains whitespace
+simple_gui.py:100:80: E501 line too long (91 > 79 characters)
+simple_gui.py:101:1: W293 blank line contains whitespace
+simple_gui.py:103:80: E501 line too long (87 > 79 characters)
+simple_gui.py:104:41: E128 continuation line under-indented for visual indent
+simple_gui.py:104:80: E501 line too long (80 > 79 characters)
+simple_gui.py:106:1: W293 blank line contains whitespace
+simple_gui.py:109:38: E128 continuation line under-indented for visual indent
+simple_gui.py:111:1: W293 blank line contains whitespace
+simple_gui.py:113:80: E501 line too long (82 > 79 characters)
+simple_gui.py:114:80: E501 line too long (93 > 79 characters)
+simple_gui.py:116:1: W293 blank line contains whitespace
+simple_gui.py:117:80: E501 line too long (100 > 79 characters)
+simple_gui.py:118:80: E501 line too long (81 > 79 characters)
+simple_gui.py:119:1: W293 blank line contains whitespace
+simple_gui.py:120:80: E501 line too long (83 > 79 characters)
+simple_gui.py:122:1: W293 blank line contains whitespace
+simple_gui.py:124:80: E501 line too long (80 > 79 characters)
+simple_gui.py:125:80: E501 line too long (104 > 79 characters)
+simple_gui.py:129:1: W293 blank line contains whitespace
+simple_gui.py:131:80: E501 line too long (101 > 79 characters)
+simple_gui.py:133:1: W293 blank line contains whitespace
+simple_gui.py:134:80: E501 line too long (80 > 79 characters)
+simple_gui.py:136:1: W293 blank line contains whitespace
+simple_gui.py:139:80: E501 line too long (97 > 79 characters)
+simple_gui.py:143:1: W293 blank line contains whitespace
+simple_gui.py:148:80: E501 line too long (82 > 79 characters)
+simple_gui.py:155:1: W293 blank line contains whitespace
+simple_gui.py:161:1: W293 blank line contains whitespace
+simple_gui.py:166:1: W293 blank line contains whitespace
+simple_gui.py:171:1: W293 blank line contains whitespace
+simple_gui.py:175:1: W293 blank line contains whitespace
+simple_gui.py:178:80: E501 line too long (80 > 79 characters)
+simple_gui.py:180:1: W293 blank line contains whitespace
+simple_gui.py:184:1: W293 blank line contains whitespace
+simple_gui.py:188:1: W293 blank line contains whitespace
+simple_gui.py:193:1: W293 blank line contains whitespace
+simple_gui.py:199:1: W293 blank line contains whitespace
+simple_gui.py:204:1: W293 blank line contains whitespace
+simple_gui.py:207:1: W293 blank line contains whitespace
+simple_gui.py:210:1: W293 blank line contains whitespace
+simple_gui.py:222:1: W293 blank line contains whitespace
+simple_gui.py:228:1: W293 blank line contains whitespace
+simple_gui.py:231:1: W293 blank line contains whitespace
+simple_gui.py:243:1: W293 blank line contains whitespace
+simple_gui.py:245:1: W293 blank line contains whitespace
+simple_gui.py:247:80: E501 line too long (94 > 79 characters)
+simple_gui.py:248:1: W293 blank line contains whitespace
+simple_gui.py:250:80: E501 line too long (88 > 79 characters)
+simple_gui.py:255:1: W293 blank line contains whitespace
+simple_gui.py:259:80: E501 line too long (82 > 79 characters)
+simple_gui.py:260:1: W293 blank line contains whitespace
+simple_gui.py:262:30: F541 f-string is missing placeholders
+simple_gui.py:266:1: W293 blank line contains whitespace
+simple_gui.py:267:80: E501 line too long (84 > 79 characters)
+simple_gui.py:268:1: W293 blank line contains whitespace
+simple_gui.py:269:80: E501 line too long (95 > 79 characters)
+simple_gui.py:270:1: W293 blank line contains whitespace
+simple_gui.py:274:1: W293 blank line contains whitespace
+simple_gui.py:278:1: E302 expected 2 blank lines, found 1
+simple_gui.py:280:5: F841 local variable 'app' is assigned to but never used
+simple_gui.py:281:1: W293 blank line contains whitespace
+simple_gui.py:287:1: W293 blank line contains whitespace
+simple_gui.py:290:1: E305 expected 2 blank lines after class or function definition, found 1
+test_converter.py:13:1: F401 'time' imported but unused
+test_converter.py:14:1: F401 'typing.Dict' imported but unused
+test_converter.py:14:1: F401 'typing.List' imported but unused
+test_converter.py:14:1: F401 'typing.Any' imported but unused
+test_converter.py:21:5: F401 'universal_document_converter.DocxReader' imported but unused
+test_converter.py:21:5: F401 'universal_document_converter.PdfReader' imported but unused
+test_converter.py:21:5: F401 'universal_document_converter.RtfReader' imported but unused
+test_converter.py:21:5: F401 'universal_document_converter.TxtWriter' imported but unused
+test_converter.py:21:5: F401 'universal_document_converter.DependencyError' imported but unused
+test_converter.py:25:80: E501 line too long (92 > 79 characters)
+test_converter.py:32:1: E302 expected 2 blank lines, found 1
+test_converter.py:34:1: W293 blank line contains whitespace
+test_converter.py:39:1: W293 blank line contains whitespace
+test_converter.py:51:1: W293 blank line contains whitespace
+test_converter.py:56:1: W293 blank line contains whitespace
+test_converter.py:61:1: W293 blank line contains whitespace
+test_converter.py:65:1: W293 blank line contains whitespace
+test_converter.py:69:1: E302 expected 2 blank lines, found 1
+test_converter.py:71:1: W293 blank line contains whitespace
+test_converter.py:76:1: W293 blank line contains whitespace
+test_converter.py:79:1: W293 blank line contains whitespace
+test_converter.py:85:1: W293 blank line contains whitespace
+test_converter.py:91:1: W293 blank line contains whitespace
+test_converter.py:92:80: E501 line too long (101 > 79 characters)
+test_converter.py:97:1: W293 blank line contains whitespace
+test_converter.py:104:1: W293 blank line contains whitespace
+test_converter.py:106:80: E501 line too long (82 > 79 characters)
+test_converter.py:107:1: W293 blank line contains whitespace
+test_converter.py:112:1: W293 blank line contains whitespace
+test_converter.py:115:1: W293 blank line contains whitespace
+test_converter.py:122:1: W293 blank line contains whitespace
+test_converter.py:125:1: W293 blank line contains whitespace
+test_converter.py:131:1: W293 blank line contains whitespace
+test_converter.py:134:1: W293 blank line contains whitespace
+test_converter.py:139:13: F401 'bs4.BeautifulSoup' imported but unused
+test_converter.py:140:1: W293 blank line contains whitespace
+test_converter.py:144:1: W293 blank line contains whitespace
+test_converter.py:146:80: E501 line too long (83 > 79 characters)
+test_converter.py:147:1: W293 blank line contains whitespace
+test_converter.py:152:1: W293 blank line contains whitespace
+test_converter.py:157:1: W293 blank line contains whitespace
+test_converter.py:164:1: W293 blank line contains whitespace
+test_converter.py:166:80: E501 line too long (83 > 79 characters)
+test_converter.py:167:1: W293 blank line contains whitespace
+test_converter.py:170:1: W293 blank line contains whitespace
+test_converter.py:173:1: W293 blank line contains whitespace
+test_converter.py:181:80: E501 line too long (83 > 79 characters)
+test_converter.py:183:1: E302 expected 2 blank lines, found 1
+test_converter.py:215:80: E501 line too long (84 > 79 characters)
+test_converter.py:237:80: E501 line too long (81 > 79 characters)
+test_converter.py:246:80: E501 line too long (100 > 79 characters)
+test_converter.py:252:80: E501 line too long (83 > 79 characters)
+test_converter.py:265:80: E501 line too long (89 > 79 characters)
+test_converter.py:276:80: E501 line too long (85 > 79 characters)
+test_converter.py:293:1: E302 expected 2 blank lines, found 1
+test_converter.py:323:80: E501 line too long (88 > 79 characters)
+test_converter.py:324:80: E501 line too long (90 > 79 characters)
+test_converter.py:329:80: E501 line too long (91 > 79 characters)
+test_converter.py:366:80: E501 line too long (80 > 79 characters)
+test_converter.py:396:1: E302 expected 2 blank lines, found 1
+test_converter.py:398:1: W293 blank line contains whitespace
+test_converter.py:403:1: W293 blank line contains whitespace
+test_converter.py:406:9: F811 redefinition of unused 'time' from line 13
+test_converter.py:407:1: W293 blank line contains whitespace
+test_converter.py:410:1: W293 blank line contains whitespace
+test_converter.py:415:1: W293 blank line contains whitespace
+test_converter.py:418:1: W293 blank line contains whitespace
+test_converter.py:423:1: W293 blank line contains whitespace
+test_converter.py:426:80: E501 line too long (90 > 79 characters)
+test_converter.py:430:80: E501 line too long (91 > 79 characters)
+test_converter.py:432:1: E302 expected 2 blank lines, found 1
+test_converter.py:455:80: E501 line too long (93 > 79 characters)
+test_converter.py:464:80: E501 line too long (88 > 79 characters)
+test_converter.py:477:80: E501 line too long (84 > 79 characters)
+test_converter.py:498:80: E501 line too long (82 > 79 characters)
+test_converter.py:512:80: E501 line too long (89 > 79 characters)
+test_converter.py:515:1: E302 expected 2 blank lines, found 1
+test_converter.py:542:80: E501 line too long (108 > 79 characters)
+test_converter.py:559:80: E501 line too long (83 > 79 characters)
+test_converter.py:609:80: E501 line too long (89 > 79 characters)
+test_converter.py:619:1: E302 expected 2 blank lines, found 1
+test_converter.py:651:13: F811 redefinition of unused 'DependencyError' from line 21
+test_converter.py:657:80: E501 line too long (87 > 79 characters)
+test_converter.py:658:80: E501 line too long (84 > 79 characters)
+test_converter.py:659:80: E501 line too long (80 > 79 characters)
+test_converter.py:684:80: E501 line too long (88 > 79 characters)
+test_converter.py:702:80: E501 line too long (84 > 79 characters)
+test_converter.py:707:80: E501 line too long (82 > 79 characters)
+test_converter.py:718:80: E501 line too long (82 > 79 characters)
+test_converter.py:768:80: E501 line too long (84 > 79 characters)
+test_converter.py:775:1: E302 expected 2 blank lines, found 1
+test_converter.py:796:80: E501 line too long (82 > 79 characters)
+test_converter.py:817:80: E501 line too long (82 > 79 characters)
+test_converter.py:825:80: E501 line too long (81 > 79 characters)
+test_converter.py:826:80: E501 line too long (82 > 79 characters)
+test_converter.py:842:80: E501 line too long (85 > 79 characters)
+test_converter.py:844:80: E501 line too long (82 > 79 characters)
+test_converter.py:863:80: E501 line too long (82 > 79 characters)
+test_converter.py:882:80: E501 line too long (82 > 79 characters)
+test_converter.py:901:80: E501 line too long (82 > 79 characters)
+test_converter.py:922:80: E501 line too long (82 > 79 characters)
+test_converter.py:938:1: E302 expected 2 blank lines, found 1
+test_converter.py:942:1: W293 blank line contains whitespace
+test_converter.py:950:1: W293 blank line contains whitespace
+test_converter.py:953:1: W293 blank line contains whitespace
+test_converter.py:962:1: W293 blank line contains whitespace
+test_converter.py:963:80: E501 line too long (86 > 79 characters)
+test_converter.py:964:1: W293 blank line contains whitespace
+test_converter.py:966:15: F541 f-string is missing placeholders
+test_converter.py:973:1: E302 expected 2 blank lines, found 1
+test_converter.py:978:1: W293 blank line contains whitespace
+test_converter.py:981:1: W293 blank line contains whitespace
+test_converter.py:984:1: W293 blank line contains whitespace
+test_converter.py:988:1: W293 blank line contains whitespace
+test_converter.py:994:1: W293 blank line contains whitespace
+test_converter.py:995:80: E501 line too long (90 > 79 characters)
+test_converter.py:996:80: E501 line too long (112 > 79 characters)
+test_converter.py:997:1: W293 blank line contains whitespace
+test_converter.py:999:1: W293 blank line contains whitespace
+test_converter.py:1004:80: E501 line too long (94 > 79 characters)
+test_converter.py:1005:80: E501 line too long (101 > 79 characters)
+test_converter.py:1006:1: W293 blank line contains whitespace
+test_converter.py:1011:1: W293 blank line contains whitespace
+test_converter.py:1012:17: F841 local variable 'e' is assigned to but never used
+test_converter.py:1014:1: W293 blank line contains whitespace
+test_converter.py:1018:1: W293 blank line contains whitespace
+test_converter.py:1033:1: E302 expected 2 blank lines, found 1
+test_converter.py:1049:80: E501 line too long (82 > 79 characters)
+test_converter.py:1078:80: E501 line too long (82 > 79 characters)
+test_converter.py:1103:80: E501 line too long (82 > 79 characters)
+test_converter.py:1115:80: E501 line too long (95 > 79 characters)
+test_converter.py:1124:80: E501 line too long (82 > 79 characters)
+test_converter.py:1135:21: E128 continuation line under-indented for visual indent
+test_converter.py:1135:80: E501 line too long (97 > 79 characters)
+test_converter.py:1138:80: E501 line too long (80 > 79 characters)
+test_converter.py:1145:25: E128 continuation line under-indented for visual indent
+test_converter.py:1148:25: E128 continuation line under-indented for visual indent
+test_converter.py:1151:80: E501 line too long (87 > 79 characters)
+test_converter.py:1156:80: E501 line too long (82 > 79 characters)
+test_converter.py:1178:1: E302 expected 2 blank lines, found 1
+test_converter.py:1183:1: W293 blank line contains whitespace
+test_converter.py:1186:1: W293 blank line contains whitespace
+test_converter.py:1189:1: W293 blank line contains whitespace
+test_converter.py:1194:1: W293 blank line contains whitespace
+test_converter.py:1198:1: W293 blank line contains whitespace
+test_converter.py:1207:80: E501 line too long (80 > 79 characters)
+test_converter.py:1213:1: W293 blank line contains whitespace
+test_converter.py:1215:15: F541 f-string is missing placeholders
+test_converter.py:1219:80: E501 line too long (159 > 79 characters)
+test_converter.py:1220:1: W293 blank line contains whitespace
+test_converter.py:1225:1: W293 blank line contains whitespace
+test_converter.py:1231:1: E305 expected 2 blank lines after class or function definition, found 1
+test_converter.py:1233:34: W291 trailing whitespace
+test_converter.py:1233:35: W292 no newline at end of file
+test_cross_platform.py:11:1: F401 'os' imported but unused
+test_cross_platform.py:17:1: F401 'unittest.mock.Mock' imported but unused
+test_cross_platform.py:17:1: F401 'unittest.mock.MagicMock' imported but unused
+test_cross_platform.py:26:1: W293 blank line contains whitespace
+test_cross_platform.py:31:1: W293 blank line contains whitespace
+test_cross_platform.py:36:1: W293 blank line contains whitespace
+test_cross_platform.py:41:1: W293 blank line contains whitespace
+test_cross_platform.py:46:1: W293 blank line contains whitespace
+test_cross_platform.py:51:1: W293 blank line contains whitespace
+test_cross_platform.py:54:1: W293 blank line contains whitespace
+test_cross_platform.py:57:1: W293 blank line contains whitespace
+test_cross_platform.py:60:1: W293 blank line contains whitespace
+test_cross_platform.py:64:1: W293 blank line contains whitespace
+test_cross_platform.py:77:1: W293 blank line contains whitespace
+test_cross_platform.py:83:80: E501 line too long (86 > 79 characters)
+test_cross_platform.py:85:1: W293 blank line contains whitespace
+test_cross_platform.py:93:1: W293 blank line contains whitespace
+test_cross_platform.py:99:80: E501 line too long (99 > 79 characters)
+test_cross_platform.py:101:1: W293 blank line contains whitespace
+test_cross_platform.py:107:80: E501 line too long (83 > 79 characters)
+test_cross_platform.py:109:1: W293 blank line contains whitespace
+test_cross_platform.py:117:1: W293 blank line contains whitespace
+test_cross_platform.py:123:80: E501 line too long (84 > 79 characters)
+test_cross_platform.py:129:1: W293 blank line contains whitespace
+test_cross_platform.py:133:1: W293 blank line contains whitespace
+test_cross_platform.py:136:1: W293 blank line contains whitespace
+test_cross_platform.py:138:80: E501 line too long (84 > 79 characters)
+test_cross_platform.py:141:1: W293 blank line contains whitespace
+test_cross_platform.py:146:1: W293 blank line contains whitespace
+test_cross_platform.py:151:1: W293 blank line contains whitespace
+test_cross_platform.py:154:1: W293 blank line contains whitespace
+test_cross_platform.py:161:1: W293 blank line contains whitespace
+test_cross_platform.py:165:80: E501 line too long (81 > 79 characters)
+test_cross_platform.py:166:1: W293 blank line contains whitespace
+test_cross_platform.py:188:1: W293 blank line contains whitespace
+test_cross_platform.py:192:80: E501 line too long (81 > 79 characters)
+test_cross_platform.py:215:1: W293 blank line contains whitespace
+test_cross_platform.py:219:1: W293 blank line contains whitespace
+test_cross_platform.py:226:1: W293 blank line contains whitespace
+test_cross_platform.py:230:1: W293 blank line contains whitespace
+test_cross_platform.py:235:1: W293 blank line contains whitespace
+test_cross_platform.py:245:1: W293 blank line contains whitespace
+test_cross_platform.py:258:1: W293 blank line contains whitespace
+test_cross_platform.py:262:1: W293 blank line contains whitespace
+test_cross_platform.py:268:1: W293 blank line contains whitespace
+test_gui.py:9:1: E302 expected 2 blank lines, found 1
+test_gui.py:13:1: E305 expected 2 blank lines after class or function definition, found 1
+test_gui.py:18:80: E501 line too long (80 > 79 characters)
+test_gui.py:22:80: E501 line too long (85 > 79 characters)
+test_gui.py:26:80: E501 line too long (80 > 79 characters)
+test_ocr_integration.py:11:1: F401 'pathlib.Path' imported but unused
+test_ocr_integration.py:19:1: E402 module level import not at top of file
+test_ocr_integration.py:20:1: E402 module level import not at top of file
+test_ocr_integration.py:21:1: E402 module level import not at top of file
+test_ocr_integration.py:22:1: E402 module level import not at top of file
+test_ocr_integration.py:24:1: E302 expected 2 blank lines, found 1
+test_ocr_integration.py:26:1: W293 blank line contains whitespace
+test_ocr_integration.py:31:1: W293 blank line contains whitespace
+test_ocr_integration.py:36:1: W293 blank line contains whitespace
+test_ocr_integration.py:41:1: W293 blank line contains whitespace
+test_ocr_integration.py:46:1: W293 blank line contains whitespace
+test_ocr_integration.py:50:1: W293 blank line contains whitespace
+test_ocr_integration.py:54:1: W293 blank line contains whitespace
+test_ocr_integration.py:61:1: W293 blank line contains whitespace
+test_ocr_integration.py:65:1: E302 expected 2 blank lines, found 1
+test_ocr_integration.py:67:1: W293 blank line contains whitespace
+test_ocr_integration.py:72:1: W293 blank line contains whitespace
+test_ocr_integration.py:77:1: W293 blank line contains whitespace
+test_ocr_integration.py:82:1: W293 blank line contains whitespace
+test_ocr_integration.py:85:80: E501 line too long (94 > 79 characters)
+test_ocr_integration.py:86:1: W293 blank line contains whitespace
+test_ocr_integration.py:96:1: W293 blank line contains whitespace
+test_ocr_integration.py:101:1: E302 expected 2 blank lines, found 1
+test_ocr_integration.py:103:1: W293 blank line contains whitespace
+test_ocr_integration.py:108:1: W293 blank line contains whitespace
+test_ocr_integration.py:113:1: W293 blank line contains whitespace
+test_ocr_integration.py:117:1: W293 blank line contains whitespace
+test_ocr_integration.py:122:1: W293 blank line contains whitespace
+test_ocr_integration.py:124:1: W293 blank line contains whitespace
+test_ocr_integration.py:128:1: W293 blank line contains whitespace
+test_ocr_integration.py:133:1: W293 blank line contains whitespace
+test_ocr_integration.py:135:1: W293 blank line contains whitespace
+test_ocr_integration.py:141:1: E302 expected 2 blank lines, found 1
+test_ocr_integration.py:143:1: W293 blank line contains whitespace
+test_ocr_integration.py:148:1: W293 blank line contains whitespace
+test_ocr_integration.py:153:1: W293 blank line contains whitespace
+test_ocr_integration.py:160:1: W293 blank line contains whitespace
+test_ocr_integration.py:164:1: W293 blank line contains whitespace
+test_ocr_integration.py:172:1: W293 blank line contains whitespace
+test_ocr_integration.py:177:1: E302 expected 2 blank lines, found 1
+test_ocr_integration.py:179:1: W293 blank line contains whitespace
+test_ocr_integration.py:189:1: W293 blank line contains whitespace
+test_ocr_integration.py:192:1: W293 blank line contains whitespace
+test_ocr_integration.py:194:1: W293 blank line contains whitespace
+test_ocr_integration.py:198:1: W293 blank line contains whitespace
+test_ocr_integration.py:202:1: E302 expected 2 blank lines, found 1
+test_ocr_integration.py:204:1: W293 blank line contains whitespace
+test_ocr_integration.py:209:1: W293 blank line contains whitespace
+test_ocr_integration.py:214:1: W293 blank line contains whitespace
+test_ocr_integration.py:224:1: W293 blank line contains whitespace
+test_ocr_integration.py:228:1: W293 blank line contains whitespace
+test_ocr_integration.py:232:1: E302 expected 2 blank lines, found 1
+test_ocr_integration.py:234:1: W293 blank line contains whitespace
+test_ocr_integration.py:238:1: W293 blank line contains whitespace
+test_ocr_integration.py:245:1: W293 blank line contains whitespace
+test_ocr_integration.py:251:1: W293 blank line contains whitespace
+test_ocr_integration.py:256:1: W293 blank line contains whitespace
+test_ocr_integration.py:263:1: E302 expected 2 blank lines, found 1
+test_ocr_integration.py:266:1: W293 blank line contains whitespace
+test_ocr_integration.py:275:1: W293 blank line contains whitespace
+test_ocr_integration.py:278:1: E302 expected 2 blank lines, found 1
+test_ocr_integration.py:283:1: W293 blank line contains whitespace
+test_ocr_integration.py:286:1: W293 blank line contains whitespace
+test_ocr_integration.py:290:1: W293 blank line contains whitespace
+test_ocr_integration.py:298:1: W293 blank line contains whitespace
+test_ocr_integration.py:303:1: W293 blank line contains whitespace
+test_ocr_integration.py:308:1: W293 blank line contains whitespace
+test_ocr_integration.py:311:1: E305 expected 2 blank lines after class or function definition, found 1
+test_ocr_integration.py:313:34: W292 no newline at end of file
+universal_document_converter.py:14:1: F401 'mimetypes' imported but unused
+universal_document_converter.py:15:1: F401 're' imported but unused
+universal_document_converter.py:34:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:38:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:42:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:46:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:50:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:55:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:58:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:88:80: E501 line too long (94 > 79 characters)
+universal_document_converter.py:105:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:111:80: E501 line too long (93 > 79 characters)
+universal_document_converter.py:148:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:178:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:269:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:274:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:311:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:333:80: E501 line too long (107 > 79 characters)
+universal_document_converter.py:336:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:338:1: W293 blank line contains whitespace
+universal_document_converter.py:340:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:341:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:342:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:343:80: E501 line too long (99 > 79 characters)
+universal_document_converter.py:344:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:345:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:347:1: W293 blank line contains whitespace
+universal_document_converter.py:349:80: E501 line too long (89 > 79 characters)
+universal_document_converter.py:350:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:351:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:352:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:353:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:355:1: W293 blank line contains whitespace
+universal_document_converter.py:364:1: W293 blank line contains whitespace
+universal_document_converter.py:370:80: E501 line too long (86 > 79 characters)
+universal_document_converter.py:372:1: W293 blank line contains whitespace
+universal_document_converter.py:381:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:383:1: W293 blank line contains whitespace
+universal_document_converter.py:388:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:390:1: W293 blank line contains whitespace
+universal_document_converter.py:395:1: W293 blank line contains whitespace
+universal_document_converter.py:401:80: E501 line too long (118 > 79 characters)
+universal_document_converter.py:405:1: W293 blank line contains whitespace
+universal_document_converter.py:408:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:410:1: W293 blank line contains whitespace
+universal_document_converter.py:413:1: W293 blank line contains whitespace
+universal_document_converter.py:417:1: W293 blank line contains whitespace
+universal_document_converter.py:422:1: W293 blank line contains whitespace
+universal_document_converter.py:425:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:434:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:437:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:458:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:474:80: E501 line too long (96 > 79 characters)
+universal_document_converter.py:495:80: E501 line too long (100 > 79 characters)
+universal_document_converter.py:509:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:511:1: W293 blank line contains whitespace
+universal_document_converter.py:514:1: W293 blank line contains whitespace
+universal_document_converter.py:517:1: W293 blank line contains whitespace
+universal_document_converter.py:519:1: W293 blank line contains whitespace
+universal_document_converter.py:521:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:529:1: W293 blank line contains whitespace
+universal_document_converter.py:532:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:534:1: W293 blank line contains whitespace
+universal_document_converter.py:537:1: W293 blank line contains whitespace
+universal_document_converter.py:540:1: W293 blank line contains whitespace
+universal_document_converter.py:554:80: E501 line too long (110 > 79 characters)
+universal_document_converter.py:576:80: E501 line too long (93 > 79 characters)
+universal_document_converter.py:589:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:602:80: E501 line too long (110 > 79 characters)
+universal_document_converter.py:606:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:610:80: E501 line too long (102 > 79 characters)
+universal_document_converter.py:623:9: F811 redefinition of unused 're' from line 15
+universal_document_converter.py:632:80: E501 line too long (106 > 79 characters)
+universal_document_converter.py:645:1: W293 blank line contains whitespace
+universal_document_converter.py:650:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:652:1: W293 blank line contains whitespace
+universal_document_converter.py:655:1: W293 blank line contains whitespace
+universal_document_converter.py:670:1: W293 blank line contains whitespace
+universal_document_converter.py:674:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:676:1: W293 blank line contains whitespace
+universal_document_converter.py:679:1: W293 blank line contains whitespace
+universal_document_converter.py:695:1: W293 blank line contains whitespace
+universal_document_converter.py:699:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:701:1: W293 blank line contains whitespace
+universal_document_converter.py:708:80: E501 line too long (89 > 79 characters)
+universal_document_converter.py:711:80: E501 line too long (112 > 79 characters)
+universal_document_converter.py:718:1: W293 blank line contains whitespace
+universal_document_converter.py:722:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:729:1: W293 blank line contains whitespace
+universal_document_converter.py:731:1: W293 blank line contains whitespace
+universal_document_converter.py:734:1: W293 blank line contains whitespace
+universal_document_converter.py:738:20: E127 continuation line over-indented for visual indent
+universal_document_converter.py:743:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:745:1: W293 blank line contains whitespace
+universal_document_converter.py:753:1: W293 blank line contains whitespace
+universal_document_converter.py:757:80: E501 line too long (89 > 79 characters)
+universal_document_converter.py:758:80: E501 line too long (90 > 79 characters)
+universal_document_converter.py:765:1: W293 blank line contains whitespace
+universal_document_converter.py:767:1: W293 blank line contains whitespace
+universal_document_converter.py:770:1: W293 blank line contains whitespace
+universal_document_converter.py:773:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:781:13: F401 'ebooklib' imported but unused
+universal_document_converter.py:784:80: E501 line too long (110 > 79 characters)
+universal_document_converter.py:802:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:823:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:839:80: E501 line too long (104 > 79 characters)
+universal_document_converter.py:854:80: E501 line too long (104 > 79 characters)
+universal_document_converter.py:869:80: E501 line too long (94 > 79 characters)
+universal_document_converter.py:870:80: E501 line too long (94 > 79 characters)
+universal_document_converter.py:884:80: E501 line too long (90 > 79 characters)
+universal_document_converter.py:888:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:951:20: E127 continuation line over-indented for visual indent
+universal_document_converter.py:958:80: E501 line too long (93 > 79 characters)
+universal_document_converter.py:960:80: E501 line too long (102 > 79 characters)
+universal_document_converter.py:967:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:996:80: E501 line too long (101 > 79 characters)
+universal_document_converter.py:998:40: E128 continuation line under-indented for visual indent
+universal_document_converter.py:998:80: E501 line too long (112 > 79 characters)
+universal_document_converter.py:1030:80: E501 line too long (103 > 79 characters)
+universal_document_converter.py:1042:80: E501 line too long (93 > 79 characters)
+universal_document_converter.py:1049:80: E501 line too long (92 > 79 characters)
+universal_document_converter.py:1065:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:1066:21: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1066:80: E501 line too long (89 > 79 characters)
+universal_document_converter.py:1072:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:1076:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:1082:80: E501 line too long (90 > 79 characters)
+universal_document_converter.py:1087:80: E501 line too long (95 > 79 characters)
+universal_document_converter.py:1091:80: E501 line too long (96 > 79 characters)
+universal_document_converter.py:1096:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:1097:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:1104:80: E501 line too long (93 > 79 characters)
+universal_document_converter.py:1115:80: E501 line too long (89 > 79 characters)
+universal_document_converter.py:1116:80: E501 line too long (104 > 79 characters)
+universal_document_converter.py:1123:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:1133:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:1152:80: E501 line too long (97 > 79 characters)
+universal_document_converter.py:1154:80: E501 line too long (97 > 79 characters)
+universal_document_converter.py:1164:80: E501 line too long (90 > 79 characters)
+universal_document_converter.py:1165:22: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1166:22: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1167:22: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1167:80: E501 line too long (96 > 79 characters)
+universal_document_converter.py:1186:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:1188:80: E501 line too long (107 > 79 characters)
+universal_document_converter.py:1208:80: E501 line too long (100 > 79 characters)
+universal_document_converter.py:1209:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:1211:80: E501 line too long (100 > 79 characters)
+universal_document_converter.py:1212:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:1216:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:1219:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:1221:80: E501 line too long (117 > 79 characters)
+universal_document_converter.py:1224:80: E501 line too long (99 > 79 characters)
+universal_document_converter.py:1227:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:1230:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:1248:80: E501 line too long (94 > 79 characters)
+universal_document_converter.py:1254:80: E501 line too long (92 > 79 characters)
+universal_document_converter.py:1255:25: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1255:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:1256:25: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1292:80: E501 line too long (103 > 79 characters)
+universal_document_converter.py:1293:80: E501 line too long (105 > 79 characters)
+universal_document_converter.py:1340:80: E501 line too long (90 > 79 characters)
+universal_document_converter.py:1355:19: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1355:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:1358:19: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1361:19: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1361:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:1364:19: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1372:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:1376:80: E501 line too long (103 > 79 characters)
+universal_document_converter.py:1377:80: E501 line too long (107 > 79 characters)
+universal_document_converter.py:1379:21: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1379:80: E501 line too long (110 > 79 characters)
+universal_document_converter.py:1381:80: E501 line too long (104 > 79 characters)
+universal_document_converter.py:1382:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:1384:21: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1384:80: E501 line too long (111 > 79 characters)
+universal_document_converter.py:1387:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:1388:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:1395:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:1398:19: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1401:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:1405:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1405:80: E501 line too long (106 > 79 characters)
+universal_document_converter.py:1407:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1407:80: E501 line too long (105 > 79 characters)
+universal_document_converter.py:1408:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:1409:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1409:80: E501 line too long (104 > 79 characters)
+universal_document_converter.py:1421:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1421:80: E501 line too long (95 > 79 characters)
+universal_document_converter.py:1424:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:1425:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:1428:80: E501 line too long (111 > 79 characters)
+universal_document_converter.py:1429:80: E501 line too long (90 > 79 characters)
+universal_document_converter.py:1430:20: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1431:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:1435:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:1440:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1440:80: E501 line too long (119 > 79 characters)
+universal_document_converter.py:1442:80: E501 line too long (111 > 79 characters)
+universal_document_converter.py:1443:80: E501 line too long (106 > 79 characters)
+universal_document_converter.py:1444:20: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1452:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:1456:80: E501 line too long (103 > 79 characters)
+universal_document_converter.py:1457:80: E501 line too long (99 > 79 characters)
+universal_document_converter.py:1458:20: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1460:80: E501 line too long (104 > 79 characters)
+universal_document_converter.py:1461:80: E501 line too long (100 > 79 characters)
+universal_document_converter.py:1462:20: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1465:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1465:80: E501 line too long (119 > 79 characters)
+universal_document_converter.py:1468:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:1469:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:1472:80: E501 line too long (99 > 79 characters)
+universal_document_converter.py:1474:21: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1474:80: E501 line too long (116 > 79 characters)
+universal_document_converter.py:1476:80: E501 line too long (103 > 79 characters)
+universal_document_converter.py:1477:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:1478:20: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1485:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1485:80: E501 line too long (102 > 79 characters)
+universal_document_converter.py:1497:80: E501 line too long (98 > 79 characters)
+universal_document_converter.py:1499:21: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1499:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:1500:21: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1503:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:1508:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1508:80: E501 line too long (114 > 79 characters)
+universal_document_converter.py:1510:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1510:80: E501 line too long (110 > 79 characters)
+universal_document_converter.py:1512:80: E501 line too long (110 > 79 characters)
+universal_document_converter.py:1513:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:1514:20: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1518:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:1526:80: E501 line too long (89 > 79 characters)
+universal_document_converter.py:1527:80: E501 line too long (95 > 79 characters)
+universal_document_converter.py:1528:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:1529:60: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1529:80: E501 line too long (113 > 79 characters)
+universal_document_converter.py:1530:80: E501 line too long (97 > 79 characters)
+universal_document_converter.py:1531:80: E501 line too long (96 > 79 characters)
+universal_document_converter.py:1532:80: E501 line too long (94 > 79 characters)
+universal_document_converter.py:1537:80: E501 line too long (116 > 79 characters)
+universal_document_converter.py:1538:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:1539:80: E501 line too long (99 > 79 characters)
+universal_document_converter.py:1547:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:1548:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:1553:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:1554:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:1564:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:1565:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:1566:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:1610:36: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1610:80: E501 line too long (94 > 79 characters)
+universal_document_converter.py:1627:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:1654:80: E501 line too long (96 > 79 characters)
+universal_document_converter.py:1659:80: E501 line too long (98 > 79 characters)
+universal_document_converter.py:1660:80: E501 line too long (104 > 79 characters)
+universal_document_converter.py:1665:80: E501 line too long (123 > 79 characters)
+universal_document_converter.py:1666:80: E501 line too long (97 > 79 characters)
+universal_document_converter.py:1671:80: E501 line too long (125 > 79 characters)
+universal_document_converter.py:1700:80: E501 line too long (107 > 79 characters)
+universal_document_converter.py:1701:80: E501 line too long (115 > 79 characters)
+universal_document_converter.py:1703:80: E501 line too long (90 > 79 characters)
+universal_document_converter.py:1708:80: E501 line too long (100 > 79 characters)
+universal_document_converter.py:1710:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:1715:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:1717:80: E501 line too long (104 > 79 characters)
+universal_document_converter.py:1719:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:1720:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:1722:80: E501 line too long (96 > 79 characters)
+universal_document_converter.py:1740:1: W293 blank line contains whitespace
+universal_document_converter.py:1747:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:1748:32: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1751:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:1752:35: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1756:80: E501 line too long (95 > 79 characters)
+universal_document_converter.py:1757:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:1760:1: W293 blank line contains whitespace
+universal_document_converter.py:1764:1: W293 blank line contains whitespace
+universal_document_converter.py:1766:80: E501 line too long (92 > 79 characters)
+universal_document_converter.py:1767:47: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1767:80: E501 line too long (101 > 79 characters)
+universal_document_converter.py:1768:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:1769:1: W293 blank line contains whitespace
+universal_document_converter.py:1773:1: W293 blank line contains whitespace
+universal_document_converter.py:1777:1: W293 blank line contains whitespace
+universal_document_converter.py:1779:80: E501 line too long (94 > 79 characters)
+universal_document_converter.py:1780:48: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1780:80: E501 line too long (103 > 79 characters)
+universal_document_converter.py:1782:1: W293 blank line contains whitespace
+universal_document_converter.py:1784:80: E501 line too long (93 > 79 characters)
+universal_document_converter.py:1785:80: E501 line too long (90 > 79 characters)
+universal_document_converter.py:1789:80: E501 line too long (98 > 79 characters)
+universal_document_converter.py:1790:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:1797:19: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1797:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:1799:19: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1802:80: E501 line too long (94 > 79 characters)
+universal_document_converter.py:1803:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:1805:1: W293 blank line contains whitespace
+universal_document_converter.py:1806:80: E501 line too long (101 > 79 characters)
+universal_document_converter.py:1807:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:1808:1: W293 blank line contains whitespace
+universal_document_converter.py:1810:19: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1813:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:1814:80: E501 line too long (92 > 79 characters)
+universal_document_converter.py:1820:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1820:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:1824:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1824:80: E501 line too long (105 > 79 characters)
+universal_document_converter.py:1828:80: E501 line too long (89 > 79 characters)
+universal_document_converter.py:1831:24: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1831:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:1833:80: E501 line too long (102 > 79 characters)
+universal_document_converter.py:1836:38: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1844:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:1847:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:1848:41: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1849:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:1853:40: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1854:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:1861:80: E501 line too long (89 > 79 characters)
+universal_document_converter.py:1862:80: E501 line too long (93 > 79 characters)
+universal_document_converter.py:1864:1: W293 blank line contains whitespace
+universal_document_converter.py:1865:80: E501 line too long (100 > 79 characters)
+universal_document_converter.py:1866:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:1867:1: W293 blank line contains whitespace
+universal_document_converter.py:1868:80: E501 line too long (102 > 79 characters)
+universal_document_converter.py:1872:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:1873:80: E501 line too long (104 > 79 characters)
+universal_document_converter.py:1884:80: E501 line too long (93 > 79 characters)
+universal_document_converter.py:1885:80: E501 line too long (98 > 79 characters)
+universal_document_converter.py:1888:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:1892:80: E501 line too long (119 > 79 characters)
+universal_document_converter.py:1893:30: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1895:1: W293 blank line contains whitespace
+universal_document_converter.py:1898:1: W293 blank line contains whitespace
+universal_document_converter.py:1902:13: F401 'tkinterdnd2.TkinterDnD' imported but unused
+universal_document_converter.py:1928:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:1939:32: E128 continuation line under-indented for visual indent
+universal_document_converter.py:1959:80: E501 line too long (87 > 79 characters)
+universal_document_converter.py:1963:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:1964:1: W293 blank line contains whitespace
+universal_document_converter.py:1977:1: W293 blank line contains whitespace
+universal_document_converter.py:1978:80: E501 line too long (101 > 79 characters)
+universal_document_converter.py:1983:1: W293 blank line contains whitespace
+universal_document_converter.py:1986:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:1990:1: W293 blank line contains whitespace
+universal_document_converter.py:1996:1: W293 blank line contains whitespace
+universal_document_converter.py:2001:32: W291 trailing whitespace
+universal_document_converter.py:2005:1: W293 blank line contains whitespace
+universal_document_converter.py:2012:1: W293 blank line contains whitespace
+universal_document_converter.py:2014:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:2016:1: W293 blank line contains whitespace
+universal_document_converter.py:2029:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:2041:80: E501 line too long (90 > 79 characters)
+universal_document_converter.py:2048:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:2067:80: E501 line too long (95 > 79 characters)
+universal_document_converter.py:2068:80: E501 line too long (97 > 79 characters)
+universal_document_converter.py:2069:80: E501 line too long (98 > 79 characters)
+universal_document_converter.py:2072:80: E501 line too long (96 > 79 characters)
+universal_document_converter.py:2073:80: E501 line too long (95 > 79 characters)
+universal_document_converter.py:2119:80: E501 line too long (115 > 79 characters)
+universal_document_converter.py:2136:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:2139:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:2154:80: E501 line too long (93 > 79 characters)
+universal_document_converter.py:2155:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:2157:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:2165:80: E501 line too long (103 > 79 characters)
+universal_document_converter.py:2172:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:2185:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:2186:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:2187:80: E501 line too long (134 > 79 characters)
+universal_document_converter.py:2188:80: E501 line too long (113 > 79 characters)
+universal_document_converter.py:2189:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:2193:80: E501 line too long (98 > 79 characters)
+universal_document_converter.py:2195:80: E501 line too long (98 > 79 characters)
+universal_document_converter.py:2208:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:2224:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:2233:80: E501 line too long (96 > 79 characters)
+universal_document_converter.py:2238:80: E501 line too long (99 > 79 characters)
+universal_document_converter.py:2272:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:2274:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:2285:80: E501 line too long (94 > 79 characters)
+universal_document_converter.py:2286:80: E501 line too long (96 > 79 characters)
+universal_document_converter.py:2298:80: E501 line too long (92 > 79 characters)
+universal_document_converter.py:2308:80: E501 line too long (104 > 79 characters)
+universal_document_converter.py:2329:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:2356:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:2400:9: F841 local variable 'pady_small' is assigned to but never used
+universal_document_converter.py:2411:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:2433:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:2435:80: E501 line too long (81 > 79 characters)
+universal_document_converter.py:2454:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:2463:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:2465:1: W293 blank line contains whitespace
+universal_document_converter.py:2469:1: W293 blank line contains whitespace
+universal_document_converter.py:2471:1: W293 blank line contains whitespace
+universal_document_converter.py:2476:1: W293 blank line contains whitespace
+universal_document_converter.py:2487:1: W293 blank line contains whitespace
+universal_document_converter.py:2489:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:2517:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:2524:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:2533:80: E501 line too long (96 > 79 characters)
+universal_document_converter.py:2536:80: E501 line too long (98 > 79 characters)
+universal_document_converter.py:2542:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:2559:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:2561:80: E501 line too long (82 > 79 characters)
+universal_document_converter.py:2563:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:2565:80: E501 line too long (94 > 79 characters)
+universal_document_converter.py:2584:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:2596:80: E501 line too long (112 > 79 characters)
+universal_document_converter.py:2598:80: E501 line too long (86 > 79 characters)
+universal_document_converter.py:2602:80: E501 line too long (93 > 79 characters)
+universal_document_converter.py:2610:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:2617:80: E501 line too long (88 > 79 characters)
+universal_document_converter.py:2618:29: E128 continuation line under-indented for visual indent
+universal_document_converter.py:2619:29: E128 continuation line under-indented for visual indent
+universal_document_converter.py:2620:29: E128 continuation line under-indented for visual indent
+universal_document_converter.py:2621:29: E128 continuation line under-indented for visual indent
+universal_document_converter.py:2624:35: F541 f-string is missing placeholders
+universal_document_converter.py:2624:80: E501 line too long (86 > 79 characters)
+universal_document_converter.py:2635:1: W293 blank line contains whitespace
+universal_document_converter.py:2639:1: W293 blank line contains whitespace
+universal_document_converter.py:2645:1: W293 blank line contains whitespace
+universal_document_converter.py:2652:80: E501 line too long (89 > 79 characters)
+universal_document_converter.py:2656:80: E501 line too long (80 > 79 characters)
+universal_document_converter.py:2660:80: E501 line too long (91 > 79 characters)
+universal_document_converter.py:2680:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:2692:80: E501 line too long (84 > 79 characters)
+universal_document_converter.py:2696:80: E501 line too long (83 > 79 characters)
+universal_document_converter.py:2700:80: E501 line too long (85 > 79 characters)
+universal_document_converter.py:2745:1: E302 expected 2 blank lines, found 1
+universal_document_converter.py:2761:5: F841 local variable 'app' is assigned to but never used
+universal_document_converter.py:2773:1: E305 expected 2 blank lines after class or function definition, found 1
+universal_document_converter.py:2774:11: W291 trailing whitespace
+universal_document_converter.py:2774:12: W292 no newline at end of file
+universal_document_converter_enhanced.py:17:1: F401 'tkinter.filedialog' imported but unused
+universal_document_converter_enhanced.py:17:1: F401 'tkinter.messagebox' imported but unused
+universal_document_converter_enhanced.py:19:1: F401 'os' imported but unused
+universal_document_converter_enhanced.py:20:1: F401 'pathlib.Path' imported but unused
+universal_document_converter_enhanced.py:21:1: F401 'sys' imported but unused
+universal_document_converter_enhanced.py:22:1: F401 'mimetypes' imported but unused
+universal_document_converter_enhanced.py:23:1: F401 're' imported but unused
+universal_document_converter_enhanced.py:24:1: F401 'logging' imported but unused
+universal_document_converter_enhanced.py:25:1: F401 'datetime' imported but unused
+universal_document_converter_enhanced.py:26:1: F401 'json' imported but unused
+universal_document_converter_enhanced.py:27:1: F401 'typing.Union' imported but unused
+universal_document_converter_enhanced.py:28:1: F401 'concurrent.futures' imported but unused
+universal_document_converter_enhanced.py:29:1: F401 'time' imported but unused
+universal_document_converter_enhanced.py:30:1: F401 'hashlib' imported but unused
+universal_document_converter_enhanced.py:31:1: F401 'threading.Lock' imported but unused
+universal_document_converter_enhanced.py:32:1: F401 'gc' imported but unused
+universal_document_converter_enhanced.py:36:1: F401 'ocr_engine.format_detector.OCRFormatDetector' imported but unused
+universal_document_converter_enhanced.py:39:1: F401 'universal_document_converter.DocumentConverterError' imported but unused
+universal_document_converter_enhanced.py:39:1: F401 'universal_document_converter.UnsupportedFormatError' imported but unused
+universal_document_converter_enhanced.py:39:1: F401 'universal_document_converter.FileProcessingError' imported but unused
+universal_document_converter_enhanced.py:39:1: F401 'universal_document_converter.DependencyError' imported but unused
+universal_document_converter_enhanced.py:39:1: F401 'universal_document_converter.ConfigurationError' imported but unused
+universal_document_converter_enhanced.py:39:1: F401 'universal_document_converter.ConverterLogger' imported but unused
+universal_document_converter_enhanced.py:45:1: E302 expected 2 blank lines, found 1
+universal_document_converter_enhanced.py:47:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:53:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:57:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:61:80: E501 line too long (81 > 79 characters)
+universal_document_converter_enhanced.py:62:80: E501 line too long (88 > 79 characters)
+universal_document_converter_enhanced.py:64:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:68:23: W291 trailing whitespace
+universal_document_converter_enhanced.py:74:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:77:80: E501 line too long (102 > 79 characters)
+universal_document_converter_enhanced.py:78:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:80:80: E501 line too long (111 > 79 characters)
+universal_document_converter_enhanced.py:91:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:93:80: E501 line too long (114 > 79 characters)
+universal_document_converter_enhanced.py:104:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:106:80: E501 line too long (122 > 79 characters)
+universal_document_converter_enhanced.py:117:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:119:80: E501 line too long (121 > 79 characters)
+universal_document_converter_enhanced.py:130:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:133:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:135:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:141:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:145:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:152:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:159:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:162:80: E501 line too long (87 > 79 characters)
+universal_document_converter_enhanced.py:163:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:169:80: E501 line too long (94 > 79 characters)
+universal_document_converter_enhanced.py:170:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:173:80: E501 line too long (80 > 79 characters)
+universal_document_converter_enhanced.py:174:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:178:80: E501 line too long (95 > 79 characters)
+universal_document_converter_enhanced.py:179:80: E501 line too long (98 > 79 characters)
+universal_document_converter_enhanced.py:180:80: E501 line too long (114 > 79 characters)
+universal_document_converter_enhanced.py:182:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:189:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:194:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:196:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:197:72: W291 trailing whitespace
+universal_document_converter_enhanced.py:198:26: E128 continuation line under-indented for visual indent
+universal_document_converter_enhanced.py:206:80: E501 line too long (112 > 79 characters)
+universal_document_converter_enhanced.py:219:1: E302 expected 2 blank lines, found 1
+universal_document_converter_enhanced.py:221:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:225:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:228:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:230:80: E501 line too long (96 > 79 characters)
+universal_document_converter_enhanced.py:231:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:234:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:238:80: E501 line too long (87 > 79 characters)
+universal_document_converter_enhanced.py:239:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:243:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:245:80: E501 line too long (89 > 79 characters)
+universal_document_converter_enhanced.py:246:32: E128 continuation line under-indented for visual indent
+universal_document_converter_enhanced.py:248:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:251:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:253:80: E501 line too long (80 > 79 characters)
+universal_document_converter_enhanced.py:254:40: E128 continuation line under-indented for visual indent
+universal_document_converter_enhanced.py:256:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:259:80: E501 line too long (96 > 79 characters)
+universal_document_converter_enhanced.py:260:80: E501 line too long (96 > 79 characters)
+universal_document_converter_enhanced.py:261:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:266:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:269:80: E501 line too long (95 > 79 characters)
+universal_document_converter_enhanced.py:270:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:277:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:282:80: E501 line too long (81 > 79 characters)
+universal_document_converter_enhanced.py:283:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:288:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:291:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:298:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:299:80: E501 line too long (111 > 79 characters)
+universal_document_converter_enhanced.py:300:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:305:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:310:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:315:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:320:1: E302 expected 2 blank lines, found 1
+universal_document_converter_enhanced.py:327:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:330:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:331:5: F841 local variable 'app' is assigned to but never used
+universal_document_converter_enhanced.py:332:1: W293 blank line contains whitespace
+universal_document_converter_enhanced.py:335:1: E305 expected 2 blank lines after class or function definition, found 1
+universal_document_converter_enhanced.py:336:11: W292 no newline at end of file
+universal_document_converter_ocr.py:22:1: F401 'mimetypes' imported but unused
+universal_document_converter_ocr.py:23:1: F401 're' imported but unused
+universal_document_converter_ocr.py:27:1: F401 'typing.Optional' imported but unused
+universal_document_converter_ocr.py:27:1: F401 'typing.Union' imported but unused
+universal_document_converter_ocr.py:27:1: F401 'typing.List' imported but unused
+universal_document_converter_ocr.py:28:1: F401 'concurrent.futures' imported but unused
+universal_document_converter_ocr.py:29:1: F401 'time' imported but unused
+universal_document_converter_ocr.py:30:1: F401 'hashlib' imported but unused
+universal_document_converter_ocr.py:31:1: F401 'threading.Lock' imported but unused
+universal_document_converter_ocr.py:37:1: E302 expected 2 blank lines, found 1
+universal_document_converter_ocr.py:39:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:45:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:49:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:53:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:60:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:64:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:67:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:80:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:88:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:90:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:98:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:103:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:104:80: E501 line too long (97 > 79 characters)
+universal_document_converter_ocr.py:105:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:114:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:116:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:122:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:128:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:130:80: E501 line too long (89 > 79 characters)
+universal_document_converter_ocr.py:130:90: W291 trailing whitespace
+universal_document_converter_ocr.py:131:32: E128 continuation line under-indented for visual indent
+universal_document_converter_ocr.py:133:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:135:80: E501 line too long (84 > 79 characters)
+universal_document_converter_ocr.py:136:80: E501 line too long (89 > 79 characters)
+universal_document_converter_ocr.py:138:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:141:80: E501 line too long (100 > 79 characters)
+universal_document_converter_ocr.py:144:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:145:80: E501 line too long (84 > 79 characters)
+universal_document_converter_ocr.py:146:80: E501 line too long (80 > 79 characters)
+universal_document_converter_ocr.py:147:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:148:80: E501 line too long (97 > 79 characters)
+universal_document_converter_ocr.py:151:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:153:80: E501 line too long (107 > 79 characters)
+universal_document_converter_ocr.py:154:80: E501 line too long (119 > 79 characters)
+universal_document_converter_ocr.py:155:80: E501 line too long (94 > 79 characters)
+universal_document_converter_ocr.py:156:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:158:80: E501 line too long (82 > 79 characters)
+universal_document_converter_ocr.py:159:80: E501 line too long (93 > 79 characters)
+universal_document_converter_ocr.py:160:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:162:80: E501 line too long (80 > 79 characters)
+universal_document_converter_ocr.py:163:80: E501 line too long (90 > 79 characters)
+universal_document_converter_ocr.py:163:91: W291 trailing whitespace
+universal_document_converter_ocr.py:164:36: E128 continuation line under-indented for visual indent
+universal_document_converter_ocr.py:164:80: E501 line too long (82 > 79 characters)
+universal_document_converter_ocr.py:166:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:168:80: E501 line too long (105 > 79 characters)
+universal_document_converter_ocr.py:169:80: E501 line too long (85 > 79 characters)
+universal_document_converter_ocr.py:170:80: E501 line too long (81 > 79 characters)
+universal_document_converter_ocr.py:170:82: W291 trailing whitespace
+universal_document_converter_ocr.py:171:36: E128 continuation line under-indented for visual indent
+universal_document_converter_ocr.py:171:80: E501 line too long (88 > 79 characters)
+universal_document_converter_ocr.py:171:89: W291 trailing whitespace
+universal_document_converter_ocr.py:172:36: E128 continuation line under-indented for visual indent
+universal_document_converter_ocr.py:174:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:176:80: E501 line too long (108 > 79 characters)
+universal_document_converter_ocr.py:177:80: E501 line too long (89 > 79 characters)
+universal_document_converter_ocr.py:178:80: E501 line too long (92 > 79 characters)
+universal_document_converter_ocr.py:180:80: E501 line too long (103 > 79 characters)
+universal_document_converter_ocr.py:181:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:183:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:185:80: E501 line too long (82 > 79 characters)
+universal_document_converter_ocr.py:186:80: E501 line too long (93 > 79 characters)
+universal_document_converter_ocr.py:188:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:190:80: E501 line too long (100 > 79 characters)
+universal_document_converter_ocr.py:191:80: E501 line too long (81 > 79 characters)
+universal_document_converter_ocr.py:192:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:195:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:199:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:200:80: E501 line too long (108 > 79 characters)
+universal_document_converter_ocr.py:202:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:203:80: E501 line too long (119 > 79 characters)
+universal_document_converter_ocr.py:205:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:206:80: E501 line too long (92 > 79 characters)
+universal_document_converter_ocr.py:207:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:212:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:217:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:223:80: E501 line too long (127 > 79 characters)
+universal_document_converter_ocr.py:225:80: E501 line too long (81 > 79 characters)
+universal_document_converter_ocr.py:230:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:238:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:246:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:251:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:258:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:262:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:268:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:270:80: E501 line too long (95 > 79 characters)
+universal_document_converter_ocr.py:272:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:277:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:282:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:285:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:289:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:294:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:300:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:304:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:305:80: E501 line too long (82 > 79 characters)
+universal_document_converter_ocr.py:307:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:313:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:315:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:319:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:323:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:325:80: E501 line too long (109 > 79 characters)
+universal_document_converter_ocr.py:326:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:330:80: E501 line too long (82 > 79 characters)
+universal_document_converter_ocr.py:331:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:337:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:341:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:376:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:384:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:389:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:392:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:393:9: F841 local variable 'e' is assigned to but never used
+universal_document_converter_ocr.py:399:80: E501 line too long (80 > 79 characters)
+universal_document_converter_ocr.py:400:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:405:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:410:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:414:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:417:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:419:80: E501 line too long (103 > 79 characters)
+universal_document_converter_ocr.py:420:80: E501 line too long (110 > 79 characters)
+universal_document_converter_ocr.py:422:80: E501 line too long (103 > 79 characters)
+universal_document_converter_ocr.py:423:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:425:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:430:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:434:80: E501 line too long (97 > 79 characters)
+universal_document_converter_ocr.py:436:80: E501 line too long (80 > 79 characters)
+universal_document_converter_ocr.py:442:1: E302 expected 2 blank lines, found 1
+universal_document_converter_ocr.py:445:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:448:9: F401 'tkinterdnd2.DND_FILES' imported but unused
+universal_document_converter_ocr.py:452:1: W293 blank line contains whitespace
+universal_document_converter_ocr.py:453:5: F841 local variable 'app' is assigned to but never used
+universal_document_converter_ocr.py:456:1: E305 expected 2 blank lines after class or function definition, found 1
+universal_document_converter_ocr.py:457:11: W292 no newline at end of file
+validate_ocr_integration.py:4:80: E501 line too long (80 > 79 characters)
+validate_ocr_integration.py:11:1: F401 'subprocess' imported but unused
+validate_ocr_integration.py:12:1: F401 'pathlib.Path' imported but unused
+validate_ocr_integration.py:17:80: E501 line too long (91 > 79 characters)
+validate_ocr_integration.py:20:1: E302 expected 2 blank lines, found 1
+validate_ocr_integration.py:22:1: W293 blank line contains whitespace
+validate_ocr_integration.py:26:1: W293 blank line contains whitespace
+validate_ocr_integration.py:34:1: W293 blank line contains whitespace
+validate_ocr_integration.py:39:1: W293 blank line contains whitespace
+validate_ocr_integration.py:43:13: F401 'ocr_engine.ocr_engine.OCREngine' imported but unused
+validate_ocr_integration.py:44:13: F401 'ocr_engine.ocr_integration.OCRIntegration' imported but unused
+validate_ocr_integration.py:45:13: F401 'ocr_engine.format_detector.OCRFormatDetector' imported but unused
+validate_ocr_integration.py:46:13: F401 'ocr_engine.image_processor.ImageProcessor' imported but unused
+validate_ocr_integration.py:47:1: W293 blank line contains whitespace
+validate_ocr_integration.py:48:80: E501 line too long (95 > 79 characters)
+validate_ocr_integration.py:53:1: W293 blank line contains whitespace
+validate_ocr_integration.py:63:1: W293 blank line contains whitespace
+validate_ocr_integration.py:70:1: W293 blank line contains whitespace
+validate_ocr_integration.py:72:80: E501 line too long (88 > 79 characters)
+validate_ocr_integration.py:75:80: E501 line too long (88 > 79 characters)
+validate_ocr_integration.py:77:1: W293 blank line contains whitespace
+validate_ocr_integration.py:82:1: W293 blank line contains whitespace
+validate_ocr_integration.py:85:1: W293 blank line contains whitespace
+validate_ocr_integration.py:89:1: W293 blank line contains whitespace
+validate_ocr_integration.py:94:13: E722 do not use bare 'except'
+validate_ocr_integration.py:96:1: W293 blank line contains whitespace
+validate_ocr_integration.py:99:1: W293 blank line contains whitespace
+validate_ocr_integration.py:103:1: W293 blank line contains whitespace
+validate_ocr_integration.py:105:80: E501 line too long (110 > 79 characters)
+validate_ocr_integration.py:108:80: E501 line too long (100 > 79 characters)
+validate_ocr_integration.py:110:1: W293 blank line contains whitespace
+validate_ocr_integration.py:114:1: W293 blank line contains whitespace
+validate_ocr_integration.py:119:1: W293 blank line contains whitespace
+validate_ocr_integration.py:121:1: W293 blank line contains whitespace
+validate_ocr_integration.py:130:1: W293 blank line contains whitespace
+validate_ocr_integration.py:137:1: W293 blank line contains whitespace
+validate_ocr_integration.py:138:80: E501 line too long (97 > 79 characters)
+validate_ocr_integration.py:140:1: W293 blank line contains whitespace
+validate_ocr_integration.py:144:1: W293 blank line contains whitespace
+validate_ocr_integration.py:149:1: W293 blank line contains whitespace
+validate_ocr_integration.py:151:1: W293 blank line contains whitespace
+validate_ocr_integration.py:154:80: E501 line too long (90 > 79 characters)
+validate_ocr_integration.py:156:1: W293 blank line contains whitespace
+validate_ocr_integration.py:160:80: E501 line too long (104 > 79 characters)
+validate_ocr_integration.py:163:80: E501 line too long (91 > 79 characters)
+validate_ocr_integration.py:165:1: W293 blank line contains whitespace
+validate_ocr_integration.py:169:1: W293 blank line contains whitespace
+validate_ocr_integration.py:176:1: W293 blank line contains whitespace
+validate_ocr_integration.py:180:1: W293 blank line contains whitespace
+validate_ocr_integration.py:182:1: W293 blank line contains whitespace
+validate_ocr_integration.py:185:80: E501 line too long (102 > 79 characters)
+validate_ocr_integration.py:189:80: E501 line too long (93 > 79 characters)
+validate_ocr_integration.py:192:1: W293 blank line contains whitespace
+validate_ocr_integration.py:196:1: W293 blank line contains whitespace
+validate_ocr_integration.py:202:1: W293 blank line contains whitespace
+validate_ocr_integration.py:204:1: W293 blank line contains whitespace
+validate_ocr_integration.py:212:1: W293 blank line contains whitespace
+validate_ocr_integration.py:215:1: W293 blank line contains whitespace
+validate_ocr_integration.py:217:80: E501 line too long (108 > 79 characters)
+validate_ocr_integration.py:220:80: E501 line too long (117 > 79 characters)
+validate_ocr_integration.py:222:1: W293 blank line contains whitespace
+validate_ocr_integration.py:226:1: W293 blank line contains whitespace
+validate_ocr_integration.py:238:1: W293 blank line contains whitespace
+validate_ocr_integration.py:241:1: W293 blank line contains whitespace
+validate_ocr_integration.py:246:1: W293 blank line contains whitespace
+validate_ocr_integration.py:248:80: E501 line too long (100 > 79 characters)
+validate_ocr_integration.py:251:80: E501 line too long (85 > 79 characters)
+validate_ocr_integration.py:254:80: E501 line too long (82 > 79 characters)
+validate_ocr_integration.py:256:1: W293 blank line contains whitespace
+validate_ocr_integration.py:260:1: W293 blank line contains whitespace
+validate_ocr_integration.py:265:1: W293 blank line contains whitespace
+validate_ocr_integration.py:267:1: W293 blank line contains whitespace
+validate_ocr_integration.py:271:80: E501 line too long (93 > 79 characters)
+validate_ocr_integration.py:274:80: E501 line too long (91 > 79 characters)
+validate_ocr_integration.py:276:1: W293 blank line contains whitespace
+validate_ocr_integration.py:280:1: W293 blank line contains whitespace
+validate_ocr_integration.py:284:1: W293 blank line contains whitespace
+validate_ocr_integration.py:287:1: W293 blank line contains whitespace
+validate_ocr_integration.py:289:80: E501 line too long (95 > 79 characters)
+validate_ocr_integration.py:292:80: E501 line too long (87 > 79 characters)
+validate_ocr_integration.py:294:1: W293 blank line contains whitespace
+validate_ocr_integration.py:299:1: W293 blank line contains whitespace
+validate_ocr_integration.py:312:1: W293 blank line contains whitespace
+validate_ocr_integration.py:315:1: W293 blank line contains whitespace
+validate_ocr_integration.py:321:80: E501 line too long (80 > 79 characters)
+validate_ocr_integration.py:322:1: W293 blank line contains whitespace
+validate_ocr_integration.py:328:1: W293 blank line contains whitespace
+validate_ocr_integration.py:340:1: W293 blank line contains whitespace
+validate_ocr_integration.py:342:1: W293 blank line contains whitespace
+validate_ocr_integration.py:344:1: W293 blank line contains whitespace
+validate_ocr_integration.py:350:1: E302 expected 2 blank lines, found 1
+validate_ocr_integration.py:353:1: W293 blank line contains whitespace
+validate_ocr_integration.py:356:1: W293 blank line contains whitespace
+validate_ocr_integration.py:358:80: E501 line too long (83 > 79 characters)
+validate_ocr_integration.py:361:80: E501 line too long (82 > 79 characters)
+validate_ocr_integration.py:363:1: W293 blank line contains whitespace
+validate_ocr_integration.py:367:1: E305 expected 2 blank lines after class or function definition, found 1
+validate_ocr_integration.py:368:21: W292 no newline at end of file

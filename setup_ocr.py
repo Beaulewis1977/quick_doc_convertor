@@ -16,11 +16,11 @@ logger = logging.getLogger(__name__)
 
 class OCRSetup:
     """Setup class for OCR Document Converter"""
-    
+
     def __init__(self):
         self.system = platform.system()
         self.is_admin = self._check_admin()
-        
+
     def _check_admin(self):
         """Check if running as administrator"""
         try:
@@ -31,11 +31,11 @@ class OCRSetup:
                 return os.geteuid() == 0
         except:
             return False
-    
+
     def install_python_packages(self):
         """Install required Python packages"""
         logger.info("Installing Python packages...")
-        
+
         try:
             subprocess.run([
                 sys.executable, "-m", "pip", "install", "-r", "requirements_updated.txt"
@@ -45,43 +45,43 @@ class OCRSetup:
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to install Python packages: {e}")
             return False
-    
+
     def install_tesseract_windows(self):
         """Install Tesseract on Windows"""
         logger.info("Installing Tesseract OCR on Windows...")
-        
+
         try:
             # Try winget first
             result = subprocess.run([
                 "winget", "install", "--id", "tesseract-ocr.tesseract-ocr", "-e"
             ], capture_output=True, text=True)
-            
+
             if result.returncode == 0:
                 logger.info("Tesseract installed successfully via winget")
                 return True
             else:
                 logger.warning("winget installation failed, trying chocolatey...")
-                
+
                 # Try chocolatey
                 result = subprocess.run([
                     "choco", "install", "tesseract", "-y"
                 ], capture_output=True, text=True)
-                
+
                 if result.returncode == 0:
                     logger.info("Tesseract installed successfully via chocolatey")
                     return True
                 else:
                     logger.error("Tesseract installation failed")
                     return False
-                    
+
         except Exception as e:
             logger.error(f"Windows Tesseract installation error: {e}")
             return False
-    
+
     def install_tesseract_macos(self):
         """Install Tesseract on macOS"""
         logger.info("Installing Tesseract OCR on macOS...")
-        
+
         try:
             subprocess.run([
                 "brew", "install", "tesseract"
@@ -91,11 +91,11 @@ class OCRSetup:
         except subprocess.CalledProcessError as e:
             logger.error(f"macOS Tesseract installation failed: {e}")
             return False
-    
+
     def install_tesseract_linux(self):
         """Install Tesseract on Linux"""
         logger.info("Installing Tesseract OCR on Linux...")
-        
+
         try:
             if self.is_admin:
                 subprocess.run([
@@ -114,7 +114,7 @@ class OCRSetup:
         except subprocess.CalledProcessError as e:
             logger.error(f"Linux Tesseract installation failed: {e}")
             return False
-    
+
     def verify_tesseract_installation(self):
         """Verify Tesseract is properly installed"""
         try:
@@ -122,7 +122,7 @@ class OCRSetup:
             result = subprocess.run([
                 "tesseract", "--version"
             ], capture_output=True, text=True)
-            
+
             if result.returncode == 0:
                 version_line = result.stdout.split('\n')[0]
                 logger.info(f"Tesseract verified: {version_line}")
@@ -133,7 +133,7 @@ class OCRSetup:
         except FileNotFoundError:
             logger.warning("Tesseract not found")
             return False
-    
+
     def setup_tesseract_path(self):
         """Setup Tesseract path for pytesseract"""
         possible_paths = {
@@ -150,9 +150,9 @@ class OCRSetup:
                 "/usr/local/bin/tesseract",
             ]
         }
-        
+
         system_paths = possible_paths.get(self.system, [])
-        
+
         for path in system_paths:
             if os.path.isfile(path):
                 # Create config file
@@ -164,34 +164,34 @@ pytesseract.pytesseract.tesseract_cmd = r"{path}"
                 config_path.write_text(config_content)
                 logger.info(f"Tesseract path configured: {path}")
                 return True
-        
+
         logger.warning("Could not find Tesseract installation")
         return False
-    
+
     def run_setup(self):
         """Run complete setup"""
         logger.info(f"Starting setup for {self.system}")
-        
+
         # Install Python packages
         if not self.install_python_packages():
             logger.error("Python package installation failed")
             return False
-        
+
         # Install system dependencies
         tesseract_installed = False
-        
+
         if self.system == "Windows":
             tesseract_installed = self.install_tesseract_windows()
         elif self.system == "Darwin":
             tesseract_installed = self.install_tesseract_macos()
         elif self.system == "Linux":
             tesseract_installed = self.install_tesseract_linux()
-        
+
         # Verify installation
         if not self.verify_tesseract_installation():
             logger.warning("Tesseract verification failed, checking paths...")
             self.setup_tesseract_path()
-        
+
         # Test OCR functionality
         try:
             from ocr_engine import OCREngine
@@ -206,13 +206,13 @@ pytesseract.pytesseract.tesseract_cmd = r"{path}"
         except Exception as e:
             logger.error(f"OCR engine test failed: {e}")
             return False
-    
+
     def print_instructions(self):
         """Print manual installation instructions"""
         print("\n" + "="*60)
         print("OCR DOCUMENT CONVERTER - SETUP INSTRUCTIONS")
         print("="*60)
-        
+
         if self.system == "Windows":
             print("""
 Windows Setup:
@@ -229,7 +229,7 @@ Windows Setup:
 3. Python packages:
    - Run: python -m pip install -r requirements_updated.txt
             """)
-        
+
         elif self.system == "Darwin":
             print("""
 macOS Setup:
@@ -244,7 +244,7 @@ macOS Setup:
 3. Python packages:
    - Run: python3 -m pip install -r requirements_updated.txt
             """)
-        
+
         elif self.system == "Linux":
             print("""
 Linux Setup:
@@ -261,7 +261,7 @@ Linux Setup:
 3. Python packages:
    - Run: python3 -m pip install -r requirements_updated.txt
             """)
-        
+
         print("\n" + "="*60)
         print("USAGE")
         print("="*60)
@@ -277,7 +277,7 @@ Linux Setup:
 
 if __name__ == "__main__":
     setup = OCRSetup()
-    
+
     if len(sys.argv) > 1 and sys.argv[1] == "--help":
         setup.print_instructions()
     else:

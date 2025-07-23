@@ -335,7 +335,7 @@ class ConfigManager:
 
 class FormatDetector:
     """Utility class for detecting and validating file formats"""
-    
+
     SUPPORTED_INPUT_FORMATS = {
         'docx': {'extensions': ['.docx'], 'name': 'Word Document', 'reader': 'DocxReader'},
         'pdf': {'extensions': ['.pdf'], 'name': 'PDF Document', 'reader': 'PdfReader'},
@@ -344,7 +344,7 @@ class FormatDetector:
         'rtf': {'extensions': ['.rtf'], 'name': 'Rich Text Format', 'reader': 'RtfReader'},
         'epub': {'extensions': ['.epub'], 'name': 'EPUB eBook', 'reader': 'EpubReader'}
     }
-    
+
     SUPPORTED_OUTPUT_FORMATS = {
         'markdown': {'extension': '.md', 'name': 'Markdown', 'writer': 'MarkdownWriter'},
         'txt': {'extension': '.txt', 'name': 'Plain Text', 'writer': 'TxtWriter'},
@@ -352,7 +352,7 @@ class FormatDetector:
         'rtf': {'extension': '.rtf', 'name': 'Rich Text Format', 'writer': 'RtfWriter'},
         'epub': {'extension': '.epub', 'name': 'EPUB eBook', 'writer': 'EpubWriter'}
     }
-    
+
     @classmethod
     def detect_format(cls, file_path):
         """Auto-detect the format of a file"""
@@ -361,7 +361,7 @@ class FormatDetector:
             if ext in format_info['extensions']:
                 return format_key
         return None
-    
+
     @classmethod
     def get_input_format_list(cls):
         """Get list of input formats for dropdown"""
@@ -369,7 +369,7 @@ class FormatDetector:
         for key, info in cls.SUPPORTED_INPUT_FORMATS.items():
             formats.append((f"{info['name']} ({', '.join(info['extensions'])})", key))
         return formats
-    
+
     @classmethod
     def get_output_format_list(cls):
         """Get list of output formats for dropdown"""
@@ -380,19 +380,19 @@ class FormatDetector:
 
 class DocumentReader:
     """Base class for document readers"""
-    
+
     def read(self, file_path):
         """Read document and return text content"""
         raise NotImplementedError
 
 class DocxReader(DocumentReader):
     """Reader for DOCX files"""
-    
+
     def read(self, file_path):
         from docx import Document
         doc = Document(file_path)
         content = []
-        
+
         for paragraph in doc.paragraphs:
             text = paragraph.text.strip()
             if text:
@@ -402,24 +402,24 @@ class DocxReader(DocumentReader):
                     content.append(('heading', level, text))
                 else:
                     content.append(('paragraph', text))
-        
+
         return content
 
 class PdfReader(DocumentReader):
     """Reader for PDF files"""
-    
+
     def read(self, file_path):
         import PyPDF2
-        
+
         with open(file_path, 'rb') as file:
             pdf_reader = PyPDF2.PdfReader(file)
             content = []
-            
+
             for page_num, page in enumerate(pdf_reader.pages):
                 text = page.extract_text()
                 if text.strip():
                     content.append(('page', page_num + 1, text.strip()))
-        
+
         return content
 
 class TxtReader(DocumentReader):
@@ -508,15 +508,15 @@ class TxtReader(DocumentReader):
 
 class HtmlReader(DocumentReader):
     """Reader for HTML files"""
-    
+
     def read(self, file_path):
         from bs4 import BeautifulSoup
-        
+
         with open(file_path, 'r', encoding='utf-8') as file:
             soup = BeautifulSoup(file.read(), 'html.parser')
-        
+
         content = []
-        
+
         # Extract headings and paragraphs
         for element in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div']):
             text = element.get_text().strip()
@@ -526,18 +526,18 @@ class HtmlReader(DocumentReader):
                     content.append(('heading', level, text))
                 else:
                     content.append(('paragraph', text))
-        
+
         return content
 
 class RtfReader(DocumentReader):
     """Reader for RTF files"""
-    
+
     def read(self, file_path):
         from striprtf.striprtf import rtf_to_text
-        
+
         with open(file_path, 'r', encoding='utf-8') as file:
             rtf_content = file.read()
-        
+
         text = rtf_to_text(rtf_content)
         paragraphs = [p.strip() for p in text.split('\n\n') if p.strip()]
         return [('paragraph', p) for p in paragraphs]
@@ -642,17 +642,17 @@ class EpubReader(DocumentReader):
 
 class DocumentWriter:
     """Base class for document writers"""
-    
+
     def write(self, content, output_path):
         """Write content to output file"""
         raise NotImplementedError
 
 class MarkdownWriter(DocumentWriter):
     """Writer for Markdown files"""
-    
+
     def write(self, content, output_path):
         lines = []
-        
+
         for item in content:
             if item[0] == 'heading':
                 level, text = item[1], item[2]
@@ -667,16 +667,16 @@ class MarkdownWriter(DocumentWriter):
                 lines.append("")
                 lines.append(text)
                 lines.append("")
-        
+
         with open(output_path, 'w', encoding='utf-8') as file:
             file.write('\n'.join(lines))
 
 class TxtWriter(DocumentWriter):
     """Writer for plain text files"""
-    
+
     def write(self, content, output_path):
         lines = []
-        
+
         for item in content:
             if item[0] == 'heading':
                 text = item[2]
@@ -692,13 +692,13 @@ class TxtWriter(DocumentWriter):
                 lines.append("-" * 20)
                 lines.append(text)
                 lines.append("")
-        
+
         with open(output_path, 'w', encoding='utf-8') as file:
             file.write('\n'.join(lines))
 
 class HtmlWriter(DocumentWriter):
     """Writer for HTML files"""
-    
+
     def write(self, content, output_path):
         lines = [
             "<!DOCTYPE html>",
@@ -715,7 +715,7 @@ class HtmlWriter(DocumentWriter):
             "</head>",
             "<body>"
         ]
-        
+
         for item in content:
             if item[0] == 'heading':
                 level, text = item[1], item[2]
@@ -726,12 +726,12 @@ class HtmlWriter(DocumentWriter):
                 page_num, text = item[1], item[2]
                 lines.append(f"    <h2>Page {page_num}</h2>")
                 lines.append(f"    <p>{self._escape_html(text)}</p>")
-        
+
         lines.extend(["</body>", "</html>"])
-        
+
         with open(output_path, 'w', encoding='utf-8') as file:
             file.write('\n'.join(lines))
-    
+
     def _escape_html(self, text):
         """Escape HTML special characters"""
         return (text.replace('&', '&amp;')
@@ -742,7 +742,7 @@ class HtmlWriter(DocumentWriter):
 
 class RtfWriter(DocumentWriter):
     """Writer for RTF files"""
-    
+
     def write(self, content, output_path):
         # Basic RTF structure
         rtf_lines = [
@@ -750,7 +750,7 @@ class RtfWriter(DocumentWriter):
             r"{\fonttbl{\f0 Times New Roman;}}",
             r"\f0\fs24"
         ]
-        
+
         for item in content:
             if item[0] == 'heading':
                 level, text = item[1], item[2]
@@ -762,12 +762,12 @@ class RtfWriter(DocumentWriter):
                 page_num, text = item[1], item[2]
                 rtf_lines.append(f"\\par\\fs28\\b Page {page_num}\\b0\\fs24")
                 rtf_lines.append(f"\\par {self._escape_rtf(text)}")
-        
+
         rtf_lines.append("}")
-        
+
         with open(output_path, 'w', encoding='utf-8') as file:
             file.write(''.join(rtf_lines))
-    
+
     def _escape_rtf(self, text):
         """Escape RTF special characters"""
         return text.replace('\\', '\\\\').replace('{', '\\{').replace('}', '\\}')
@@ -1737,7 +1737,7 @@ class UniversalDocumentConverterGUI:
         # Main frame with padding
         self.main_frame = ttk.Frame(self.root, padding="15")
         self.main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
-        
+
         # Configure grid weights
         self.root.columnconfigure(0, weight=1)
         self.root.rowconfigure(0, weight=1)
@@ -1757,29 +1757,29 @@ class UniversalDocumentConverterGUI:
         format_frame.grid(row=2, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=(0, 15))
         format_frame.columnconfigure(1, weight=1)
         format_frame.columnconfigure(3, weight=1)
-        
+
         # From format
         ttk.Label(format_frame, text="From:", font=('Arial', 10, 'bold')).grid(
             row=0, column=0, sticky=tk.W, padx=(0, 10))
-        
+
         input_formats = FormatDetector.get_input_format_list()
         self.input_format_combo = ttk.Combobox(format_frame, textvariable=self.input_format,
                                               values=[f[1] for f in input_formats], state='readonly')
         self.input_format_combo.grid(row=0, column=1, sticky=(tk.W, tk.E), padx=(0, 20))
-        
+
         # Configure display values
         format_display = {f[1]: f[0] for f in input_formats}
         self.input_format_combo.configure(values=list(format_display.keys()))
-        
+
         # To format
         ttk.Label(format_frame, text="To:", font=('Arial', 10, 'bold')).grid(
             row=0, column=2, sticky=tk.W, padx=(0, 10))
-        
+
         output_formats = FormatDetector.get_output_format_list()
         self.output_format_combo = ttk.Combobox(format_frame, textvariable=self.output_format,
                                                values=[f[1] for f in output_formats], state='readonly')
         self.output_format_combo.grid(row=0, column=3, sticky=(tk.W, tk.E))
-        
+
         # Input selection frame
         input_frame = ttk.LabelFrame(self.main_frame, text="📁 Input Selection", padding="10")
         input_frame.grid(row=3, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=(0, 15))
@@ -1802,10 +1802,10 @@ class UniversalDocumentConverterGUI:
         output_frame = ttk.LabelFrame(self.main_frame, text="📂 Output Location", padding="10")
         output_frame.grid(row=4, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=(0, 15))
         output_frame.columnconfigure(0, weight=1)
-        
+
         self.output_entry = ttk.Entry(output_frame, textvariable=self.output_path, font=('Arial', 9))
         self.output_entry.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=(0, 10))
-        
+
         ttk.Button(output_frame, text="Browse",
                   command=self.browse_output_folder).grid(row=0, column=1)
 
@@ -1861,10 +1861,10 @@ class UniversalDocumentConverterGUI:
         progress_frame = ttk.LabelFrame(self.main_frame, text="📊 Progress", padding="10")
         progress_frame.grid(row=7, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=(0, 15))
         progress_frame.columnconfigure(0, weight=1)
-        
+
         self.progress_bar = ttk.Progressbar(progress_frame, variable=self.progress_var, maximum=100)
         self.progress_bar.grid(row=0, column=0, sticky=(tk.W, tk.E), pady=(0, 5))
-        
+
         self.status_label = ttk.Label(progress_frame, textvariable=self.status_var, font=('Arial', 9))
         self.status_label.grid(row=1, column=0, sticky=tk.W)
 
@@ -1892,10 +1892,10 @@ class UniversalDocumentConverterGUI:
         tip_label = ttk.Label(self.main_frame, text="💡 Tip: Drag and drop files or folders directly onto this window!",
                              font=('Arial', 9), foreground='gray')
         tip_label.grid(row=9, column=0, columnspan=3, pady=5)
-        
+
         # Setup drag and drop
         self.setup_drag_drop()
-    
+
     def setup_drag_drop(self):
         """Set up drag and drop functionality"""
         try:
@@ -1961,7 +1961,7 @@ class UniversalDocumentConverterGUI:
                 # Single file dropped
                 self.input_path.set(dropped_path)
                 self.log_message(f"📄 File dropped: {os.path.basename(dropped_path)}")
-    
+
     def browse_input_files(self):
         """Browse for input files"""
         filetypes = [
@@ -1974,46 +1974,46 @@ class UniversalDocumentConverterGUI:
             ("EPUB eBooks", "*.epub"),
             ("All files", "*.*")
         ]
-        
+
         files = filedialog.askopenfilenames(title="Select documents to convert", filetypes=filetypes)
         if files:
             # Store multiple files (we'll handle this in conversion)
             self.input_path.set(";".join(files))
             self.log_message(f"📄 Selected {len(files)} file(s)")
-    
+
     def browse_input_folder(self):
         """Browse for input folder"""
         folder = filedialog.askdirectory(title="Select folder containing documents")
         if folder:
             self.input_path.set(folder)
             self.log_message(f"📁 Selected folder: {os.path.basename(folder)}")
-    
+
     def browse_output_folder(self):
         """Browse for output folder"""
         folder = filedialog.askdirectory(title="Select output folder")
         if folder:
             self.output_path.set(folder)
-    
+
     def check_dependencies(self):
         """Check if required packages are installed"""
         required_packages = {
             'python-docx': 'docx',
-            'PyPDF2': 'PyPDF2', 
+            'PyPDF2': 'PyPDF2',
             'beautifulsoup4': 'bs4',
             'striprtf': 'striprtf'
         }
-        
+
         missing = []
         for package, import_name in required_packages.items():
             try:
                 __import__(import_name)
             except ImportError:
                 missing.append(package)
-        
+
         if missing:
             self.log_message(f"📦 Installing missing packages: {', '.join(missing)}")
             self.install_packages(missing)
-    
+
     def install_packages(self, packages):
         """Install required packages"""
         for package in packages:
@@ -2462,18 +2462,18 @@ After setting up file associations, you can double-click EPUB files to open them
         if not self.input_path.get():
             messagebox.showerror("Error", "Please select input files or folder")
             return False
-        
+
         if not self.output_path.get():
             messagebox.showerror("Error", "Please select output folder")
             return False
-        
+
         return True
-    
+
     def start_conversion(self):
         """Start conversion in separate thread"""
         if not self.validate_inputs():
             return
-        
+
         self.convert_button.config(state='disabled')
         self.progress_var.set(0)
         self.results_text.delete(1.0, tk.END)
@@ -2484,7 +2484,7 @@ After setting up file associations, you can double-click EPUB files to open them
 
         # Start conversion in background thread
         threading.Thread(target=self.convert_documents, daemon=True).start()
-    
+
     def convert_documents(self):
         """Enhanced conversion process with multi-threading and performance optimization"""
         try:
@@ -2621,7 +2621,7 @@ After setting up file associations, you can double-click EPUB files to open them
                             f"Output location: {output_dir}")
 
             if results['successful'] == 1 and self.last_converted_file:
-                completion_msg += f"\n\nClick 'Open File' to view the converted file."
+                completion_msg += "\n\nClick 'Open File' to view the converted file."
 
             messagebox.showinfo("Conversion Complete", completion_msg)
 
@@ -2632,17 +2632,17 @@ After setting up file associations, you can double-click EPUB files to open them
 
         finally:
             self.convert_button.config(state='normal')
-    
+
     def update_status(self, message):
         """Update status label safely"""
         self.root.after(0, lambda: self.status_var.set(message))
-    
+
     def log_message(self, message):
         """Add message to results area safely"""
         def _add_message():
             self.results_text.insert(tk.END, message + "\n")
             self.results_text.see(tk.END)
-        
+
         self.root.after(0, _add_message)
 
     # Test compatibility methods - these methods exist for test compatibility
@@ -2771,4 +2771,4 @@ def main():
     root.mainloop()
 
 if __name__ == "__main__":
-    main() 
+    main()

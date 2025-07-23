@@ -39,7 +39,7 @@ class DocumentConverterCLI:
         log_level = self.config_manager.get('logging', 'log_level', 'INFO')
         self.logger_instance = ConverterLogger("CLI", log_level)
         self.logger = self.logger_instance.get_logger()
-        
+
     def create_parser(self) -> argparse.ArgumentParser:
         """Create and configure the argument parser"""
         parser = argparse.ArgumentParser(
@@ -58,13 +58,13 @@ Supported Input Formats:  DOCX, PDF, TXT, HTML, RTF
 Supported Output Formats: Markdown, TXT, HTML, RTF
             """
         )
-        
+
         # Input/Output arguments
-        parser.add_argument('input', nargs='*', 
+        parser.add_argument('input', nargs='*',
                           help='Input file(s) or directory to convert')
         parser.add_argument('-o', '--output', required=False,
                           help='Output file or directory')
-        
+
         # Format arguments
         parser.add_argument('-f', '--from-format', default='auto',
                           choices=['auto'] + list(FormatDetector.SUPPORTED_INPUT_FORMATS.keys()),
@@ -72,7 +72,7 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
         parser.add_argument('-t', '--to-format', default='markdown',
                           choices=list(FormatDetector.SUPPORTED_OUTPUT_FORMATS.keys()),
                           help='Output format (default: markdown)')
-        
+
         # Processing options
         parser.add_argument('--recursive', '-r', action='store_true',
                           help='Process directories recursively')
@@ -82,22 +82,22 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
                           help='Overwrite existing output files')
         parser.add_argument('--workers', type=int, default=None,
                           help='Number of worker threads (default: auto)')
-        
+
         # Caching and performance
         parser.add_argument('--no-cache', action='store_true',
                           help='Disable caching for this conversion')
         parser.add_argument('--clear-cache', action='store_true',
                           help='Clear the conversion cache and exit')
-        
+
         # Batch processing
         parser.add_argument('--batch', metavar='CONFIG_FILE',
                           help='Batch conversion using JSON configuration file')
-        
+
         # Information commands
         parser.add_argument('--list-formats', action='store_true',
                           help='List all supported input and output formats')
         parser.add_argument('--version', action='version', version='Quick Document Convertor 2.0')
-        
+
         # Logging and output
         parser.add_argument('--verbose', '-v', action='store_true',
                           help='Enable verbose logging')
@@ -123,21 +123,21 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
                           help='List available configuration profiles')
 
         return parser
-    
+
     def list_formats(self):
         """Display supported formats"""
         print("Quick Document Convertor - Supported Formats\n")
-        
+
         print("INPUT FORMATS:")
         for key, info in FormatDetector.SUPPORTED_INPUT_FORMATS.items():
             extensions = ', '.join(info['extensions'])
             print(f"  {key.upper():8} - {info['name']} ({extensions})")
-        
+
         print("\nOUTPUT FORMATS:")
         for key, info in FormatDetector.SUPPORTED_OUTPUT_FORMATS.items():
             extension = info['extension']
             print(f"  {key.upper():8} - {info['name']} ({extension})")
-        
+
         print("\nUse 'auto' for automatic input format detection")
 
     def show_config(self):
@@ -245,25 +245,25 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
                 print(f"Error: Batch configuration file not found: {args.batch}")
                 return False
             return True
-        
+
         # Regular mode validation
         if not args.input:
             print("Error: No input files specified")
             return False
-        
+
         if not args.output:
             print("Error: Output path required (use -o/--output)")
             return False
-        
+
         # Validate input files exist
         for input_path in args.input:
             path = Path(input_path)
             if not path.exists():
                 print(f"Error: Input path does not exist: {input_path}")
                 return False
-        
+
         return True
-    
+
     def setup_logging(self, args):
         """Configure logging based on arguments"""
         # Determine log level
@@ -281,8 +281,8 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
         # Update all handlers
         for handler in self.logger.handlers:
             handler.setLevel(numeric_level)
-    
-    def convert_single_file(self, input_path: Path, output_path: Path, 
+
+    def convert_single_file(self, input_path: Path, output_path: Path,
                           from_format: str, to_format: str) -> bool:
         """Convert a single file"""
         try:
@@ -291,13 +291,13 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
         except (UnsupportedFormatError, FileProcessingError, DocumentConverterError) as e:
             self.logger.error(f"Failed to convert {input_path}: {e}")
             return False
-    
-    def get_output_path(self, input_path: Path, output_base: Path, 
-                       to_format: str, preserve_structure: bool, 
+
+    def get_output_path(self, input_path: Path, output_base: Path,
+                       to_format: str, preserve_structure: bool,
                        base_input_dir: Optional[Path] = None) -> Path:
         """Generate output path for a given input file"""
         output_ext = FormatDetector.SUPPORTED_OUTPUT_FORMATS[to_format]['extension']
-        
+
         if output_base.is_file() or (not output_base.exists() and not output_base.suffix):
             # Output is a specific file or directory
             if preserve_structure and base_input_dir and input_path != base_input_dir:
@@ -313,14 +313,14 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
         else:
             # Output directory
             return output_base / f"{input_path.stem}{output_ext}"
-    
+
     def collect_input_files(self, input_paths: List[str], recursive: bool) -> List[Path]:
         """Collect all input files to process"""
         files = []
-        
+
         for input_path in input_paths:
             path = Path(input_path)
-            
+
             if path.is_file():
                 files.append(path)
             elif path.is_dir():
@@ -339,23 +339,23 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
                 from glob import glob
                 matched_files = glob(str(path))
                 files.extend([Path(f) for f in matched_files if Path(f).is_file()])
-        
+
         # Remove duplicates and filter out temporary files
         unique_files = list(set(files))
         return [f for f in unique_files if not f.name.startswith('~$')]
-    
+
     def run(self, args=None) -> int:
         """Main CLI execution method"""
         parser = self.create_parser()
         args = parser.parse_args(args)
-        
+
         # Validate arguments
         if not self.validate_args(args):
             return 1
-        
+
         # Setup logging
         self.setup_logging(args)
-        
+
         # Handle information commands
         if args.list_formats:
             self.list_formats()
@@ -389,7 +389,7 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
         # Handle batch mode
         if args.batch:
             return self.run_batch_conversion(args.batch)
-        
+
         # Regular conversion mode
         return self.run_conversion(args)
 
@@ -535,7 +535,7 @@ Supported Output Formats: Markdown, TXT, HTML, RTF
                 else:
                     total_failed += 1
 
-            print(f"\nBatch conversion complete!")
+            print("\nBatch conversion complete!")
             print(f"Successful conversions: {total_successful}")
             if total_failed > 0:
                 print(f"Failed conversions: {total_failed}")

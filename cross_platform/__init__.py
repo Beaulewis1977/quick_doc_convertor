@@ -11,13 +11,13 @@ Project: Quick Document Convertor
 import platform
 import sys
 from pathlib import Path
-from typing import Dict, Optional, Tuple
+from typing import Dict
 
 
 def get_platform() -> str:
     """
     Get the current platform identifier.
-    
+
     Returns:
         str: 'windows', 'linux', 'macos', or 'unknown'
     """
@@ -35,7 +35,7 @@ def get_platform() -> str:
 def get_platform_info() -> Dict[str, str]:
     """
     Get detailed platform information.
-    
+
     Returns:
         Dict containing platform details
     """
@@ -54,12 +54,12 @@ def get_platform_info() -> Dict[str, str]:
 def get_config_dir() -> Path:
     """
     Get platform-specific configuration directory.
-    
+
     Returns:
         Path to configuration directory
     """
     platform_name = get_platform()
-    
+
     if platform_name == 'windows':
         # Windows: %APPDATA%\Quick Document Convertor
         return Path.home() / "AppData" / "Roaming" / "Quick Document Convertor"
@@ -77,12 +77,12 @@ def get_config_dir() -> Path:
 def get_data_dir() -> Path:
     """
     Get platform-specific data directory.
-    
+
     Returns:
         Path to data directory
     """
     platform_name = get_platform()
-    
+
     if platform_name == 'windows':
         # Windows: %LOCALAPPDATA%\Quick Document Convertor
         return Path.home() / "AppData" / "Local" / "Quick Document Convertor"
@@ -100,12 +100,12 @@ def get_data_dir() -> Path:
 def get_cache_dir() -> Path:
     """
     Get platform-specific cache directory.
-    
+
     Returns:
         Path to cache directory
     """
     platform_name = get_platform()
-    
+
     if platform_name == 'windows':
         # Windows: %LOCALAPPDATA%\Quick Document Convertor\Cache
         return get_data_dir() / "Cache"
@@ -123,12 +123,12 @@ def get_cache_dir() -> Path:
 def get_log_dir() -> Path:
     """
     Get platform-specific log directory.
-    
+
     Returns:
         Path to log directory
     """
     platform_name = get_platform()
-    
+
     if platform_name == 'windows':
         # Windows: %LOCALAPPDATA%\Quick Document Convertor\Logs
         return get_data_dir() / "Logs"
@@ -146,7 +146,7 @@ def get_log_dir() -> Path:
 def is_supported_platform() -> bool:
     """
     Check if the current platform is supported.
-    
+
     Returns:
         bool: True if platform is supported
     """
@@ -156,7 +156,7 @@ def is_supported_platform() -> bool:
 def get_executable_extension() -> str:
     """
     Get the executable file extension for the current platform.
-    
+
     Returns:
         str: File extension including dot, or empty string
     """
@@ -170,7 +170,7 @@ def get_executable_extension() -> str:
 def get_supported_file_formats() -> Dict[str, list]:
     """
     Get supported file formats for document conversion.
-    
+
     Returns:
         Dict with input and output format lists
     """
@@ -187,7 +187,7 @@ def get_supported_file_formats() -> Dict[str, list]:
 def create_platform_directories() -> bool:
     """
     Create all necessary platform-specific directories.
-    
+
     Returns:
         bool: True if successful
     """
@@ -198,10 +198,10 @@ def create_platform_directories() -> bool:
             get_cache_dir(),
             get_log_dir()
         ]
-        
+
         for directory in directories:
             directory.mkdir(parents=True, exist_ok=True)
-        
+
         return True
     except Exception as e:
         print(f"Error creating platform directories: {e}")
@@ -212,12 +212,12 @@ def create_platform_directories() -> bool:
 def get_platform_integration():
     """
     Get the appropriate platform integration module.
-    
+
     Returns:
         Platform-specific integration module or None
     """
     platform_name = get_platform()
-    
+
     try:
         if platform_name == 'linux':
             from . import linux_integration

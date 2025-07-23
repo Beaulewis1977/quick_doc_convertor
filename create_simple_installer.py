@@ -12,11 +12,11 @@ from pathlib import Path
 def create_portable_package():
     """Create a portable ZIP package for easy distribution"""
     print("📦 Creating Portable Package...")
-    
+
     # Create dist directory
     dist_dir = Path("dist")
     dist_dir.mkdir(exist_ok=True)
-    
+
     # Files to include in package
     files_to_include = [
         "universal_document_converter.py",
@@ -30,14 +30,14 @@ def create_portable_package():
         "requirements.txt",
         "requirements_installer.txt"
     ]
-    
+
     # Create package directory
     package_name = "QuickDocumentConvertor_Portable"
     package_dir = dist_dir / package_name
     if package_dir.exists():
         shutil.rmtree(package_dir)
     package_dir.mkdir()
-    
+
     # Copy files
     missing_files = []
     for file_path in files_to_include:
@@ -47,7 +47,7 @@ def create_portable_package():
         else:
             missing_files.append(file_path)
             print(f"⚠️ Missing: {file_path}")
-    
+
     # Create ZIP file
     zip_path = dist_dir / f"{package_name}.zip"
     with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -56,21 +56,21 @@ def create_portable_package():
                 file_path = Path(root) / file
                 arc_path = file_path.relative_to(package_dir.parent)
                 zipf.write(file_path, arc_path)
-    
+
     print(f"\n📦 Portable package created: {zip_path}")
-    print(f"📁 Extract and run: run_converter.bat")
-    
+    print("📁 Extract and run: run_converter.bat")
+
     if missing_files:
         print(f"\n⚠️ Missing files: {', '.join(missing_files)}")
-    
+
     return zip_path
 
 if __name__ == "__main__":
     print("🚀 Quick Document Convertor - Portable Package Creator")
     print("=" * 60)
-    
+
     zip_path = create_portable_package()
-    
+
     print("\n" + "=" * 60)
     print("✅ Package ready for distribution!")
     print(f"📁 Location: {zip_path}")
@@ -78,5 +78,5 @@ if __name__ == "__main__":
     print("1. Share the ZIP file with users")
     print("2. Users extract and run run_converter.bat")
     print("3. First-time users run install_converter.py")
-    
+
     input("\nPress Enter to exit...")

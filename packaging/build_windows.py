@@ -27,17 +27,17 @@ def create_pyinstaller_executable(
 ) -> Path:
     """
     Create Windows executable using PyInstaller.
-    
+
     Args:
         script_path: Path to main Python script
         output_dir: Output directory
         app_name: Application name
         icon_path: Path to icon file
         onefile: Create single file executable
-    
+
     Returns:
         Path to created executable or directory
-    
+
     Raises:
         PackagingError: If creation fails
     """
@@ -47,7 +47,7 @@ def create_pyinstaller_executable(
             import PyInstaller
         except ImportError:
             raise PackagingError("PyInstaller not installed. Install with: pip install pyinstaller")
-        
+
         # PyInstaller command
         cmd = [
             'pyinstaller',
@@ -59,17 +59,17 @@ def create_pyinstaller_executable(
             '--clean',
             '--noconfirm'
         ]
-        
+
         # Choose between onefile and onedir
         if onefile:
             cmd.append('--onefile')
         else:
             cmd.append('--onedir')
-        
+
         # Add icon if provided
         if icon_path and icon_path.exists():
             cmd.extend(['--icon', str(icon_path)])
-        
+
         # Add hidden imports for common modules
         hidden_imports = [
             'tkinter', 'tkinter.filedialog', 'tkinter.messagebox',
@@ -77,7 +77,7 @@ def create_pyinstaller_executable(
         ]
         for module in hidden_imports:
             cmd.extend(['--hidden-import', module])
-        
+
         # Add version info
         app_info = get_app_info()
         version_info = f"""
@@ -110,33 +110,33 @@ VSVersionInfo(
   ]
 )
 """
-        
+
         version_file = output_dir / 'version_info.txt'
         with open(version_file, 'w') as f:
             f.write(version_info)
-        
+
         cmd.extend(['--version-file', str(version_file)])
-        
+
         # Add the script
         cmd.append(str(script_path))
-        
+
         # Run PyInstaller
         result = subprocess.run(cmd, capture_output=True, text=True, cwd=output_dir)
-        
+
         if result.returncode != 0:
             raise PackagingError(f"PyInstaller failed: {result.stderr}")
-        
+
         # Return path to executable or directory
         if onefile:
             executable = output_dir / 'dist' / f"{app_name}.exe"
         else:
             executable = output_dir / 'dist' / app_name
-        
+
         if not executable.exists():
             raise PackagingError("Executable not created by PyInstaller")
-        
+
         return executable
-    
+
     except Exception as e:
         raise PackagingError(f"Failed to create executable: {e}")
 
@@ -150,26 +150,26 @@ def create_nsis_installer(
 ) -> Path:
     """
     Create NSIS installer for Windows.
-    
+
     Args:
         app_dir: Directory containing the application
         output_path: Output path for installer
         app_name: Application name
         version: Application version
         icon_path: Path to icon file
-    
+
     Returns:
         Path to created installer
-    
+
     Raises:
         PackagingError: If creation fails
     """
     app_info = get_app_info()
-    
+
     try:
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_path = Path(temp_dir)
-            
+
             # Create NSIS script
             nsis_script = f'''
 !define APPNAME "{app_name}"
@@ -214,13 +214,13 @@ functionEnd
 section "install"
     setOutPath $INSTDIR
     file /r "{app_dir}\\*.*"
-    
+
     writeUninstaller "$INSTDIR\\uninstall.exe"
-    
+
     createDirectory "$SMPROGRAMS\\${{COMPANYNAME}}"
     createShortCut "$SMPROGRAMS\\${{COMPANYNAME}}\\${{APPNAME}}.lnk" "$INSTDIR\\{app_name}.exe"
     createShortCut "$DESKTOP\\${{APPNAME}}.lnk" "$INSTDIR\\{app_name}.exe"
-    
+
     WriteRegStr HKLM "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\${{COMPANYNAME}} ${{APPNAME}}" "DisplayName" "${{APPNAME}}"
     WriteRegStr HKLM "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\${{COMPANYNAME}} ${{APPNAME}}" "UninstallString" "$\\"$INSTDIR\\uninstall.exe$\\""
     WriteRegStr HKLM "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\${{COMPANYNAME}} ${{APPNAME}}" "QuietUninstallString" "$\\"$INSTDIR\\uninstall.exe$\\" /S"
@@ -242,31 +242,31 @@ section "uninstall"
     delete "$SMPROGRAMS\\${{COMPANYNAME}}\\${{APPNAME}}.lnk"
     rmDir "$SMPROGRAMS\\${{COMPANYNAME}}"
     delete "$DESKTOP\\${{APPNAME}}.lnk"
-    
+
     rmDir /r "$INSTDIR"
-    
+
     DeleteRegKey HKLM "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\${{COMPANYNAME}} ${{APPNAME}}"
 sectionEnd
 '''
-            
+
             nsis_file = temp_path / "installer.nsi"
             with open(nsis_file, 'w', encoding='utf-8') as f:
                 f.write(nsis_script)
-            
+
             # Try to compile with NSIS
             try:
                 result = subprocess.run([
                     'makensis', str(nsis_file)
                 ], capture_output=True, text=True)
-                
+
                 if result.returncode != 0:
                     raise PackagingError(f"NSIS compilation failed: {result.stderr}")
-                
+
                 return output_path
-            
+
             except FileNotFoundError:
                 raise PackagingError("NSIS not found. Please install NSIS to create installers.")
-    
+
     except Exception as e:
         raise PackagingError(f"Failed to create NSIS installer: {e}")
 
@@ -279,44 +279,44 @@ def create_msi_installer(
 ) -> Path:
     """
     Create MSI installer using WiX Toolset.
-    
+
     Args:
         app_dir: Directory containing the application
         output_path: Output path for MSI
         app_name: Application name
         version: Application version
-    
+
     Returns:
         Path to created MSI
-    
+
     Raises:
         PackagingError: If creation fails
     """
     app_info = get_app_info()
-    
+
     try:
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_path = Path(temp_dir)
-            
+
             # Create WiX source file
             wix_content = f'''<?xml version='1.0' encoding='windows-1252'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
-  <Product Name='{app_name}' 
-           Id='*' 
+  <Product Name='{app_name}'
+           Id='*'
            UpgradeCode='12345678-1234-1234-1234-123456789012'
-           Language='1033' 
-           Codepage='1252' 
-           Version='{version}' 
+           Language='1033'
+           Codepage='1252'
+           Version='{version}'
            Manufacturer='{app_info["author"]}'>
 
-    <Package Id='*' 
-             Keywords='Installer' 
-             Description='{app_info["description"]}' 
-             Comments='{app_info["description"]}' 
-             Manufacturer='{app_info["author"]}' 
-             InstallerVersion='100' 
-             Languages='1033' 
-             Compressed='yes' 
+    <Package Id='*'
+             Keywords='Installer'
+             Description='{app_info["description"]}'
+             Comments='{app_info["description"]}'
+             Manufacturer='{app_info["author"]}'
+             InstallerVersion='100'
+             Languages='1033'
+             Compressed='yes'
              SummaryCodepage='1252' />
 
     <Media Id='1' Cabinet='Sample.cab' EmbedCab='yes' DiskPrompt="CD-ROM #1" />
@@ -333,7 +333,7 @@ def create_msi_installer(
           </Component>
         </Directory>
       </Directory>
-      
+
       <Directory Id="ProgramMenuFolder" Name="Programs">
         <Directory Id="ProgramMenuDir" Name='{app_name}'>
           <Component Id="ProgramMenuDir" Guid="*">
@@ -342,7 +342,7 @@ def create_msi_installer(
           </Component>
         </Directory>
       </Directory>
-      
+
       <Directory Id="DesktopFolder" Name="Desktop" />
     </Directory>
 
@@ -355,11 +355,11 @@ def create_msi_installer(
 
   </Product>
 </Wix>'''
-            
+
             wix_file = temp_path / "installer.wxs"
             with open(wix_file, 'w', encoding='utf-8') as f:
                 f.write(wix_content)
-            
+
             # Try to compile with WiX
             try:
                 # Compile to object file
@@ -367,23 +367,23 @@ def create_msi_installer(
                 result = subprocess.run([
                     'candle', '-out', str(wixobj_file), str(wix_file)
                 ], capture_output=True, text=True)
-                
+
                 if result.returncode != 0:
                     raise PackagingError(f"WiX candle failed: {result.stderr}")
-                
+
                 # Link to MSI
                 result = subprocess.run([
                     'light', '-out', str(output_path), str(wixobj_file)
                 ], capture_output=True, text=True)
-                
+
                 if result.returncode != 0:
                     raise PackagingError(f"WiX light failed: {result.stderr}")
-                
+
                 return output_path
-            
+
             except FileNotFoundError:
                 raise PackagingError("WiX Toolset not found. Please install WiX to create MSI installers.")
-    
+
     except Exception as e:
         raise PackagingError(f"Failed to create MSI installer: {e}")
 
@@ -396,18 +396,18 @@ def build_all_windows_packages(
 ) -> Dict[str, Path]:
     """
     Build all Windows package formats.
-    
+
     Args:
         script_path: Path to main Python script
         output_dir: Output directory for packages
         version: Application version
         icon_path: Path to icon file
-    
+
     Returns:
         Dict mapping package type to file path
     """
     results = {}
-    
+
     try:
         # Create executable using PyInstaller
         executable = create_pyinstaller_executable(script_path, output_dir, icon_path=icon_path)
@@ -415,7 +415,7 @@ def build_all_windows_packages(
     except Exception as e:
         results['executable_error'] = str(e)
         return results
-    
+
     try:
         # Create NSIS installer
         nsis_path = output_dir / f"QuickDocumentConvertor-{version}-Setup.exe"
@@ -423,7 +423,7 @@ def build_all_windows_packages(
         results['nsis'] = nsis_result
     except Exception as e:
         results['nsis_error'] = str(e)
-    
+
     try:
         # Create MSI installer
         msi_path = output_dir / f"QuickDocumentConvertor-{version}.msi"
@@ -431,7 +431,7 @@ def build_all_windows_packages(
         results['msi'] = msi_result
     except Exception as e:
         results['msi_error'] = str(e)
-    
+
     return results
 
 

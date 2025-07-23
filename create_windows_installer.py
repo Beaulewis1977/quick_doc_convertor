@@ -14,9 +14,10 @@ from pathlib import Path
 from typing import Dict, List, Optional
 import json
 
+
 class WindowsInstallerCreator:
     """Creates a professional Windows installer with full system integration"""
-    
+
     def __init__(self):
         self.app_name = "Quick Document Convertor"
         self.app_version = "2.0.0"
@@ -24,74 +25,78 @@ class WindowsInstallerCreator:
         self.app_dir = Path(__file__).parent
         self.build_dir = self.app_dir / "build_installer"
         self.dist_dir = self.app_dir / "dist_installer"
-        
+
     def check_dependencies(self) -> Dict[str, bool]:
         """Check if required dependencies are available"""
         deps = {
-            'pyinstaller': False,
-            'pywin32': False,
-            'nsis': False,
-            'pillow': False
+            "pyinstaller": False,
+            "pywin32": False,
+            "nsis": False,
+            "pillow": False,
         }
-        
+
         # Check PyInstaller
         try:
             import PyInstaller
-            deps['pyinstaller'] = True
+
+            deps["pyinstaller"] = True
         except ImportError:
             pass
-            
+
         # Check pywin32
         try:
             import win32com.client
-            deps['pywin32'] = True
+
+            deps["pywin32"] = True
         except ImportError:
             pass
-            
+
         # Check NSIS (for professional installer)
         try:
-            result = subprocess.run(['makensis', '/VERSION'], 
-                                  capture_output=True, text=True)
+            result = subprocess.run(
+                ["makensis", "/VERSION"], capture_output=True, text=True
+            )
             if result.returncode == 0:
-                deps['nsis'] = True
+                deps["nsis"] = True
         except FileNotFoundError:
             pass
-            
+
         # Check Pillow (for icon processing)
         try:
             import PIL
-            deps['pillow'] = True
+
+            deps["pillow"] = True
         except ImportError:
             pass
-            
+
         return deps
-    
+
     def install_dependencies(self) -> bool:
         """Install missing dependencies"""
         print("📦 Installing required dependencies...")
-        
+
         packages = [
-            'pyinstaller>=5.0',
-            'pywin32>=304',
-            'pillow>=9.0',
-            'psutil>=5.9.0'
+            "pyinstaller>=5.0",
+            "pywin32>=304",
+            "pillow>=9.0",
+            "psutil>=5.9.0",
         ]
-        
+
         try:
             for package in packages:
                 print(f"Installing {package}...")
-                subprocess.check_call([
-                    sys.executable, '-m', 'pip', 'install', package
-                ])
+                subprocess.check_call(
+                    [sys.executable, "-m", "pip", "install", package]
+                )
             return True
         except subprocess.CalledProcessError as e:
             print(f"❌ Failed to install dependencies: {e}")
             return False
-    
+
     def create_system_tray_version(self) -> Path:
         """Create a system tray version of the application"""
         tray_script = self.build_dir / "tray_app.py"
-        
+
         tray_code = '''#!/usr/bin/env python3
 """
 Quick Document Convertor - System Tray Application
@@ -196,18 +201,18 @@ def main():
 if __name__ == "__main__":
     main()
 '''
-        
+
         self.build_dir.mkdir(parents=True, exist_ok=True)
-        with open(tray_script, 'w', encoding='utf-8') as f:
+        with open(tray_script, "w", encoding="utf-8") as f:
             f.write(tray_code)
-            
+
         return tray_script
-    
+
     def create_installer_script(self) -> Path:
         """Create NSIS installer script"""
         nsis_script = self.build_dir / "installer.nsi"
-        
-        nsis_code = f'''
+
+        nsis_code = f"""
 ; Quick Document Convertor Installer
 ; Created with NSIS
 
@@ -330,19 +335,19 @@ section "uninstall"
     deleteRegValue HKCU "Software\\Microsoft\\Windows\\CurrentVersion\\Run" "QuickDocConvertor"
     
 sectionEnd
-'''
-        
-        with open(nsis_script, 'w', encoding='utf-8') as f:
+"""
+
+        with open(nsis_script, "w", encoding="utf-8") as f:
             f.write(nsis_code)
-            
+
         return nsis_script
-    
+
     def create_executables(self) -> bool:
         """Create executable files using PyInstaller"""
         print("🔨 Creating executable files...")
-        
+
         # Main application executable
-        main_spec = f'''
+        main_spec = f"""
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
@@ -399,10 +404,10 @@ exe = EXE(
     icon='icon.ico' if Path('icon.ico').exists() else None,
     version='version_info.txt' if Path('version_info.txt').exists() else None,
 )
-'''
-        
+"""
+
         # System tray executable
-        tray_spec = f'''
+        tray_spec = f"""
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
@@ -451,19 +456,19 @@ exe = EXE(
     entitlements_file=None,
     icon='icon.ico' if Path('icon.ico').exists() else None,
 )
-'''
-        
+"""
+
         # Write spec files
         main_spec_file = self.build_dir / "main_app.spec"
         tray_spec_file = self.build_dir / "tray_app.spec"
-        
-        with open(main_spec_file, 'w') as f:
+
+        with open(main_spec_file, "w") as f:
             f.write(main_spec)
-        with open(tray_spec_file, 'w') as f:
+        with open(tray_spec_file, "w") as f:
             f.write(tray_spec)
-        
+
         # Create version info file
-        version_info = f'''
+        version_info = f"""
 VSVersionInfo(
   ffi=FixedFileInfo(
     filevers=(2, 0, 0, 0),
@@ -492,118 +497,134 @@ VSVersionInfo(
     VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
   ]
 )
-'''
-        
+"""
+
         version_file = self.build_dir / "version_info.txt"
-        with open(version_file, 'w') as f:
+        with open(version_file, "w") as f:
             f.write(version_info)
-        
+
         # Copy necessary files to build directory
-        shutil.copy2(self.app_dir / "universal_document_converter.py", self.build_dir)
-        
+        shutil.copy2(
+            self.app_dir / "universal_document_converter.py", self.build_dir
+        )
+
         # Copy icon if exists
         icon_file = self.app_dir / "icon.ico"
         if not icon_file.exists():
             # Create a simple icon
             self.create_simple_icon(icon_file)
         shutil.copy2(icon_file, self.build_dir)
-        
+
         # Copy other files
         for file in ["requirements.txt", "README.md", "LICENSE"]:
             src = self.app_dir / file
             if src.exists():
                 shutil.copy2(src, self.build_dir)
-        
+
         # Build executables
         try:
             os.chdir(self.build_dir)
-            
+
             # Build main application
-            subprocess.check_call([
-                sys.executable, '-m', 'PyInstaller', 
-                '--clean', str(main_spec_file)
-            ])
-            
+            subprocess.check_call(
+                [
+                    sys.executable,
+                    "-m",
+                    "PyInstaller",
+                    "--clean",
+                    str(main_spec_file),
+                ]
+            )
+
             # Build tray application
-            subprocess.check_call([
-                sys.executable, '-m', 'PyInstaller', 
-                '--clean', str(tray_spec_file)
-            ])
-            
+            subprocess.check_call(
+                [
+                    sys.executable,
+                    "-m",
+                    "PyInstaller",
+                    "--clean",
+                    str(tray_spec_file),
+                ]
+            )
+
             return True
-            
+
         except subprocess.CalledProcessError as e:
             print(f"❌ Failed to create executables: {e}")
             return False
         finally:
             os.chdir(self.app_dir)
-    
+
     def create_simple_icon(self, icon_path: Path):
         """Create a simple icon file"""
         try:
             from PIL import Image, ImageDraw
-            
+
             # Create a 32x32 icon
-            img = Image.new('RGB', (32, 32), color='white')
+            img = Image.new("RGB", (32, 32), color="white")
             draw = ImageDraw.Draw(img)
-            
+
             # Draw a simple document icon
-            draw.rectangle([4, 4, 28, 28], fill='lightblue', outline='blue', width=2)
-            draw.text((8, 12), "QDC", fill='black')
-            
+            draw.rectangle(
+                [4, 4, 28, 28], fill="lightblue", outline="blue", width=2
+            )
+            draw.text((8, 12), "QDC", fill="black")
+
             # Save as ICO
-            img.save(icon_path, format='ICO')
-            
+            img.save(icon_path, format="ICO")
+
         except ImportError:
             # Fallback: create empty icon file
             icon_path.touch()
-    
+
     def build_installer(self) -> bool:
         """Build the complete installer"""
         print("🏗️  Building Windows installer...")
-        
+
         # Check dependencies
         deps = self.check_dependencies()
         missing = [k for k, v in deps.items() if not v]
-        
+
         if missing:
             print(f"❌ Missing dependencies: {', '.join(missing)}")
             if not self.install_dependencies():
                 return False
-        
+
         # Create system tray version
         tray_script = self.create_system_tray_version()
         print(f"✅ Created system tray application: {tray_script}")
-        
+
         # Create executables
         if not self.create_executables():
             return False
         print("✅ Created executable files")
-        
+
         # Create NSIS installer script
         nsis_script = self.create_installer_script()
         print(f"✅ Created installer script: {nsis_script}")
-        
+
         # Build installer with NSIS (if available)
-        if deps.get('nsis', False):
+        if deps.get("nsis", False):
             try:
-                subprocess.check_call(['makensis', str(nsis_script)])
+                subprocess.check_call(["makensis", str(nsis_script)])
                 print("✅ Created NSIS installer")
             except subprocess.CalledProcessError:
-                print("⚠️  NSIS installer creation failed, creating batch installer instead")
+                print(
+                    "⚠️  NSIS installer creation failed, creating batch installer instead"
+                )
                 self.create_batch_installer()
         else:
             print("⚠️  NSIS not available, creating batch installer")
             self.create_batch_installer()
-        
+
         return True
-    
+
     def create_batch_installer(self):
         """Create a batch file installer as fallback"""
         batch_installer = self.dist_dir / "install.bat"
         self.dist_dir.mkdir(parents=True, exist_ok=True)
-        
-        batch_code = f'''@echo off
+
+        batch_code = f"""@echo off
 echo Installing {self.app_name}...
 
 REM Create installation directory
@@ -634,20 +655,21 @@ echo - Use the desktop shortcut
 echo - Pin to taskbar by right-clicking the shortcut
 echo.
 pause
-'''
-        
-        with open(batch_installer, 'w') as f:
+"""
+
+        with open(batch_installer, "w") as f:
             f.write(batch_code)
-        
+
         print(f"✅ Created batch installer: {batch_installer}")
+
 
 def main():
     """Main function"""
     print("🚀 Quick Document Convertor - Windows Installer Creator")
     print("=" * 60)
-    
+
     creator = WindowsInstallerCreator()
-    
+
     if creator.build_installer():
         print("\n🎉 Windows installer created successfully!")
         print("\nInstaller features:")
@@ -660,18 +682,19 @@ def main():
         print("  ✅ Context menu integration")
         print("  ✅ Add/Remove Programs entry")
         print("  ✅ Automatic uninstaller")
-        
+
         print(f"\nFiles created in: {creator.dist_dir}")
         print("\nTo install:")
         print("  1. Run the installer as Administrator")
         print("  2. Follow the installation wizard")
         print("  3. Pin to taskbar by right-clicking the shortcut")
         print("  4. System tray app will auto-start")
-        
+
     else:
         print("❌ Failed to create installer")
-    
+
     input("\nPress Enter to exit...")
 
+
 if __name__ == "__main__":
-    main() 
+    main()

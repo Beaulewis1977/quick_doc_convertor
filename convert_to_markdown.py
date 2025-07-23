@@ -8,36 +8,57 @@ import os
 import sys
 from pathlib import Path
 import argparse
+import subprocess
+import importlib
+import re
+
 
 def install_requirements():
     """Install required packages"""
-    required_packages = [
-        'python-docx',
-        'PyPDF2',
-        'markdownify'
-    ]
-    
+    required_packages = ["python-docx", "PyPDF2", "markdownify"]
+
     for package in required_packages:
         try:
-            __import__(package.replace('-', '_'))
+            import_name = package.replace("-", "_")
+            importlib.import_module(import_name)
             print(f"✓ {package} already installed")
         except ImportError:
+            # Validate package name to prevent command injection
+            if not re.match(r"^[a-zA-Z0-9][a-zA-Z0-9._-]*$", package):
+                print(f"❌ Invalid package name: {package}")
+                continue
+
             print(f"Installing {package}...")
-            os.system(f'pip install {package}')
+            try:
+                result = subprocess.run(
+                    [sys.executable, "-m", "pip", "install", package],
+                    capture_output=True,
+                    text=True,
+                    timeout=300,
+                )
+                if result.returncode == 0:
+                    print(f"✅ {package} installed successfully")
+                else:
+                    print(f"❌ Failed to install {package}: {result.stderr}")
+            except subprocess.TimeoutExpired:
+                print(f"❌ Package installation timeout for {package}")
+            except Exception as e:
+                print(f"❌ Failed to install {package}: {str(e)}")
+
 
 def convert_docx_to_markdown(file_path):
     """Convert DOCX file to Markdown"""
     try:
         from docx import Document
-        
+
         doc = Document(file_path)
         markdown_content = []
-        
+
         for paragraph in doc.paragraphs:
             text = paragraph.text.strip()
             if text:
                 # Basic formatting detection
-                if paragraph.style.name.startswith('Heading'):
+                if paragraph.style.name.startswith("Heading"):
                     level = paragraph.style.name.split()[-1]
                     if level.isdigit():
                         markdown_content.append(f"{'#' * int(level)} {text}")
@@ -46,29 +67,30 @@ def convert_docx_to_markdown(file_path):
                 else:
                     markdown_content.append(text)
                 markdown_content.append("")  # Add blank line
-        
+
         return "\n".join(markdown_content)
-    
+
     except Exception as e:
         print(f"Error converting DOCX file {file_path}: {e}")
         return None
+
 
 def convert_pdf_to_markdown(file_path):
     """Convert PDF file to Markdown"""
     try:
         import PyPDF2
-        
+
         markdown_content = []
-        
-        with open(file_path, 'rb') as file:
+
+        with open(file_path, "rb") as file:
             pdf_reader = PyPDF2.PdfReader(file)
-            
+
             for page_num, page in enumerate(pdf_reader.pages):
                 text = page.extract_text()
                 if text.strip():
                     if page_num == 0:
                         # Assume first page has title
-                        lines = text.strip().split('\n')
+                        lines = text.strip().split("\n")
                         if lines:
                             markdown_content.append(f"# {lines[0]}")
                             markdown_content.append("")
@@ -76,23 +98,24 @@ def convert_pdf_to_markdown(file_path):
                     else:
                         markdown_content.append(text)
                     markdown_content.append("")  # Add blank line between pages
-        
+
         return "\n".join(markdown_content)
-    
+
     except Exception as e:
         print(f"Error converting PDF file {file_path}: {e}")
         return None
 
+
 def convert_txt_to_markdown(file_path):
     """Convert TXT file to Markdown"""
     try:
-        with open(file_path, 'r', encoding='utf-8') as file:
+        with open(file_path, "r", encoding="utf-8") as file:
             content = file.read()
-        
+
         # Basic markdown formatting for text files
-        lines = content.split('\n')
+        lines = content.split("\n")
         markdown_content = []
-        
+
         for i, line in enumerate(lines):
             line = line.strip()
             if line:
@@ -102,138 +125,154 @@ def convert_txt_to_markdown(file_path):
                 else:
                     markdown_content.append(line)
             markdown_content.append("")
-        
+
         return "\n".join(markdown_content)
-    
+
     except Exception as e:
         print(f"Error converting TXT file {file_path}: {e}")
         return None
+
 
 def convert_file(file_path, output_dir):
     """Convert a single file to Markdown"""
     file_path = Path(file_path)
     output_dir = Path(output_dir)
-    
+
     # Create output directory if it doesn't exist
     output_dir.mkdir(parents=True, exist_ok=True)
-    
+
     # Determine conversion method based on file extension
     extension = file_path.suffix.lower()
-    
+
     print(f"Converting: {file_path.name}")
-    
-    if extension == '.docx':
+
+    if extension == ".docx":
         content = convert_docx_to_markdown(file_path)
-    elif extension == '.pdf':
+    elif extension == ".pdf":
         content = convert_pdf_to_markdown(file_path)
-    elif extension == '.txt':
+    elif extension == ".txt":
         content = convert_txt_to_markdown(file_path)
     else:
         print(f"Unsupported file type: {extension}")
         return False
-    
+
     if content:
         # Create output filename
-        output_filename = file_path.stem + '.md'
+        output_filename = file_path.stem + ".md"
         output_path = output_dir / output_filename
-        
+
         # Write markdown content
-        with open(output_path, 'w', encoding='utf-8') as output_file:
+        with open(output_path, "w", encoding="utf-8") as output_file:
             output_file.write(content)
-        
+
         print(f"✓ Converted to: {output_path}")
         return True
     else:
         print(f"✗ Failed to convert: {file_path}")
         return False
 
+
 def main():
-    parser = argparse.ArgumentParser(description='Convert documents to Markdown')
-    parser.add_argument('input_dir', nargs='?', default='.', 
-                       help='Input directory (default: current directory)')
-    parser.add_argument('-o', '--output', default='markdown_output', 
-                       help='Output directory (default: markdown_output)')
-    parser.add_argument('--install', action='store_true', 
-                       help='Install required packages')
-    
+    parser = argparse.ArgumentParser(
+        description="Convert documents to Markdown"
+    )
+    parser.add_argument(
+        "input_dir",
+        nargs="?",
+        default=".",
+        help="Input directory (default: current directory)",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        default="markdown_output",
+        help="Output directory (default: markdown_output)",
+    )
+    parser.add_argument(
+        "--install", action="store_true", help="Install required packages"
+    )
+
     args = parser.parse_args()
-    
+
     if args.install:
         install_requirements()
         return
-    
+
     input_dir = Path(args.input_dir)
     output_dir = Path(args.output)
-    
+
     if not input_dir.exists():
         print(f"Error: Input directory '{input_dir}' does not exist")
         return
-    
+
     # Find all supported files
-    supported_extensions = ['.docx', '.pdf', '.txt']
+    supported_extensions = [".docx", ".pdf", ".txt"]
     files_to_convert = []
-    
+
     for ext in supported_extensions:
-        files_to_convert.extend(input_dir.glob(f'*{ext}'))
-    
+        files_to_convert.extend(input_dir.glob(f"*{ext}"))
+
     if not files_to_convert:
         print(f"No supported files found in '{input_dir}'")
         print(f"Supported formats: {', '.join(supported_extensions)}")
         return
-    
+
     print(f"Found {len(files_to_convert)} files to convert:")
     for file in files_to_convert:
         print(f"  - {file.name}")
-    
+
     print(f"\nOutput directory: {output_dir}")
     print("=" * 50)
-    
+
     # Convert files
     successful = 0
     failed = 0
-    
+
     for file_path in files_to_convert:
         if convert_file(file_path, output_dir):
             successful += 1
         else:
             failed += 1
-    
+
     print("=" * 50)
     print(f"Conversion complete!")
     print(f"✓ Successful: {successful}")
     print(f"✗ Failed: {failed}")
-    
+
     if successful > 0:
         print(f"\nMarkdown files saved to: {output_dir}")
 
-if __name__ == '__main__':
-    main() 
+
+if __name__ == "__main__":
+    main()
+
+
 def convert_to_markdown(input_path, output_path=None):
     """Main conversion function for CLI compatibility"""
     input_path = Path(input_path)
-    
+
     if output_path is None:
-        output_path = input_path.with_suffix('.md')
+        output_path = input_path.with_suffix(".md")
     else:
         output_path = Path(output_path)
-    
+
     file_ext = input_path.suffix.lower()
-    
+
     try:
-        if file_ext == '.docx':
+        if file_ext == ".docx":
             content = convert_docx_to_markdown(str(input_path))
-        elif file_ext == '.pdf':
+        elif file_ext == ".pdf":
             content = convert_pdf_to_markdown(str(input_path))
-        elif file_ext == '.txt':
+        elif file_ext == ".txt":
             content = convert_txt_to_markdown(str(input_path))
         else:
             raise ValueError(f"Unsupported format: {file_ext}")
-        
-        with open(output_path, 'w', encoding='utf-8') as f:
+
+        with open(output_path, "w", encoding="utf-8") as f:
             f.write(content)
-        
+
         return str(output_path)
-        
+
     except Exception as e:
         print(f"Error converting {input_path}: {e}")
         return None

@@ -10,6 +10,7 @@ import subprocess
 import platform
 import logging
 from pathlib import Path
+import shlex
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -23,11 +24,17 @@ class OCRSetup:
         self.python_executable = sys.executable
         self.pip_executable = f"{self.python_executable} -m pip"
         
-    def run_command(self, command, shell=True):
+    def run_command(self, command, shell=False):
         """Run system command with error handling"""
         try:
-            logger.info(f"Running: {command}")
-            result = subprocess.run(command, shell=shell, capture_output=True, text=True)
+            # If command is a string, convert to list for safer execution
+            if isinstance(command, str):
+                cmd_list = shlex.split(command)
+            else:
+                cmd_list = command
+                
+            logger.info(f"Running: {' '.join(cmd_list)}")
+            result = subprocess.run(cmd_list, shell=shell, capture_output=True, text=True)
             
             if result.returncode == 0:
                 logger.info("Command completed successfully")
@@ -83,9 +90,10 @@ class OCRSetup:
         logger.info("Setting up Windows dependencies...")
         
         # Check if Tesseract is installed
+        import os
         tesseract_paths = [
-            "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
-            "C:\\Users\\%USERNAME%\\AppData\\Local\\Tesseract-OCR\\tesseract.exe"
+            os.path.join(os.environ.get('ProgramFiles', 'C:\\Program Files'), 'Tesseract-OCR', 'tesseract.exe'),
+            os.path.join(os.path.expanduser('~'), 'AppData', 'Local', 'Tesseract-OCR', 'tesseract.exe')
         ]
         
         tesseract_found = False
@@ -223,8 +231,8 @@ class OCRSetup:
         """Get Tesseract executable path"""
         if self.system == "Windows":
             possible_paths = [
-                "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
-                "C:\\Users\\{}\\AppData\\Local\\Tesseract-OCR\\tesseract.exe".format(os.getenv('USERNAME'))
+                os.path.join(os.environ.get('ProgramFiles', 'C:\\Program Files'), 'Tesseract-OCR', 'tesseract.exe'),
+                os.path.join(os.path.expanduser('~'), 'AppData', 'Local', 'Tesseract-OCR', 'tesseract.exe')
             ]
             
             for path in possible_paths:
@@ -236,7 +244,7 @@ class OCRSetup:
                 result = subprocess.run(["which", "tesseract"], capture_output=True, text=True)
                 if result.returncode == 0:
                     return result.stdout.strip()
-            except:
+            except (subprocess.SubprocessError, FileNotFoundError):
                 pass
         
         return "tesseract"

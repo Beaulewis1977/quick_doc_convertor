@@ -12,6 +12,7 @@ import subprocess
 from pathlib import Path
 import time
 import logging
+import importlib
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -64,7 +65,7 @@ class OCRIntegrationValidator:
         failed_deps = []
         for dep in dependencies:
             try:
-                __import__(dep)
+                importlib.import_module(dep)
             except ImportError:
                 failed_deps.append(dep)
         
@@ -91,7 +92,7 @@ class OCRIntegrationValidator:
             try:
                 font = ImageFont.load_default()
                 draw.text((10, 10), "TEST", fill='black', font=font)
-            except:
+            except (OSError, IOError):
                 draw.text((10, 10), "TEST", fill='black')
             
             test_image = os.path.join(self.temp_dir, 'test_ocr.png')

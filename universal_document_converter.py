@@ -11,7 +11,6 @@ import threading
 import os
 from pathlib import Path
 import sys
-import mimetypes
 import re
 import logging
 import datetime
@@ -22,6 +21,8 @@ import time
 import hashlib
 from threading import Lock
 import gc
+import subprocess
+import importlib
 
 # Optional dependency for memory monitoring
 try:
@@ -2006,7 +2007,7 @@ class UniversalDocumentConverterGUI:
         missing = []
         for package, import_name in required_packages.items():
             try:
-                __import__(import_name)
+                importlib.import_module(import_name)
             except ImportError:
                 missing.append(package)
         
@@ -2018,9 +2019,20 @@ class UniversalDocumentConverterGUI:
         """Install required packages"""
         for package in packages:
             try:
+                # Validate package name to prevent command injection
+                if not re.match(r'^[a-zA-Z0-9][a-zA-Z0-9._-]*$', package):
+                    self.log_message(f"❌ Invalid package name: {package}")
+                    continue
+                    
                 self.log_message(f"📦 Installing {package}...")
-                os.system(f'pip install {package}')
-                self.log_message(f"✅ {package} installed successfully")
+                result = subprocess.run([sys.executable, '-m', 'pip', 'install', package], 
+                                      capture_output=True, text=True, timeout=300)
+                if result.returncode == 0:
+                    self.log_message(f"✅ {package} installed successfully")
+                else:
+                    self.log_message(f"❌ Failed to install {package}: {result.stderr}")
+            except subprocess.TimeoutExpired:
+                self.log_message(f"❌ Package installation timeout for {package}")
             except Exception as e:
                 self.log_message(f"❌ Failed to install {package}: {str(e)}")
 
@@ -2115,8 +2127,10 @@ class UniversalDocumentConverterGUI:
             try:
                 if os.name == 'nt':  # Windows
                     os.startfile(output_path)
-                elif os.name == 'posix':  # macOS and Linux
-                    os.system(f'open "{output_path}"' if sys.platform == 'darwin' else f'xdg-open "{output_path}"')
+                elif sys.platform == 'darwin':  # macOS
+                    subprocess.run(['open', output_path], check=True)
+                else:  # Linux and other Unix-like
+                    subprocess.run(['xdg-open', output_path], check=True)
                 self.log_message(f"📂 Opened output folder: {output_path}")
             except Exception as e:
                 messagebox.showerror("Error", f"Could not open folder: {e}")
@@ -2225,11 +2239,10 @@ Features:
             try:
                 if os.name == 'nt':  # Windows
                     os.startfile(self.last_converted_file)
-                elif os.name == 'posix':  # macOS and Linux
-                    if sys.platform == 'darwin':  # macOS
-                        os.system(f'open "{self.last_converted_file}"')
-                    else:  # Linux
-                        os.system(f'xdg-open "{self.last_converted_file}"')
+                elif sys.platform == 'darwin':  # macOS
+                    subprocess.run(['open', self.last_converted_file], check=True)
+                else:  # Linux and other Unix-like
+                    subprocess.run(['xdg-open', self.last_converted_file], check=True)
                 self.log_message(f"📖 Opened file: {os.path.basename(self.last_converted_file)}")
             except Exception as e:
                 messagebox.showerror("Error", f"Could not open file: {e}")

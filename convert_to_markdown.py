@@ -8,6 +8,9 @@ import os
 import sys
 from pathlib import Path
 import argparse
+import subprocess
+import importlib
+import re
 
 def install_requirements():
     """Install required packages"""
@@ -19,11 +22,27 @@ def install_requirements():
     
     for package in required_packages:
         try:
-            __import__(package.replace('-', '_'))
+            import_name = package.replace('-', '_')
+            importlib.import_module(import_name)
             print(f"✓ {package} already installed")
         except ImportError:
+            # Validate package name to prevent command injection
+            if not re.match(r'^[a-zA-Z0-9][a-zA-Z0-9._-]*$', package):
+                print(f"❌ Invalid package name: {package}")
+                continue
+                
             print(f"Installing {package}...")
-            os.system(f'pip install {package}')
+            try:
+                result = subprocess.run([sys.executable, '-m', 'pip', 'install', package], 
+                                      capture_output=True, text=True, timeout=300)
+                if result.returncode == 0:
+                    print(f"✅ {package} installed successfully")
+                else:
+                    print(f"❌ Failed to install {package}: {result.stderr}")
+            except subprocess.TimeoutExpired:
+                print(f"❌ Package installation timeout for {package}")
+            except Exception as e:
+                print(f"❌ Failed to install {package}: {str(e)}")
 
 def convert_docx_to_markdown(file_path):
     """Convert DOCX file to Markdown"""

@@ -31,8 +31,8 @@ class OCREngine:
         try:
             # Try to find Tesseract in common locations
             tesseract_paths = [
-                r"C:\Program Files\Tesseract-OCR\tesseract.exe",
-                r"C:\Users\{}\AppData\Local\Tesseract-OCR\tesseract.exe".format(os.getenv('USERNAME', '')),
+                os.path.join(os.environ.get('ProgramFiles', 'C:\\Program Files'), 'Tesseract-OCR', 'tesseract.exe'),
+                os.path.join(os.path.expanduser('~'), 'AppData', 'Local', 'Tesseract-OCR', 'tesseract.exe'),
                 "/usr/bin/tesseract",
                 "/usr/local/bin/tesseract",
                 "/opt/homebrew/bin/tesseract"
